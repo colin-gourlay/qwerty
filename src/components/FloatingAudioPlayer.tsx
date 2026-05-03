@@ -7,9 +7,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import SoundWave from './SoundWave'
 import stationLogo from '@/assets/images/station-logo.webp'
+import { useCurrentShow } from '@/hooks/use-current-show'
+import { Link } from 'react-router-dom'
 
 export default function FloatingAudioPlayer() {
   const { isPlaying, volume, isMuted, togglePlay, setVolume, toggleMute } = useAudioPlayer()
+  const { currentShow, currentSlot } = useCurrentShow()
   const [isMinimized, setIsMinimized] = useState(false)
   const [isExpanded, setIsExpanded] = useState(false)
 
@@ -48,27 +51,48 @@ export default function FloatingAudioPlayer() {
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 py-3">
-            <div className="flex items-center gap-3 flex-shrink-0">
+            <div className="flex items-center gap-3 flex-shrink-0 min-w-0">
               <img 
                 src={stationLogo} 
                 alt={STATION_CONFIG.name}
-                className="h-10 w-auto object-contain"
+                className="h-10 w-auto object-contain flex-shrink-0"
               />
-              <div className="hidden sm:block">
-                <div className="font-semibold text-sm">{STATION_CONFIG.name}</div>
-                <div className="text-xs text-muted-foreground flex items-center gap-2">
-                  {isPlaying ? (
-                    <>
-                      <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-                      </span>
-                      Now Playing
-                    </>
-                  ) : (
-                    'Ready to play'
-                  )}
-                </div>
+              <div className="hidden sm:block min-w-0">
+                {currentShow ? (
+                  <Link to={`/shows/${currentShow.id}`} className="block hover:opacity-80 transition-opacity">
+                    <div className="font-semibold text-sm truncate">{currentShow.name}</div>
+                    <div className="text-xs text-muted-foreground flex items-center gap-2">
+                      {isPlaying ? (
+                        <>
+                          <span className="relative flex h-2 w-2 flex-shrink-0">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                          </span>
+                          <span className="truncate">Now Playing</span>
+                        </>
+                      ) : (
+                        <span className="truncate">Click to view show</span>
+                      )}
+                    </div>
+                  </Link>
+                ) : (
+                  <>
+                    <div className="font-semibold text-sm">{STATION_CONFIG.name}</div>
+                    <div className="text-xs text-muted-foreground flex items-center gap-2">
+                      {isPlaying ? (
+                        <>
+                          <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                          </span>
+                          Now Playing
+                        </>
+                      ) : (
+                        'Ready to play'
+                      )}
+                    </div>
+                  </>
+                )}
               </div>
             </div>
 
@@ -77,7 +101,7 @@ export default function FloatingAudioPlayer() {
                 size="icon"
                 variant="ghost"
                 onClick={togglePlay}
-                className="h-12 w-12 rounded-full hover:bg-primary hover:text-primary-foreground transition-all"
+                className="h-12 w-12 rounded-full hover:bg-primary hover:text-primary-foreground transition-all flex-shrink-0"
               >
                 {isPlaying ? (
                   <Pause weight="fill" className="h-6 w-6" />
@@ -86,7 +110,23 @@ export default function FloatingAudioPlayer() {
                 )}
               </Button>
 
-              {isPlaying && (
+              {isPlaying && currentShow && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="hidden lg:flex flex-col items-center min-w-0"
+                >
+                  <div className="text-xs text-muted-foreground">Now Playing</div>
+                  <div className="font-medium text-sm truncate max-w-xs">{currentShow.name}</div>
+                  {currentSlot && (
+                    <div className="text-xs text-muted-foreground">
+                      {currentSlot.startTime} - {currentSlot.endTime}
+                    </div>
+                  )}
+                </motion.div>
+              )}
+
+              {isPlaying && !currentShow && (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
