@@ -51,16 +51,12 @@ function Header() {
     <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center">
             <img 
               src={stationLogo} 
               alt={STATION_CONFIG.name}
-              className="h-10 w-10 object-contain"
+              className="h-12 w-auto object-contain"
             />
-            <div className="hidden sm:block">
-              <div className="font-bold text-lg">{STATION_CONFIG.name}</div>
-              <div className="text-xs text-muted-foreground">{STATION_CONFIG.tagline}</div>
-            </div>
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">
