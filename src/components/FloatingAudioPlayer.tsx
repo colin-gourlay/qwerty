@@ -52,11 +52,21 @@ export default function FloatingAudioPlayer() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 py-3">
             <div className="flex items-center gap-3 flex-shrink-0 min-w-0">
-              <img 
-                src={stationLogo} 
-                alt={STATION_CONFIG.name}
-                className="h-10 w-auto object-contain flex-shrink-0"
-              />
+              {currentShow && currentShow.image ? (
+                <Link to={`/shows/${currentShow.id}`} className="flex-shrink-0">
+                  <img 
+                    src={currentShow.image} 
+                    alt={currentShow.name}
+                    className="h-14 w-14 object-cover rounded-lg border-2 border-border hover:border-primary transition-colors shadow-sm"
+                  />
+                </Link>
+              ) : (
+                <img 
+                  src={stationLogo} 
+                  alt={STATION_CONFIG.name}
+                  className="h-10 w-auto object-contain flex-shrink-0"
+                />
+              )}
               <div className="hidden sm:block min-w-0">
                 {currentShow ? (
                   <Link to={`/shows/${currentShow.id}`} className="block hover:opacity-80 transition-opacity">
