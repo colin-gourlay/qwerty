@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-do
 import { Radio, Calendar, Users, Newspaper, Play, List, X } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
-import { STATION_CONFIG } from '@/data/config'
+import { STATION_CONFIG, STREAM_URL } from '@/data/config'
 import { useState } from 'react'
 import ShowProfilePage from '@/components/ShowProfilePage'
 import PresenterProfilePage from '@/components/PresenterProfilePage'
@@ -10,33 +10,39 @@ import { shows } from '@/data/shows'
 import { presenters } from '@/data/presenters'
 import stationLogo from '@/assets/images/station-logo.webp'
 import SoundWave from '@/components/SoundWave'
+import { AudioPlayerProvider, useAudioPlayer } from '@/components/AudioPlayerContext'
+import FloatingAudioPlayer from '@/components/FloatingAudioPlayer'
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <div className="min-h-screen bg-background flex flex-col">
-        <Header />
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/schedule" element={<SchedulePage />} />
-            <Route path="/shows" element={<ShowsPage />} />
-            <Route path="/shows/:showId" element={<ShowProfilePage />} />
-            <Route path="/presenters" element={<PresentersPage />} />
-            <Route path="/presenters/:presenterId" element={<PresenterProfilePage />} />
-            <Route path="/news" element={<NewsPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </BrowserRouter>
+    <AudioPlayerProvider streamUrl={STREAM_URL}>
+      <BrowserRouter>
+        <div className="min-h-screen bg-background flex flex-col pb-20">
+          <Header />
+          <main className="flex-1">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/schedule" element={<SchedulePage />} />
+              <Route path="/shows" element={<ShowsPage />} />
+              <Route path="/shows/:showId" element={<ShowProfilePage />} />
+              <Route path="/presenters" element={<PresentersPage />} />
+              <Route path="/presenters/:presenterId" element={<PresenterProfilePage />} />
+              <Route path="/news" element={<NewsPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+            </Routes>
+          </main>
+          <Footer />
+          <FloatingAudioPlayer />
+        </div>
+      </BrowserRouter>
+    </AudioPlayerProvider>
   )
 }
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const location = useLocation()
+  const { togglePlay, isPlaying } = useAudioPlayer()
 
   const navItems = [
     { path: '/', label: 'Home', icon: Radio },
@@ -72,10 +78,14 @@ function Header() {
                 {item.label}
               </Link>
             ))}
-            <Button size="sm" className="gap-2 animate-pulse-subtle hover:animate-none">
+            <Button 
+              size="sm" 
+              className="gap-2 animate-pulse-subtle hover:animate-none"
+              onClick={togglePlay}
+            >
               <Play weight="fill" className="h-4 w-4" />
-              Listen Live
-              <SoundWave />
+              {isPlaying ? 'Now Playing' : 'Listen Live'}
+              {isPlaying && <SoundWave />}
             </Button>
           </nav>
 
@@ -105,10 +115,16 @@ function Header() {
                     </Link>
                   )
                 })}
-                <Button className="gap-2 w-full animate-pulse-subtle hover:animate-none">
+                <Button 
+                  className="gap-2 w-full animate-pulse-subtle hover:animate-none"
+                  onClick={() => {
+                    togglePlay()
+                    setMobileMenuOpen(false)
+                  }}
+                >
                   <Play weight="fill" className="h-4 w-4" />
-                  Listen Live
-                  <SoundWave />
+                  {isPlaying ? 'Now Playing' : 'Listen Live'}
+                  {isPlaying && <SoundWave />}
                 </Button>
               </nav>
             </SheetContent>
@@ -120,6 +136,8 @@ function Header() {
 }
 
 function HomePage() {
+  const { togglePlay, isPlaying } = useAudioPlayer()
+
   return (
     <div>
       <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-accent/10 py-20">
@@ -139,10 +157,14 @@ function HomePage() {
               {STATION_CONFIG.description}
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="gap-2 animate-pulse-subtle hover:animate-none">
+              <Button 
+                size="lg" 
+                className="gap-2 animate-pulse-subtle hover:animate-none"
+                onClick={togglePlay}
+              >
                 <Play weight="fill" className="h-5 w-5" />
-                Listen Live
-                <SoundWave />
+                {isPlaying ? 'Now Playing' : 'Listen Live'}
+                {isPlaying && <SoundWave />}
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <Link to="/schedule">View Schedule</Link>

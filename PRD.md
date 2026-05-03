@@ -12,12 +12,12 @@ The site includes multiple interconnected pages (home, schedule, shows, presente
 
 ## Essential Features
 
-### Live Audio Streaming
-- **Functionality**: HTML5 audio player with play/pause/volume controls
-- **Purpose**: Core value proposition - enables listeners to tune in from anywhere
-- **Trigger**: Click "Listen Live" button in header or hero section
-- **Progression**: User clicks CTA → Player initializes → Stream loads → Audio plays → Controls remain accessible in sticky player
-- **Success criteria**: Audio streams reliably, controls respond immediately, player persists across page navigation
+### Live Audio Streaming (Floating Player)
+- **Functionality**: Persistent HTML5 audio player with play/pause/volume/mute controls that floats at bottom of viewport
+- **Purpose**: Core value proposition - enables listeners to tune in from anywhere while browsing the site
+- **Trigger**: Click "Listen Live" button in header, hero section, or any page
+- **Progression**: User clicks CTA → Floating player appears at bottom → Stream loads → Audio plays → Player persists across all page navigation → Can minimize to compact button or close temporarily
+- **Success criteria**: Audio streams reliably, controls respond immediately, playback state persists across page navigation, player can be minimized/expanded, volume settings are preserved
 
 ### On Air Now Display
 - **Functionality**: Dynamic show indicator matching current time against schedule data
@@ -142,17 +142,18 @@ Animations should create a sense of liveness and broadcast energy without distra
   - Dialog (shadcn) - Potential use for contact forms or detailed show info
   
 - **Customizations**:
-  - AudioPlayer - Custom component with persistent state, integrates with sticky header/footer
+  - FloatingAudioPlayer - Persistent player component that remains visible across all pages, with minimize/expand states, full playback controls, volume slider, and live status indicator
+  - AudioPlayerContext - React Context provider managing global audio state (isPlaying, volume, mute) accessible throughout the app
   - ScheduleGrid - Custom responsive table/grid showing weekly programming
   - OnAirWidget - Real-time component matching schedule to current time
   - ShowCard - Extended Card with show-specific layout (image, time, presenter)
   - PresenterCard - Avatar-focused card with social links
   - NewsArticleCard - Card with image, headline, excerpt, date
-  - Navigation - Custom responsive nav with active route highlighting
+  - Navigation - Custom responsive nav with active route highlighting integrated with audio player state
   
 - **States**:
   - Buttons: Distinct hover (brightness increase), active (scale down slightly), focus (ring), disabled (reduced opacity)
-  - Audio Player: Playing (animated), paused (static), loading (spinner), error (alert icon)
+  - Audio Player: Playing (animated waveform, pulsing indicators), paused (static), minimized (compact floating button), loading (spinner), error (alert icon), expanded (full controls with volume slider)
   - Cards: Default (subtle shadow), hover (elevated shadow + slight lift), active/selected (colored border)
   - Links: Underline on hover, color shift, focus visible ring
   
@@ -178,6 +179,6 @@ Animations should create a sense of liveness and broadcast energy without distra
   - Navigation: Full-width sheet drawer replacing horizontal nav
   - Schedule Grid: Stack days vertically or enable horizontal scroll with sticky time column
   - Cards: Single column layout on mobile, 2-3 columns on tablet, 3-4 on desktop
-  - Audio Player: Compact footer bar on mobile, expanded controls on desktop
+  - Audio Player: Compact floating bar at bottom with essential controls (play/pause, mute, minimize), volume slider hidden on small screens, full controls visible on tablet/desktop
   - Hero: Reduced height, stacked text/image on mobile
   - Typography: Scale down by 20-25% on mobile (H1: 36px mobile vs 48px desktop)
