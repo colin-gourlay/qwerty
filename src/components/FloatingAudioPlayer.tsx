@@ -8,7 +8,6 @@ import { useState } from 'react'
 import SoundWave from './SoundWave'
 import stationLogo from '@/assets/images/station-logo.webp'
 import { useCurrentShow } from '@/hooks/use-current-show'
-import { Link } from 'react-router-dom'
 
 export default function FloatingAudioPlayer() {
   const { isPlaying, volume, isMuted, togglePlay, setVolume, toggleMute } = useAudioPlayer()
@@ -52,24 +51,14 @@ export default function FloatingAudioPlayer() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 py-3">
             <div className="flex items-center gap-3 flex-shrink-0 min-w-0">
-              {currentShow && currentShow.image ? (
-                <Link to={`/shows/${currentShow.id}`} className="flex-shrink-0">
-                  <img 
-                    src={currentShow.image} 
-                    alt={currentShow.name}
-                    className="h-14 w-14 object-cover rounded-lg border-2 border-border hover:border-primary transition-colors shadow-sm"
-                  />
-                </Link>
-              ) : (
-                <img 
-                  src={stationLogo} 
-                  alt={STATION_CONFIG.name}
-                  className="h-10 w-auto object-contain flex-shrink-0"
-                />
-              )}
+              <img 
+                src={stationLogo} 
+                alt={STATION_CONFIG.name}
+                className="h-10 w-auto object-contain flex-shrink-0"
+              />
               <div className="hidden sm:block min-w-0">
                 {currentShow ? (
-                  <Link to={`/shows/${currentShow.id}`} className="block hover:opacity-80 transition-opacity">
+                  <>
                     <div className="font-semibold text-sm truncate">{currentShow.name}</div>
                     <div className="text-xs text-muted-foreground flex items-center gap-2">
                       {isPlaying ? (
@@ -81,10 +70,10 @@ export default function FloatingAudioPlayer() {
                           <span className="truncate">Now Playing</span>
                         </>
                       ) : (
-                        <span className="truncate">Click to view show</span>
+                        <span className="truncate">Ready to play</span>
                       )}
                     </div>
-                  </Link>
+                  </>
                 ) : (
                   <>
                     <div className="font-semibold text-sm">{STATION_CONFIG.name}</div>
