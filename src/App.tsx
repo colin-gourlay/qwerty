@@ -71,7 +71,7 @@ function Header() {
                 {item.label}
               </Link>
             ))}
-            <Button size="sm" className="gap-2">
+            <Button size="sm" className="gap-2 animate-pulse-subtle hover:animate-none">
               <Play weight="fill" className="h-4 w-4" />
               Listen Live
             </Button>
@@ -103,7 +103,7 @@ function Header() {
                     </Link>
                   )
                 })}
-                <Button className="gap-2 w-full">
+                <Button className="gap-2 w-full animate-pulse-subtle hover:animate-none">
                   <Play weight="fill" className="h-4 w-4" />
                   Listen Live
                 </Button>
@@ -136,7 +136,7 @@ function HomePage() {
               {STATION_CONFIG.description}
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="gap-2">
+              <Button size="lg" className="gap-2 animate-pulse-subtle hover:animate-none">
                 <Play weight="fill" className="h-5 w-5" />
                 Listen Live
               </Button>
