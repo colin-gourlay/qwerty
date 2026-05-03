@@ -4,6 +4,10 @@ import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { STATION_CONFIG } from '@/data/config'
 import { useState } from 'react'
+import ShowProfilePage from '@/components/ShowProfilePage'
+import PresenterProfilePage from '@/components/PresenterProfilePage'
+import { shows } from '@/data/shows'
+import { presenters } from '@/data/presenters'
 
 export default function App() {
   return (
@@ -15,7 +19,9 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/schedule" element={<SchedulePage />} />
             <Route path="/shows" element={<ShowsPage />} />
+            <Route path="/shows/:showId" element={<ShowProfilePage />} />
             <Route path="/presenters" element={<PresentersPage />} />
+            <Route path="/presenters/:presenterId" element={<PresenterProfilePage />} />
             <Route path="/news" element={<NewsPage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
@@ -177,7 +183,52 @@ function ShowsPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <h1 className="text-4xl font-bold mb-8">Our Shows</h1>
-      <p className="text-muted-foreground mb-8">Explore all our radio shows</p>
+      <p className="text-muted-foreground mb-8 max-w-2xl">
+        Discover the diverse range of programming on East Coast FM. From music and entertainment to news and specialist shows, there's something for everyone.
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {shows.map((show) => (
+          <Link key={show.id} to={`/shows/${show.id}`}>
+            <div className="rounded-lg border bg-card overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
+              <div 
+                className="aspect-video bg-muted relative"
+                style={{
+                  backgroundColor: show.color ? `${show.color}/20` : undefined
+                }}
+              >
+                <img 
+                  src={show.image} 
+                  alt={show.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6 flex-1 flex flex-col">
+                <div className="mb-2">
+                  <span 
+                    className="inline-block text-xs font-semibold px-2 py-1 rounded"
+                    style={{
+                      backgroundColor: show.color,
+                      color: 'white'
+                    }}
+                  >
+                    {show.genre}
+                  </span>
+                </div>
+                <h3 className="font-semibold text-lg mb-2">{show.name}</h3>
+                {show.schedule && (
+                  <p className="text-sm text-muted-foreground mb-2">{show.schedule}</p>
+                )}
+                <p className="text-sm text-muted-foreground line-clamp-3 flex-1">
+                  {show.description}
+                </p>
+                <Button variant="ghost" size="sm" className="mt-4 w-full">
+                  Learn More
+                </Button>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   )
 }
@@ -186,7 +237,32 @@ function PresentersPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <h1 className="text-4xl font-bold mb-8">Meet Our Presenters</h1>
-      <p className="text-muted-foreground mb-8">The voices of East Coast FM</p>
+      <p className="text-muted-foreground mb-8 max-w-2xl">
+        Get to know the talented team behind East Coast FM. Our presenters bring passion, expertise, and personality to everything they do.
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {presenters.map((presenter) => (
+          <Link key={presenter.id} to={`/presenters/${presenter.id}`}>
+            <div className="text-center hover:scale-105 transition-transform">
+              <img
+                src={presenter.image}
+                alt={presenter.name}
+                className="w-48 h-48 rounded-full object-cover mx-auto mb-4 border-4 border-border hover:border-primary transition-colors"
+              />
+              <h3 className="font-semibold text-xl mb-1">{presenter.name}</h3>
+              {presenter.role && (
+                <p className="text-sm text-muted-foreground mb-3">{presenter.role}</p>
+              )}
+              <p className="text-sm text-muted-foreground line-clamp-3 px-4">
+                {presenter.bio}
+              </p>
+              <Button variant="link" className="mt-2">
+                View Profile
+              </Button>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   )
 }

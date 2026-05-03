@@ -10,6 +10,11 @@ export interface Presenter {
     facebook?: string
     email?: string
   }
+  fullBio?: string
+  yearsExperience?: number
+  favoriteGenres?: string[]
+  funFacts?: string[]
+  joinedDate?: string
 }
 
 export interface Show {
@@ -20,6 +25,15 @@ export interface Show {
   genre: string
   image: string
   color?: string
+  fullDescription?: string
+  schedule?: string
+  features?: string[]
+  highlights?: string[]
+  contact?: {
+    phone?: string
+    email?: string
+    social?: string
+  }
 }
 
 export interface ScheduleSlot {
