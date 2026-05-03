@@ -9,6 +9,7 @@ import PresenterProfilePage from '@/components/PresenterProfilePage'
 import { shows } from '@/data/shows'
 import { presenters } from '@/data/presenters'
 import stationLogo from '@/assets/images/station-logo.webp'
+import SoundWave from '@/components/SoundWave'
 
 export default function App() {
   return (
@@ -74,6 +75,7 @@ function Header() {
             <Button size="sm" className="gap-2 animate-pulse-subtle hover:animate-none">
               <Play weight="fill" className="h-4 w-4" />
               Listen Live
+              <SoundWave />
             </Button>
           </nav>
 
@@ -106,6 +108,7 @@ function Header() {
                 <Button className="gap-2 w-full animate-pulse-subtle hover:animate-none">
                   <Play weight="fill" className="h-4 w-4" />
                   Listen Live
+                  <SoundWave />
                 </Button>
               </nav>
             </SheetContent>
@@ -139,6 +142,7 @@ function HomePage() {
               <Button size="lg" className="gap-2 animate-pulse-subtle hover:animate-none">
                 <Play weight="fill" className="h-5 w-5" />
                 Listen Live
+                <SoundWave />
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <Link to="/schedule">View Schedule</Link>
