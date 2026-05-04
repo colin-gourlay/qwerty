@@ -30,8 +30,15 @@ The site includes multiple interconnected pages (home, schedule, shows, presente
 - **Functionality**: Visual timetable showing all shows by day and time
 - **Purpose**: Helps listeners plan when to tune in for favorite shows
 - **Trigger**: Navigate to Schedule page
-- **Progression**: User clicks Schedule → Grid renders with days as columns → Shows fill time slots → User can click show for details
-- **Success criteria**: Schedule is scannable, time slots are clear, works on mobile with horizontal scroll or stacked layout
+- **Progression**: User clicks Schedule → Grid renders with days as columns → Shows fill time slots → User can click show for details → Can generate shareable schedule images
+- **Success criteria**: Schedule is scannable, time slots are clear, works on mobile with horizontal scroll or stacked layout, image generation produces high-quality graphics
+
+### Show Schedule Image Generator
+- **Functionality**: Generate shareable social media images for show schedules with custom branding
+- **Purpose**: Enable listeners and station staff to create professional graphics for promoting shows on social media
+- **Trigger**: Click "Create Share Image" button on schedule page or individual show pages
+- **Progression**: User clicks button → Dialog opens with show/day selectors → User selects show and day → Clicks generate → Canvas renders branded image with gradient background, station logo, show details, and schedule → User can download or share via native share API
+- **Success criteria**: Images are 1200x630px (optimal for social media), include all relevant information, maintain brand consistency, download and share functions work reliably
 
 ### Show Profiles
 - **Functionality**: Dedicated pages for each radio show with description, presenter links, air times

@@ -2,11 +2,15 @@ import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-do
 import { Radio, Calendar, Users, Newspaper, Play, List, X } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { Card } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
 import { STATION_CONFIG, STREAM_URL } from '@/data/config'
 import { useState } from 'react'
 import ShowProfilePage from '@/components/ShowProfilePage'
 import PresenterProfilePage from '@/components/PresenterProfilePage'
+import ScheduleImageGenerator from '@/components/ScheduleImageGenerator'
 import { shows } from '@/data/shows'
+import { schedule } from '@/data/schedule'
 import { presenters } from '@/data/presenters'
 import stationLogo from '@/assets/images/station-logo.webp'
 import SoundWave from '@/components/SoundWave'
@@ -197,10 +201,65 @@ function HomePage() {
 }
 
 function SchedulePage() {
+  const weekDays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+  
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h1 className="text-4xl font-bold mb-8">Weekly Schedule</h1>
-      <p className="text-muted-foreground mb-8">Coming soon - full weekly schedule grid</p>
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4">
+        <div>
+          <h1 className="text-4xl font-bold mb-2">Weekly Schedule</h1>
+          <p className="text-muted-foreground">
+            Tune in to your favorite shows throughout the week
+          </p>
+        </div>
+        <ScheduleImageGenerator />
+      </div>
+
+      <div className="grid gap-8">
+        {weekDays.map((day) => {
+          const daySchedule = schedule.filter(slot => slot.day === day)
+          
+          return (
+            <div key={day} className="space-y-4">
+              <h2 className="text-2xl font-bold capitalize">{day}</h2>
+              <div className="grid gap-3">
+                {daySchedule.map((slot, idx) => {
+                  const show = shows.find(s => s.id === slot.showId)
+                  if (!show) return null
+                  
+                  return (
+                    <Link key={idx} to={`/shows/${show.id}`}>
+                      <Card className="p-4 hover:shadow-md transition-shadow">
+                        <div className="flex items-center gap-4">
+                          <div className="flex-shrink-0">
+                            <div className="font-mono text-sm font-semibold text-muted-foreground">
+                              {slot.startTime} - {slot.endTime}
+                            </div>
+                          </div>
+                          <div 
+                            className="w-1 h-12 rounded-full flex-shrink-0"
+                            style={{ backgroundColor: show.color }}
+                          />
+                          <div className="flex-1 min-w-0">
+                            <h3 className="font-semibold text-lg truncate">{show.name}</h3>
+                            <p className="text-sm text-muted-foreground truncate">{show.genre}</p>
+                          </div>
+                          <Badge 
+                            className="flex-shrink-0"
+                            style={{ backgroundColor: show.color }}
+                          >
+                            {show.genre}
+                          </Badge>
+                        </div>
+                      </Card>
+                    </Link>
+                  )
+                })}
+              </div>
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }

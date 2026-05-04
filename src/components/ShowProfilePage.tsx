@@ -7,6 +7,7 @@ import { Card } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { Play, Phone, EnvelopeSimple, Hash, Clock, CheckCircle, Star } from '@phosphor-icons/react'
 import ShareButton from '@/components/ShareButton'
+import ScheduleImageGenerator from '@/components/ScheduleImageGenerator'
 import { useAudioPlayer } from '@/components/AudioPlayerContext'
 
 export default function ShowProfilePage() {
@@ -72,6 +73,7 @@ export default function ShowProfilePage() {
                   description={show.description}
                   size="lg"
                 />
+                <ScheduleImageGenerator showId={showId} />
               </div>
             </div>
             
