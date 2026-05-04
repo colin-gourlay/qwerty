@@ -69,11 +69,18 @@ The site includes multiple interconnected pages (home, schedule, shows, presente
 - **Success criteria**: Browsing is intuitive, playback controls are familiar, layout mimics real podcast/audio archive
 
 ### Contact/Advertise Pages
-- **Functionality**: Static information pages with contact details and advertising information
-- **Purpose**: Facilitate listener feedback and commercial partnerships
+- **Functionality**: Static information pages with contact details, advertising information, and interactive coverage area map
+- **Purpose**: Facilitate listener feedback, commercial partnerships, and demonstrate broadcast reach
 - **Trigger**: Navigate from footer or main navigation
-- **Progression**: User clicks Contact → Page displays station address, email, phone, social links → Form UI shown (client-side only)
-- **Success criteria**: Information is clear, accessible, and professional
+- **Progression**: User clicks Contact → Page displays station address, email, phone, social links alongside interactive coverage area map → Map visualizes primary and secondary broadcast coverage zones centered on Haddington → Shows major towns within coverage area
+- **Success criteria**: Information is clear, accessible, professional, and map accurately represents coverage area with smooth animations
+
+### Coverage Area Map
+- **Functionality**: Interactive D3-powered visualization showing the station's broadcast coverage zones
+- **Purpose**: Visually communicate broadcast reach to listeners and potential advertisers, building geographic identity
+- **Trigger**: Automatically loads on Contact page
+- **Progression**: Map renders → Primary coverage area (inner circle) and secondary coverage area (outer circle) display with gradient fills → Station location (Haddington) marked with pulsing animation → Major towns within coverage labeled → Legend explains coverage zones → Map responsively scales to container
+- **Success criteria**: Map is visually clear, animations are smooth, coverage zones are distinguishable, responsive on all screen sizes, loads quickly without performance issues
 
 ## Edge Case Handling
 
