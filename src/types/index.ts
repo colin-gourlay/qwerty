@@ -83,4 +83,9 @@ export interface StationConfig {
     instagram: string
     youtube?: string
   }
+  frequency?: {
+    fm: string
+    dab: string
+    online: string
+  }
 }

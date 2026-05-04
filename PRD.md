@@ -82,6 +82,13 @@ The site includes multiple interconnected pages (home, schedule, shows, presente
 - **Progression**: Map renders → Primary coverage area (inner circle) and secondary coverage area (outer circle) display with gradient fills → Station location (Haddington) marked with pulsing animation → Major towns within coverage labeled → Legend explains coverage zones → Map responsively scales to container
 - **Success criteria**: Map is visually clear, animations are smooth, coverage zones are distinguishable, responsive on all screen sizes, loads quickly without performance issues
 
+### Frequency Information & Reception Tips
+- **Functionality**: Comprehensive guide showing FM frequency (107.9 MHz), DAB digital radio availability, and online streaming options, with location-specific reception quality indicators and practical tuning advice
+- **Purpose**: Help listeners find the best way to tune in based on their location and available equipment, reducing technical support requests
+- **Trigger**: Displayed on Contact page below contact information and coverage map
+- **Progression**: User views contact page → Three tuning method cards display (FM/DAB/Online) → User selects "Reception by Location" tab → List of major towns shows expected reception quality with color-coded badges → User can switch to "Reception Tips" tab → Category-specific troubleshooting guides appear for FM, DAB, online streaming, and general troubleshooting
+- **Success criteria**: All frequency information is accurate and clearly displayed, reception quality indicators are intuitive (excellent/good with appropriate colors), tips are practical and actionable, tabs switch smoothly, responsive layout works on all devices
+
 ## Edge Case Handling
 
 - **Schedule Gaps** - Display "Music Mix" or station name when no specific show is scheduled

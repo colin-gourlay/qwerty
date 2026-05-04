@@ -18,6 +18,7 @@ import { AudioPlayerProvider, useAudioPlayer } from '@/components/AudioPlayerCon
 import FloatingAudioPlayer from '@/components/FloatingAudioPlayer'
 import SocialLinks from '@/components/SocialLinks'
 import CoverageMap from '@/components/CoverageMap'
+import FrequencyInfo from '@/components/FrequencyInfo'
 
 export default function App() {
   return (
@@ -367,7 +368,7 @@ function ContactPage() {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <h1 className="text-4xl font-bold mb-8">Contact Us</h1>
       
-      <div className="grid lg:grid-cols-2 gap-8 mb-8">
+      <div className="grid lg:grid-cols-2 gap-8 mb-12">
         <div>
           <p className="text-muted-foreground mb-8">{STATION_CONFIG.description}</p>
           <div className="grid gap-6">
@@ -443,6 +444,10 @@ function ContactPage() {
         <div>
           <CoverageMap />
         </div>
+      </div>
+
+      <div className="border-t pt-12">
+        <FrequencyInfo />
       </div>
     </div>
   )
