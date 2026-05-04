@@ -7,15 +7,14 @@ import { Card } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import {
   Play,
-  TwitterLogo,
-  InstagramLogo,
-  FacebookLogo,
-  EnvelopeSimple,
   Briefcase,
   CalendarBlank,
   MusicNotes,
   Lightbulb
 } from '@phosphor-icons/react'
+import ShareButton from '@/components/ShareButton'
+import SocialLinks from '@/components/SocialLinks'
+import { useAudioPlayer } from '@/components/AudioPlayerContext'
 
 export default function PresenterProfilePage() {
   const { presenterId } = useParams<{ presenterId: string }>()
@@ -43,6 +42,7 @@ export default function PresenterProfilePage() {
   }
   
   const shows = getShowsByPresenterId(presenterId)
+  const { togglePlay } = useAudioPlayer()
   
   return (
     <div>
@@ -62,44 +62,19 @@ export default function PresenterProfilePage() {
               </p>
               
               {presenter.social && (
-                <div className="flex flex-wrap gap-3 mb-6">
-                  {presenter.social.twitter && (
-                    <Button variant="outline" size="sm" asChild>
-                      <a href={`https://twitter.com/${presenter.social.twitter.replace('@', '')}`} target="_blank" rel="noopener noreferrer">
-                        <TwitterLogo className="h-4 w-4 mr-2" />
-                        Twitter
-                      </a>
-                    </Button>
-                  )}
-                  {presenter.social.instagram && (
-                    <Button variant="outline" size="sm" asChild>
-                      <a href={`https://instagram.com/${presenter.social.instagram}`} target="_blank" rel="noopener noreferrer">
-                        <InstagramLogo className="h-4 w-4 mr-2" />
-                        Instagram
-                      </a>
-                    </Button>
-                  )}
-                  {presenter.social.facebook && (
-                    <Button variant="outline" size="sm" asChild>
-                      <a href={`https://facebook.com/${presenter.social.facebook}`} target="_blank" rel="noopener noreferrer">
-                        <FacebookLogo className="h-4 w-4 mr-2" />
-                        Facebook
-                      </a>
-                    </Button>
-                  )}
-                  {presenter.social.email && (
-                    <Button variant="outline" size="sm" asChild>
-                      <a href={`mailto:${presenter.social.email}`}>
-                        <EnvelopeSimple className="h-4 w-4 mr-2" />
-                        Email
-                      </a>
-                    </Button>
-                  )}
+                <div className="mb-6">
+                  <div className="text-sm font-semibold mb-2">Connect with {presenter.name.split(' ')[0]}</div>
+                  <SocialLinks
+                    variant="large"
+                    twitter={presenter.social.twitter}
+                    facebook={presenter.social.facebook}
+                    instagram={presenter.social.instagram}
+                  />
                 </div>
               )}
               
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="gap-2">
+                <Button size="lg" className="gap-2" onClick={togglePlay}>
                   <Play weight="fill" className="h-5 w-5" />
                   Listen Live
                 </Button>
@@ -108,6 +83,11 @@ export default function PresenterProfilePage() {
                     <a href="#shows">View Shows</a>
                   </Button>
                 )}
+                <ShareButton 
+                  title={`${presenter.name} - East Coast FM`}
+                  description={presenter.bio}
+                  size="lg"
+                />
               </div>
             </div>
             

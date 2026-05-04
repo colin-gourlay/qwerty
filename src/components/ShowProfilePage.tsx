@@ -6,6 +6,8 @@ import { Badge } from '@/components/ui/badge'
 import { Card } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { Play, Phone, EnvelopeSimple, Hash, Clock, CheckCircle, Star } from '@phosphor-icons/react'
+import ShareButton from '@/components/ShareButton'
+import { useAudioPlayer } from '@/components/AudioPlayerContext'
 
 export default function ShowProfilePage() {
   const { showId } = useParams<{ showId: string }>()
@@ -33,6 +35,7 @@ export default function ShowProfilePage() {
   }
   
   const presenters = getPresentersByIds(show.presenters)
+  const { togglePlay } = useAudioPlayer()
   
   return (
     <div>
@@ -57,13 +60,18 @@ export default function ShowProfilePage() {
                 </div>
               )}
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="gap-2">
+                <Button size="lg" className="gap-2" onClick={togglePlay}>
                   <Play weight="fill" className="h-5 w-5" />
                   Listen Live
                 </Button>
                 <Button size="lg" variant="outline" asChild>
                   <Link to="/schedule">View Full Schedule</Link>
                 </Button>
+                <ShareButton 
+                  title={`${show.name} - East Coast FM`}
+                  description={show.description}
+                  size="lg"
+                />
               </div>
             </div>
             

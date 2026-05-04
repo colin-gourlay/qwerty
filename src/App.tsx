@@ -12,6 +12,7 @@ import stationLogo from '@/assets/images/station-logo.webp'
 import SoundWave from '@/components/SoundWave'
 import { AudioPlayerProvider, useAudioPlayer } from '@/components/AudioPlayerContext'
 import FloatingAudioPlayer from '@/components/FloatingAudioPlayer'
+import SocialLinks from '@/components/SocialLinks'
 
 export default function App() {
   return (
@@ -345,9 +346,13 @@ function Footer() {
                 <div className="text-sm text-muted-foreground">{STATION_CONFIG.tagline}</div>
               </div>
             </div>
-            <p className="text-sm text-muted-foreground max-w-md">
+            <p className="text-sm text-muted-foreground max-w-md mb-4">
               {STATION_CONFIG.description}
             </p>
+            <div>
+              <h4 className="font-semibold text-sm mb-2">Follow Us</h4>
+              <SocialLinks />
+            </div>
           </div>
           <div>
             <h3 className="font-semibold mb-4">Quick Links</h3>
