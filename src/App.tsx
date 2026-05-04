@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
-import { Radio, Calendar, Users, Newspaper, Play, List, X } from '@phosphor-icons/react'
+import { Radio, Calendar, Users, Newspaper, Play, List, X, Phone, ChatCircle, Envelope, MapPin } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Card } from '@/components/ui/card'
@@ -366,24 +366,74 @@ function ContactPage() {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <h1 className="text-4xl font-bold mb-8">Contact Us</h1>
       <div className="max-w-2xl">
-        <p className="text-muted-foreground mb-6">{STATION_CONFIG.description}</p>
-        <div className="space-y-4">
-          <div>
-            <div className="font-semibold">Phone</div>
-            <div className="text-muted-foreground">{STATION_CONFIG.phone}</div>
-          </div>
-          <div>
-            <div className="font-semibold">Email</div>
-            <div className="text-muted-foreground">{STATION_CONFIG.email}</div>
-          </div>
-          <div>
-            <div className="font-semibold">Address</div>
-            <div className="text-muted-foreground">
-              {STATION_CONFIG.address.street}<br />
-              {STATION_CONFIG.address.city}<br />
-              {STATION_CONFIG.address.postcode}
+        <p className="text-muted-foreground mb-8">{STATION_CONFIG.description}</p>
+        <div className="grid gap-6">
+          <Card className="p-6">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <ChatCircle className="h-6 w-6 text-primary" weight="duotone" />
+              </div>
+              <div className="flex-1">
+                <div className="font-semibold text-lg mb-1">Text Message</div>
+                <a 
+                  href={`sms:${STATION_CONFIG.text}`}
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {STATION_CONFIG.text}
+                </a>
+              </div>
             </div>
-          </div>
+          </Card>
+
+          <Card className="p-6">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <Phone className="h-6 w-6 text-primary" weight="duotone" />
+              </div>
+              <div className="flex-1">
+                <div className="font-semibold text-lg mb-1">Phone</div>
+                <a 
+                  href={`tel:${STATION_CONFIG.phone.replace(/\s/g, '')}`}
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {STATION_CONFIG.phone}
+                </a>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-6">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <Envelope className="h-6 w-6 text-primary" weight="duotone" />
+              </div>
+              <div className="flex-1">
+                <div className="font-semibold text-lg mb-1">Email</div>
+                <a 
+                  href={`mailto:${STATION_CONFIG.email}`}
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {STATION_CONFIG.email}
+                </a>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-6">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <MapPin className="h-6 w-6 text-primary" weight="duotone" />
+              </div>
+              <div className="flex-1">
+                <div className="font-semibold text-lg mb-1">Address</div>
+                <div className="text-muted-foreground">
+                  {STATION_CONFIG.address.street}<br />
+                  {STATION_CONFIG.address.city}<br />
+                  {STATION_CONFIG.address.postcode}
+                </div>
+              </div>
+            </div>
+          </Card>
         </div>
       </div>
     </div>
@@ -425,9 +475,22 @@ function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Contact</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>{STATION_CONFIG.phone}</li>
-              <li>{STATION_CONFIG.email}</li>
-              <li>{STATION_CONFIG.address.city}</li>
+              <li className="flex items-center gap-2">
+                <ChatCircle className="h-4 w-4 flex-shrink-0" />
+                <span>{STATION_CONFIG.text}</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="h-4 w-4 flex-shrink-0" />
+                <span>{STATION_CONFIG.phone}</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Envelope className="h-4 w-4 flex-shrink-0" />
+                <span>{STATION_CONFIG.email}</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 flex-shrink-0 mt-0.5" />
+                <span>{STATION_CONFIG.address.city}, {STATION_CONFIG.address.postcode}</span>
+              </li>
             </ul>
           </div>
         </div>

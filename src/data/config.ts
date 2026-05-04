@@ -5,12 +5,13 @@ export const STATION_CONFIG: StationConfig = {
   tagline: 'Your Voice on the Coast',
   description: 'Broadcasting from the heart of the East Coast, bringing you the best in music, talk, and community programming 24/7.',
   streamUrl: 'https://stream.eastcoastfm.radio/live',
-  phone: '+44 1234 567890',
-  email: 'hello@eastcoastfm.radio',
+  phone: '01620 826444',
+  text: '07835 90 20 30',
+  email: 'studio@eastcoastfm.co.uk',
   address: {
-    street: '123 Harbour Road',
-    city: 'Coastal Town',
-    postcode: 'CT1 2AB'
+    street: '2B Haddington Station Industrial Site',
+    city: 'Haddington',
+    postcode: 'EH41 3PP'
   },
   social: {
     twitter: '@EastCoastFM',

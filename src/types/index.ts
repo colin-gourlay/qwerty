@@ -70,6 +70,7 @@ export interface StationConfig {
   description: string
   streamUrl: string
   phone: string
+  text: string
   email: string
   address: {
     street: string
