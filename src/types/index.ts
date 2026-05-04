@@ -88,4 +88,8 @@ export interface StationConfig {
     dab: string
     online: string
   }
+  apps?: {
+    ios: string
+    android: string
+  }
 }

@@ -23,6 +23,10 @@ export const STATION_CONFIG: StationConfig = {
     fm: '107.9',
     dab: 'East Coast FM',
     online: 'eastcoastfm.co.uk/listen'
+  },
+  apps: {
+    ios: 'https://apps.apple.com/app/east-coast-fm',
+    android: 'https://play.google.com/store/apps/details?id=uk.co.eastcoastfm'
   }
 }
 

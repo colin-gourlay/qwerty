@@ -19,6 +19,7 @@ import FloatingAudioPlayer from '@/components/FloatingAudioPlayer'
 import SocialLinks from '@/components/SocialLinks'
 import CoverageMap from '@/components/CoverageMap'
 import FrequencyInfo from '@/components/FrequencyInfo'
+import MobileAppDownload from '@/components/MobileAppDownload'
 
 export default function App() {
   return (
@@ -198,6 +199,8 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      <MobileAppDownload />
     </div>
   )
 }
