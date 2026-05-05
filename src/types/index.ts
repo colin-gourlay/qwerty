@@ -92,4 +92,5 @@ export interface StationConfig {
     ios: string
     android: string
   }
+  tunein?: string
 }

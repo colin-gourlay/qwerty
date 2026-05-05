@@ -1,4 +1,4 @@
-import { DeviceMobile, AppleLogo, GooglePlayLogo } from '@phosphor-icons/react'
+import { DeviceMobile, AppleLogo, GooglePlayLogo, WaveformSlash } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { STATION_CONFIG } from '@/data/config'
@@ -78,6 +78,36 @@ export default function MobileAppDownload() {
               </Button>
             </Card>
           </div>
+
+          {STATION_CONFIG.tunein && (
+            <Card className="p-6 mb-8 bg-gradient-to-br from-accent/5 to-accent/10 border-accent/20">
+              <div className="flex flex-col md:flex-row items-center gap-6">
+                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center">
+                  <WaveformSlash className="h-8 w-8 text-accent" weight="duotone" />
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="font-semibold text-xl mb-2">Listen on TuneIn</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Already have TuneIn? Find {STATION_CONFIG.name} on TuneIn Radio and listen on any device, worldwide.
+                  </p>
+                </div>
+                <Button
+                  variant="outline"
+                  className="gap-2 h-12 px-6 flex-shrink-0 border-accent/20 hover:bg-accent/5"
+                  asChild
+                >
+                  <a
+                    href={STATION_CONFIG.tunein}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <WaveformSlash className="h-5 w-5" />
+                    Open in TuneIn
+                  </a>
+                </Button>
+              </div>
+            </Card>
+          )}
 
           <div className="bg-card rounded-lg p-6 border">
             <h3 className="font-semibold text-lg mb-4">App Features</h3>

@@ -1,7 +1,8 @@
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Radio, Broadcast, Globe, CheckCircle, Info, Warning } from '@phosphor-icons/react'
+import { Button } from '@/components/ui/button'
+import { Radio, Broadcast, Globe, CheckCircle, Info, Warning, WaveformSlash } from '@phosphor-icons/react'
 import { STATION_CONFIG, RECEPTION_TIPS } from '@/data/config'
 
 export default function FrequencyInfo() {
@@ -35,7 +36,7 @@ export default function FrequencyInfo() {
           East Coast FM broadcasts across East Lothian on multiple platforms. Choose the option that works best for you.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <Card className="p-6 text-center hover:shadow-lg transition-shadow">
             <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
               <Radio className="h-8 w-8 text-primary" weight="duotone" />
@@ -74,6 +75,32 @@ export default function FrequencyInfo() {
               Stream anywhere with internet access
             </p>
           </Card>
+
+          {STATION_CONFIG.tunein && (
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow border-accent/20">
+              <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
+                <WaveformSlash className="h-8 w-8 text-accent" weight="duotone" />
+              </div>
+              <h3 className="font-semibold text-xl mb-2">TuneIn Radio</h3>
+              <Button
+                variant="outline"
+                size="sm"
+                className="mt-2"
+                asChild
+              >
+                <a
+                  href={STATION_CONFIG.tunein}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Listen on TuneIn
+                </a>
+              </Button>
+              <p className="text-sm text-muted-foreground mt-3">
+                Available worldwide via TuneIn app
+              </p>
+            </Card>
+          )}
         </div>
       </div>
 
