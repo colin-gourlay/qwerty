@@ -7,7 +7,9 @@ import {
   WaveformSlash,
   Broadcast,
   Waveform,
-  Play
+  Play,
+  Microphone,
+  ChatCenteredText
 } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
@@ -155,6 +157,184 @@ export default function WaysToListenPage() {
                   Open in TuneIn
                 </a>
               </Button>
+            </div>
+          </Card>
+        </section>
+
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
+            <Microphone className="h-8 w-8 text-primary" weight="duotone" />
+            Listen on Smart Speakers
+          </h2>
+          <p className="text-muted-foreground mb-6">
+            Control {STATION_CONFIG.name} with just your voice. Our station is available on both Amazon Alexa and Google Assistant devices.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <Card className="p-8 hover:shadow-lg transition-shadow bg-gradient-to-br from-blue-500/5 to-blue-600/10">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center shadow-lg">
+                  <Microphone className="h-8 w-8 text-white" weight="duotone" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-2xl mb-2">Amazon Alexa</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Available on Echo, Echo Dot, Echo Show, and all Alexa-enabled devices
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className="bg-card rounded-lg p-4 border-2 border-blue-500/20">
+                  <div className="flex items-start gap-3 mb-3">
+                    <ChatCenteredText className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" weight="duotone" />
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-sm mb-1">Say to your Alexa device:</h4>
+                      <div className="bg-muted rounded-md p-3 font-mono text-sm">
+                        "Alexa, play East Coast FM"
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-muted/50 rounded-lg p-4">
+                  <h4 className="font-semibold text-sm mb-3">Other voice commands:</h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2" />
+                      <span>"Alexa, ask TuneIn to play East Coast FM"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2" />
+                      <span>"Alexa, open East Coast FM"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2" />
+                      <span>"Alexa, resume East Coast FM"</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-blue-50 dark:bg-blue-950/20 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
+                  <p className="text-xs text-muted-foreground">
+                    <strong className="text-foreground">Tip:</strong> You can also enable the East Coast FM skill 
+                    in the Alexa app for enhanced features and easier access.
+                  </p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-8 hover:shadow-lg transition-shadow bg-gradient-to-br from-green-500/5 to-emerald-600/10">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center shadow-lg">
+                  <Microphone className="h-8 w-8 text-white" weight="duotone" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-2xl mb-2">Google Assistant</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Available on Google Home, Nest speakers, and all Assistant-enabled devices
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className="bg-card rounded-lg p-4 border-2 border-green-500/20">
+                  <div className="flex items-start gap-3 mb-3">
+                    <ChatCenteredText className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" weight="duotone" />
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-sm mb-1">Say to your Google device:</h4>
+                      <div className="bg-muted rounded-md p-3 font-mono text-sm">
+                        "Hey Google, play East Coast FM"
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-muted/50 rounded-lg p-4">
+                  <h4 className="font-semibold text-sm mb-3">Other voice commands:</h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0 mt-2" />
+                      <span>"Hey Google, play East Coast FM on TuneIn"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0 mt-2" />
+                      <span>"Hey Google, tune into 107.9 FM"</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0 mt-2" />
+                      <span>"Hey Google, play the radio"</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-green-50 dark:bg-green-950/20 rounded-lg p-4 border border-green-200 dark:border-green-800">
+                  <p className="text-xs text-muted-foreground">
+                    <strong className="text-foreground">Tip:</strong> Set East Coast FM as your default radio 
+                    station in the Google Home app for quick access with "Hey Google, play the radio".
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          <Card className="p-6 bg-muted">
+            <h3 className="font-semibold text-lg mb-4">Smart Speaker Benefits</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-2 h-2 rounded-full bg-accent mt-2" />
+                <div>
+                  <div className="font-medium text-sm mb-1">Hands-Free Control</div>
+                  <p className="text-xs text-muted-foreground">
+                    Start listening without touching any buttons or screens
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-2 h-2 rounded-full bg-accent mt-2" />
+                <div>
+                  <div className="font-medium text-sm mb-1">Room-Filling Sound</div>
+                  <p className="text-xs text-muted-foreground">
+                    Enjoy quality audio throughout your home
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-2 h-2 rounded-full bg-accent mt-2" />
+                <div>
+                  <div className="font-medium text-sm mb-1">Multi-Room Audio</div>
+                  <p className="text-xs text-muted-foreground">
+                    Play on multiple speakers simultaneously
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-2 h-2 rounded-full bg-accent mt-2" />
+                <div>
+                  <div className="font-medium text-sm mb-1">Always Ready</div>
+                  <p className="text-xs text-muted-foreground">
+                    Your smart speaker is always listening for commands
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-2 h-2 rounded-full bg-accent mt-2" />
+                <div>
+                  <div className="font-medium text-sm mb-1">Voice Control</div>
+                  <p className="text-xs text-muted-foreground">
+                    Adjust volume, pause, and play with voice commands
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-2 h-2 rounded-full bg-accent mt-2" />
+                <div>
+                  <div className="font-medium text-sm mb-1">Easy Setup</div>
+                  <p className="text-xs text-muted-foreground">
+                    No app installation needed—just use your voice
+                  </p>
+                </div>
+              </div>
             </div>
           </Card>
         </section>
