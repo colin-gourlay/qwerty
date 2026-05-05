@@ -1,4 +1,4 @@
-import { FacebookLogo, TwitterLogo, InstagramLogo, YoutubeLogo } from '@phosphor-icons/react'
+import { FacebookLogo, TwitterLogo, InstagramLogo, YoutubeLogo, RadioButton } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { STATION_CONFIG } from '@/data/config'
 
@@ -9,6 +9,7 @@ interface SocialLinksProps {
   facebook?: string
   instagram?: string
   youtube?: string
+  showTuneIn?: boolean
 }
 
 export default function SocialLinks({ 
@@ -17,7 +18,8 @@ export default function SocialLinks({
   twitter = STATION_CONFIG.social.twitter,
   facebook = STATION_CONFIG.social.facebook,
   instagram = STATION_CONFIG.social.instagram,
-  youtube = STATION_CONFIG.social.youtube
+  youtube = STATION_CONFIG.social.youtube,
+  showTuneIn = true
 }: SocialLinksProps) {
   const iconSize = variant === 'large' ? 24 : 20
   const buttonSize = variant === 'large' ? 'default' : 'icon'
@@ -50,6 +52,13 @@ export default function SocialLinks({
       url: `https://youtube.com/${youtube}`,
       handle: youtube,
       color: 'hover:text-[#FF0000]'
+    }] : []),
+    ...(showTuneIn ? [{
+      name: 'TuneIn',
+      icon: RadioButton,
+      url: STATION_CONFIG.tunein,
+      handle: 'TuneIn',
+      color: 'hover:text-[#14D8CC]'
     }] : [])
   ]
 
