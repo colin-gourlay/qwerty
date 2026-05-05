@@ -26,7 +26,7 @@ export const STATION_CONFIG: StationConfig = {
   },
   apps: {
     ios: 'https://apps.apple.com/app/east-coast-fm',
-    android: 'https://play.google.com/store/apps/details?id=uk.co.eastcoastfm'
+    android: 'https://play.google.com/store/apps/details?id=com.appsidious.eastcoastfm'
   }
 }
 
