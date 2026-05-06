@@ -2,13 +2,14 @@ import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Radio, Globe, MapTrifold, Briefcase, FileText, FilePdf, DownloadSimple, Megaphone, Target, ChartBar, Envelope } from '@phosphor-icons/react'
+import { Radio, Globe, MapTrifold, Briefcase, FileText, FilePdf, DownloadSimple, Megaphone, Target, ChartBar, Envelope, Quotes } from '@phosphor-icons/react'
 import { 
   generateAdvertisingRatesPDF, 
   generateBookingFormPDF, 
   generateDemographicPDF,
   downloadTextAsPDF 
 } from '@/lib/pdf-generator'
+import { testimonials } from '@/data/testimonials'
 
 export default function AdvertisingPage() {
   const handleDownloadRates = () => {
@@ -226,6 +227,55 @@ export default function AdvertisingPage() {
               </div>
             </div>
           </Card>
+
+          <div className="space-y-8 mt-12">
+            <div className="text-center">
+              <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary mb-4">
+                <Quotes className="h-5 w-5" weight="duotone" />
+                ADVERTISER TESTIMONIALS
+              </div>
+              <h2 className="text-3xl font-bold mb-3">What Our Advertisers Say</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Don't just take our word for it. Hear from local businesses who have experienced the benefits of advertising with East Coast FM.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {testimonials.map((testimonial) => (
+                <Card key={testimonial.id} className="p-6 hover:shadow-lg transition-shadow">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
+                      <Quotes className="h-6 w-6 text-accent" weight="duotone" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-lg mb-1">{testimonial.company}</h3>
+                      <p className="text-sm text-muted-foreground">{testimonial.industry}</p>
+                      <div className="flex items-center gap-2 mt-2">
+                        <Badge variant="secondary" className="text-xs">
+                          {testimonial.adType === 'broadcast' && 'Broadcast'}
+                          {testimonial.adType === 'website' && 'Website'}
+                          {testimonial.adType === 'sponsorship' && 'Sponsorship'}
+                          {testimonial.adType === 'combined' && 'Broadcast & Web'}
+                        </Badge>
+                        <span className="text-xs text-muted-foreground">
+                          Since {testimonial.since}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <blockquote className="text-muted-foreground italic mb-4 leading-relaxed">
+                    "{testimonial.quote}"
+                  </blockquote>
+                  
+                  <div className="border-t pt-4">
+                    <p className="font-semibold text-sm">{testimonial.contact}</p>
+                    <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
 
           <Card className="p-8 bg-gradient-to-br from-primary/5 to-accent/5 border-primary/20">
             <div className="text-center">
