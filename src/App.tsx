@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
-import { Radio, Calendar, Users, Newspaper, Play, List, X, Phone, ChatCircle, Envelope, MapPin, Headphones, Info } from '@phosphor-icons/react'
+import { Radio, Calendar, Users, Newspaper, Play, List, X, Phone, ChatCircle, Envelope, MapPin, Headphones, Info, Heart } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Card } from '@/components/ui/card'
@@ -105,6 +105,17 @@ function Header() {
               {isPlaying ? 'Now Playing' : 'Listen Live'}
               {isPlaying && <SoundWave />}
             </Button>
+            <Button 
+              size="sm" 
+              variant="default"
+              className="gap-2 bg-accent hover:bg-accent/90 text-accent-foreground"
+              asChild
+            >
+              <Link to="/donate">
+                <Heart weight="fill" className="h-4 w-4" />
+                Donate
+              </Link>
+            </Button>
           </nav>
 
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
@@ -143,6 +154,15 @@ function Header() {
                   <Play weight="fill" className="h-4 w-4" />
                   {isPlaying ? 'Now Playing' : 'Listen Live'}
                   {isPlaying && <SoundWave />}
+                </Button>
+                <Button 
+                  className="gap-2 w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+                  asChild
+                >
+                  <Link to="/donate" onClick={() => setMobileMenuOpen(false)}>
+                    <Heart weight="fill" className="h-4 w-4" />
+                    Donate
+                  </Link>
                 </Button>
               </nav>
             </SheetContent>
