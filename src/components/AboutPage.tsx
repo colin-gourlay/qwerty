@@ -1,5 +1,5 @@
 import { Card } from '@/components/ui/card'
-import { Radio, Heart, Users, Broadcast } from '@phosphor-icons/react'
+import { Radio, Heart, Users, Broadcast, GraduationCap, Palette, Handshake, Megaphone } from '@phosphor-icons/react'
 import { STATION_CONFIG } from '@/data/config'
 import stationLogo from '@/assets/images/station-logo.webp'
 
@@ -23,11 +23,63 @@ export default function AboutPage() {
           <Card className="p-8 mb-8">
             <h2 className="text-2xl font-bold mb-4">Who We Are</h2>
             <p className="text-muted-foreground mb-4">
-              East Coast FM is a Community Radio Station serving the town of Haddington and surrounding area in East Lothian, Scotland. We broadcast online and have previously broadcast on FM Restricted Service Licenses, bringing our community together through music, talk shows, news, and entertainment that reflects the vibrant character of East Lothian.
+              East Coast FM is a Community Radio Station serving the town of Haddington and surrounding area in East Lothian, Scotland. The station broadcasts from premises in the centre of Haddington, 24 hours a day, 7 days a week.
+            </p>
+            <p className="text-muted-foreground mb-4">
+              The programming is varied and includes daytime entertainment, specialist music programmes in the evenings, opportunities for pupils at local schools to create their own shows, local sports coverage and religious themes. The station has a clear focus on being involved with its community and local events, other charities and fundraising are regularly featured.
             </p>
             <p className="text-muted-foreground">
               Since our first broadcast on St. Andrews Day (30th November) 2009, we've been dedicated to giving a voice to the people of East Lothian, showcasing local talent, supporting community initiatives, and keeping our listeners informed and entertained.
             </p>
+          </Card>
+
+          <Card className="p-8 mb-8 bg-gradient-to-br from-primary/5 to-accent/5">
+            <h2 className="text-2xl font-bold mb-6">East Coast FM's Objectives</h2>
+            <div className="grid gap-6">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Heart className="h-6 w-6 text-primary" weight="duotone" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-muted-foreground">
+                    To promote community spirit in the area by providing a community radio station for those living in Haddington and the surrounding area
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Palette className="h-6 w-6 text-primary" weight="duotone" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-muted-foreground">
+                    To promote the advancement of the arts, culture or science in the immediate area through broadcasts from the radio station
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Handshake className="h-6 w-6 text-primary" weight="duotone" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-muted-foreground">
+                    To encourage volunteers across the generations both in running the station and in fundraising social events
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <GraduationCap className="h-6 w-6 text-primary" weight="duotone" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-muted-foreground">
+                    To advance the education especially of the young people of the area by providing training and so enabling them to take part in the making and presenting of programmes
+                  </p>
+                </div>
+              </div>
+            </div>
           </Card>
 
           <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -96,6 +148,20 @@ export default function AboutPage() {
             <p className="text-muted-foreground">
               We believe in the power of radio to bring people together, spark conversations, showcase talent, and make a positive difference in our community. Every show, every song, and every word is broadcast with love for East Lothian.
             </p>
+          </Card>
+
+          <Card className="p-8 mb-8 border-2 border-primary/20">
+            <div className="flex items-start gap-4 mb-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <Megaphone className="h-6 w-6 text-primary" weight="duotone" />
+              </div>
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold mb-2">Registered Charity</h2>
+                <p className="text-muted-foreground">
+                  East Coast FM is a registered Charity in Scotland with the Registration No. <span className="font-semibold text-foreground">SC042784</span>
+                </p>
+              </div>
+            </div>
           </Card>
 
           <Card className="p-8 bg-gradient-to-br from-primary/5 to-accent/5">
