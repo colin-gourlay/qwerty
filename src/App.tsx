@@ -12,6 +12,7 @@ import ScheduleImageGenerator from '@/components/ScheduleImageGenerator'
 import WaysToListenPage from '@/components/WaysToListenPage'
 import AboutPage from '@/components/AboutPage'
 import HistoryPage from '@/components/HistoryPage'
+import DonatePage from '@/components/DonatePage'
 import { shows } from '@/data/shows'
 import { schedule } from '@/data/schedule'
 import { presenters } from '@/data/presenters'
@@ -43,6 +44,7 @@ export default function App() {
               <Route path="/listen" element={<WaysToListenPage />} />
               <Route path="/news" element={<NewsPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/donate" element={<DonatePage />} />
             </Routes>
           </main>
           <Footer />
@@ -497,6 +499,7 @@ function Footer() {
               <li><Link to="/schedule" className="text-muted-foreground hover:text-foreground">Schedule</Link></li>
               <li><Link to="/shows" className="text-muted-foreground hover:text-foreground">Shows</Link></li>
               <li><Link to="/presenters" className="text-muted-foreground hover:text-foreground">Presenters</Link></li>
+              <li><Link to="/donate" className="text-muted-foreground hover:text-foreground">Donate</Link></li>
             </ul>
           </div>
           <div>
