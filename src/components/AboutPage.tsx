@@ -23,10 +23,10 @@ export default function AboutPage() {
           <Card className="p-8 mb-8">
             <h2 className="text-2xl font-bold mb-4">Who We Are</h2>
             <p className="text-muted-foreground mb-4">
-              East Coast FM is East Lothian's community radio station, broadcasting on 107.9 FM, DAB digital radio, and online. We're passionate about serving our local community with a diverse mix of music, talk shows, news, and entertainment that reflects the vibrant character of East Lothian.
+              East Coast FM is a Community Radio Station serving the town of Haddington and surrounding area in East Lothian, Scotland. We broadcast online and have previously broadcast on FM Restricted Service Licenses, bringing our community together through music, talk shows, news, and entertainment that reflects the vibrant character of East Lothian.
             </p>
             <p className="text-muted-foreground">
-              Since our launch, we've been dedicated to giving a voice to the people of East Lothian, showcasing local talent, supporting community initiatives, and keeping our listeners informed and entertained around the clock.
+              Since our first broadcast on St. Andrews Day (30th November) 2009, we've been dedicated to giving a voice to the people of East Lothian, showcasing local talent, supporting community initiatives, and keeping our listeners informed and entertained.
             </p>
           </Card>
 
