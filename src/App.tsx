@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
-import { Radio, Calendar, Users, Newspaper, Play, List, X, Phone, ChatCircle, Envelope, MapPin, Headphones } from '@phosphor-icons/react'
+import { Radio, Calendar, Users, Newspaper, Play, List, X, Phone, ChatCircle, Envelope, MapPin, Headphones, Info } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Card } from '@/components/ui/card'
@@ -10,6 +10,7 @@ import ShowProfilePage from '@/components/ShowProfilePage'
 import PresenterProfilePage from '@/components/PresenterProfilePage'
 import ScheduleImageGenerator from '@/components/ScheduleImageGenerator'
 import WaysToListenPage from '@/components/WaysToListenPage'
+import AboutPage from '@/components/AboutPage'
 import { shows } from '@/data/shows'
 import { schedule } from '@/data/schedule'
 import { presenters } from '@/data/presenters'
@@ -31,6 +32,7 @@ export default function App() {
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
               <Route path="/schedule" element={<SchedulePage />} />
               <Route path="/shows" element={<ShowsPage />} />
               <Route path="/shows/:showId" element={<ShowProfilePage />} />
@@ -56,6 +58,7 @@ function Header() {
 
   const navItems = [
     { path: '/', label: 'Home', icon: Radio },
+    { path: '/about', label: 'About', icon: Info },
     { path: '/schedule', label: 'Schedule', icon: Calendar },
     { path: '/shows', label: 'Shows', icon: Play },
     { path: '/presenters', label: 'Presenters', icon: Users },
@@ -486,6 +489,7 @@ function Footer() {
             <h3 className="font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li><Link to="/" className="text-muted-foreground hover:text-foreground">Home</Link></li>
+              <li><Link to="/about" className="text-muted-foreground hover:text-foreground">About</Link></li>
               <li><Link to="/listen" className="text-muted-foreground hover:text-foreground">Ways to Listen</Link></li>
               <li><Link to="/schedule" className="text-muted-foreground hover:text-foreground">Schedule</Link></li>
               <li><Link to="/shows" className="text-muted-foreground hover:text-foreground">Shows</Link></li>
