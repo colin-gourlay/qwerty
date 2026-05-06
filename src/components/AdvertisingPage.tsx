@@ -3,8 +3,29 @@ import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Radio, Globe, MapTrifold, Briefcase, FileText, FilePdf, DownloadSimple, Megaphone, Target, ChartBar, Envelope } from '@phosphor-icons/react'
+import { 
+  generateAdvertisingRatesPDF, 
+  generateBookingFormPDF, 
+  generateDemographicPDF,
+  downloadTextAsPDF 
+} from '@/lib/pdf-generator'
 
 export default function AdvertisingPage() {
+  const handleDownloadRates = () => {
+    const content = generateAdvertisingRatesPDF()
+    downloadTextAsPDF('East-Coast-FM-Advertising-Rates.txt', content)
+  }
+
+  const handleDownloadBookingForm = () => {
+    const content = generateBookingFormPDF()
+    downloadTextAsPDF('East-Coast-FM-Booking-Form.txt', content)
+  }
+
+  const handleDownloadDemographic = (area: 'haddington' | 'east-lothian' | 'lothians' | 'south-scotland') => {
+    const content = generateDemographicPDF(area)
+    const areaName = area.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('-')
+    downloadTextAsPDF(`East-Coast-FM-Demographics-${areaName}.txt`, content)
+  }
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="max-w-4xl mx-auto">
@@ -137,12 +158,20 @@ export default function AdvertisingPage() {
                   To inquire further, download and complete these PDF documents:
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Button variant="outline" className="gap-2">
-                    <FilePdf className="h-5 w-5" weight="duotone" />
+                  <Button 
+                    variant="outline" 
+                    className="gap-2"
+                    onClick={handleDownloadRates}
+                  >
+                    <DownloadSimple className="h-5 w-5" weight="duotone" />
                     Advertising Rates
                   </Button>
-                  <Button variant="outline" className="gap-2">
-                    <FilePdf className="h-5 w-5" weight="duotone" />
+                  <Button 
+                    variant="outline" 
+                    className="gap-2"
+                    onClick={handleDownloadBookingForm}
+                  >
+                    <DownloadSimple className="h-5 w-5" weight="duotone" />
                     Advertising Booking Form
                   </Button>
                 </div>
@@ -161,20 +190,36 @@ export default function AdvertisingPage() {
                   To view our demographic areas please see the following PDF documents:
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <Button variant="outline" className="gap-2 justify-start">
-                    <FilePdf className="h-5 w-5" weight="duotone" />
+                  <Button 
+                    variant="outline" 
+                    className="gap-2 justify-start"
+                    onClick={() => handleDownloadDemographic('haddington')}
+                  >
+                    <DownloadSimple className="h-5 w-5" weight="duotone" />
                     Haddington
                   </Button>
-                  <Button variant="outline" className="gap-2 justify-start">
-                    <FilePdf className="h-5 w-5" weight="duotone" />
+                  <Button 
+                    variant="outline" 
+                    className="gap-2 justify-start"
+                    onClick={() => handleDownloadDemographic('east-lothian')}
+                  >
+                    <DownloadSimple className="h-5 w-5" weight="duotone" />
                     East Lothian
                   </Button>
-                  <Button variant="outline" className="gap-2 justify-start">
-                    <FilePdf className="h-5 w-5" weight="duotone" />
+                  <Button 
+                    variant="outline" 
+                    className="gap-2 justify-start"
+                    onClick={() => handleDownloadDemographic('lothians')}
+                  >
+                    <DownloadSimple className="h-5 w-5" weight="duotone" />
                     The Lothians
                   </Button>
-                  <Button variant="outline" className="gap-2 justify-start">
-                    <FilePdf className="h-5 w-5" weight="duotone" />
+                  <Button 
+                    variant="outline" 
+                    className="gap-2 justify-start"
+                    onClick={() => handleDownloadDemographic('south-scotland')}
+                  >
+                    <DownloadSimple className="h-5 w-5" weight="duotone" />
                     South Scotland
                   </Button>
                 </div>
