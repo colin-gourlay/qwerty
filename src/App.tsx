@@ -11,6 +11,7 @@ import PresenterProfilePage from '@/components/PresenterProfilePage'
 import ScheduleImageGenerator from '@/components/ScheduleImageGenerator'
 import WaysToListenPage from '@/components/WaysToListenPage'
 import AboutPage from '@/components/AboutPage'
+import HistoryPage from '@/components/HistoryPage'
 import { shows } from '@/data/shows'
 import { schedule } from '@/data/schedule'
 import { presenters } from '@/data/presenters'
@@ -33,6 +34,7 @@ export default function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/history" element={<HistoryPage />} />
               <Route path="/schedule" element={<SchedulePage />} />
               <Route path="/shows" element={<ShowsPage />} />
               <Route path="/shows/:showId" element={<ShowProfilePage />} />
@@ -490,6 +492,7 @@ function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link to="/" className="text-muted-foreground hover:text-foreground">Home</Link></li>
               <li><Link to="/about" className="text-muted-foreground hover:text-foreground">About</Link></li>
+              <li><Link to="/history" className="text-muted-foreground hover:text-foreground">History</Link></li>
               <li><Link to="/listen" className="text-muted-foreground hover:text-foreground">Ways to Listen</Link></li>
               <li><Link to="/schedule" className="text-muted-foreground hover:text-foreground">Schedule</Link></li>
               <li><Link to="/shows" className="text-muted-foreground hover:text-foreground">Shows</Link></li>
