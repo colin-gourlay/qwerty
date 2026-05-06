@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
-import { Radio, Calendar, Users, Newspaper, Play, List, X, Phone, ChatCircle, Envelope, MapPin, Headphones, Info, Heart } from '@phosphor-icons/react'
+import { Radio, Calendar, Users, Newspaper, Play, List, X, Phone, ChatCircle, Envelope, MapPin, Headphones, Info, Heart, HandHeart } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Card } from '@/components/ui/card'
@@ -13,6 +13,7 @@ import WaysToListenPage from '@/components/WaysToListenPage'
 import AboutPage from '@/components/AboutPage'
 import HistoryPage from '@/components/HistoryPage'
 import DonatePage from '@/components/DonatePage'
+import GetInvolvedPage from '@/components/GetInvolvedPage'
 import { shows } from '@/data/shows'
 import { schedule } from '@/data/schedule'
 import { presenters } from '@/data/presenters'
@@ -42,6 +43,7 @@ export default function App() {
               <Route path="/presenters" element={<PresentersPage />} />
               <Route path="/presenters/:presenterId" element={<PresenterProfilePage />} />
               <Route path="/listen" element={<WaysToListenPage />} />
+              <Route path="/get-involved" element={<GetInvolvedPage />} />
               <Route path="/news" element={<NewsPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/donate" element={<DonatePage />} />
@@ -67,6 +69,7 @@ function Header() {
     { path: '/shows', label: 'Shows', icon: Play },
     { path: '/presenters', label: 'Presenters', icon: Users },
     { path: '/listen', label: 'Listen', icon: Headphones },
+    { path: '/get-involved', label: 'Get Involved', icon: HandHeart },
     { path: '/news', label: 'News', icon: Newspaper },
   ]
 
@@ -519,6 +522,7 @@ function Footer() {
               <li><Link to="/schedule" className="text-muted-foreground hover:text-foreground">Schedule</Link></li>
               <li><Link to="/shows" className="text-muted-foreground hover:text-foreground">Shows</Link></li>
               <li><Link to="/presenters" className="text-muted-foreground hover:text-foreground">Presenters</Link></li>
+              <li><Link to="/get-involved" className="text-muted-foreground hover:text-foreground">Get Involved</Link></li>
               <li><Link to="/donate" className="text-muted-foreground hover:text-foreground">Donate</Link></li>
             </ul>
           </div>
