@@ -63,16 +63,28 @@ export default function HistoryTimeline() {
                   </div>
                 </div>
 
-                <Card className={`flex-1 p-6 hover:shadow-lg transition-shadow ${isEven ? 'md:mr-0' : 'md:ml-0'}`}>
-                  <div className="flex items-start justify-between gap-4 mb-3">
-                    <h3 className="text-xl font-bold">{milestone.title}</h3>
-                    <Badge variant="outline" className="capitalize flex-shrink-0">
-                      {milestone.category}
-                    </Badge>
+                <Card className={`flex-1 overflow-hidden hover:shadow-lg transition-shadow ${isEven ? 'md:mr-0' : 'md:ml-0'}`}>
+                  {milestone.image && (
+                    <div className="relative w-full h-48 sm:h-56 overflow-hidden">
+                      <img
+                        src={milestone.image}
+                        alt={milestone.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
+                    </div>
+                  )}
+                  <div className={milestone.image ? 'p-6 -mt-4 relative z-10' : 'p-6'}>
+                    <div className="flex items-start justify-between gap-4 mb-3">
+                      <h3 className="text-xl font-bold">{milestone.title}</h3>
+                      <Badge variant="outline" className="capitalize flex-shrink-0">
+                        {milestone.category}
+                      </Badge>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {milestone.description}
+                    </p>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {milestone.description}
-                  </p>
                 </Card>
               </div>
             </motion.div>
