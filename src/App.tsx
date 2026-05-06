@@ -14,6 +14,7 @@ import AboutPage from '@/components/AboutPage'
 import HistoryPage from '@/components/HistoryPage'
 import DonatePage from '@/components/DonatePage'
 import GetInvolvedPage from '@/components/GetInvolvedPage'
+import AdvertisingPage from '@/components/AdvertisingPage'
 import { shows } from '@/data/shows'
 import { schedule } from '@/data/schedule'
 import { presenters } from '@/data/presenters'
@@ -47,6 +48,7 @@ export default function App() {
               <Route path="/news" element={<NewsPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/donate" element={<DonatePage />} />
+              <Route path="/advertise" element={<AdvertisingPage />} />
             </Routes>
           </main>
           <Footer />
@@ -524,6 +526,7 @@ function Footer() {
               <li><Link to="/presenters" className="text-muted-foreground hover:text-foreground">Presenters</Link></li>
               <li><Link to="/get-involved" className="text-muted-foreground hover:text-foreground">Get Involved</Link></li>
               <li><Link to="/donate" className="text-muted-foreground hover:text-foreground">Donate</Link></li>
+              <li><Link to="/advertise" className="text-muted-foreground hover:text-foreground">Advertise</Link></li>
             </ul>
           </div>
           <div>
