@@ -19,7 +19,8 @@ export const testimonials: Testimonial[] = [
     role: 'Marketing Manager',
     quote: "Advertising with East Coast FM has helped us connect with local customers in a genuine way. We've seen a noticeable increase in foot traffic, especially during our seasonal promotions. The team at ECFM are professional and always willing to work with us to create ads that really resonate with the community.",
     adType: 'broadcast',
-    since: '2015'
+    since: '2015',
+    logo: 'garden-centre'
   },
   {
     id: 'lothian-motors',
@@ -29,7 +30,8 @@ export const testimonials: Testimonial[] = [
     role: 'Owner',
     quote: "We've been sponsoring the breakfast show for over three years now, and it's been one of our best marketing decisions. The audience engagement is fantastic, and we regularly have customers mentioning they heard about us on East Coast FM. It's great value for money and reaches exactly the right audience for our business.",
     adType: 'sponsorship',
-    since: '2018'
+    since: '2018',
+    logo: 'automotive'
   },
   {
     id: 'maitlands-solicitors',
@@ -39,7 +41,8 @@ export const testimonials: Testimonial[] = [
     role: 'Senior Partner',
     quote: "As a local law firm, it's important for us to maintain a presence in the community. East Coast FM provides the perfect platform to reach local residents with important legal information and updates about our services. The professionalism of the station reflects well on our brand, and we've built strong relationships through our partnership.",
     adType: 'combined',
-    since: '2016'
+    since: '2016',
+    logo: 'legal'
   },
   {
     id: 'east-lothian-physio',
@@ -49,7 +52,8 @@ export const testimonials: Testimonial[] = [
     role: 'Clinical Director',
     quote: "East Coast FM has been instrumental in helping us reach patients across East Lothian. The targeted nature of community radio means our message reaches people who are genuinely interested in local healthcare services. We've seen a steady increase in new patient enquiries since we started advertising.",
     adType: 'broadcast',
-    since: '2019'
+    since: '2019',
+    logo: 'healthcare'
   },
   {
     id: 'victoria-inn',
@@ -59,7 +63,8 @@ export const testimonials: Testimonial[] = [
     role: 'Proprietor',
     quote: "We've been advertising our events and live music nights on East Coast FM for several years. It's the best way to reach local people who are looking for things to do in the area. The response has been brilliant, and the station team are always supportive of local businesses.",
     adType: 'broadcast',
-    since: '2014'
+    since: '2014',
+    logo: 'hospitality'
   },
   {
     id: 'haddington-dental',
@@ -69,6 +74,7 @@ export const testimonials: Testimonial[] = [
     role: 'Practice Principal',
     quote: "Community radio is the perfect fit for a community dental practice. East Coast FM helps us communicate with existing and potential patients in a friendly, accessible way. We appreciate the station's commitment to serving the local area, and we're proud to be associated with them.",
     adType: 'website',
-    since: '2017'
+    since: '2017',
+    logo: 'dental'
   }
 ]

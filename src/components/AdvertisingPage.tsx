@@ -10,6 +10,7 @@ import {
   downloadTextAsPDF 
 } from '@/lib/pdf-generator'
 import { testimonials } from '@/data/testimonials'
+import AdvertiserLogo from '@/components/AdvertiserLogo'
 
 export default function AdvertisingPage() {
   const handleDownloadRates = () => {
@@ -242,11 +243,9 @@ export default function AdvertisingPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {testimonials.map((testimonial) => (
-                <Card key={testimonial.id} className="p-6 hover:shadow-lg transition-shadow">
+                <Card key={testimonial.id} className="p-6 hover:shadow-lg transition-shadow group">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
-                      <Quotes className="h-6 w-6 text-accent" weight="duotone" />
-                    </div>
+                    <AdvertiserLogo type={testimonial.logo} companyName={testimonial.company} />
                     <div className="flex-1">
                       <h3 className="font-bold text-lg mb-1">{testimonial.company}</h3>
                       <p className="text-sm text-muted-foreground">{testimonial.industry}</p>
