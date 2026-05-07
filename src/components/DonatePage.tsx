@@ -21,7 +21,7 @@ export default function DonatePage() {
             East Coast FM is run entirely by volunteers and is funded almost exclusively through our fundraising efforts and advertising.
           </p>
           <p className="text-muted-foreground mb-6 leading-relaxed">
-            If you like what we are doing and would like to make a donation to help us – no matter how small – please click the button to go to our PayPal page.
+            If you like what we are doing and would like to make a donation to help us - no matter how small - please click the button to go to our PayPal page.
           </p>
           
           <div className="flex justify-center mb-8">
