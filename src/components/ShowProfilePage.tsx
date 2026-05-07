@@ -9,6 +9,7 @@ import { Play, Phone, EnvelopeSimple, Hash, Clock, CheckCircle, Star } from '@ph
 import ShareButton from '@/components/ShareButton'
 import ScheduleImageGenerator from '@/components/ScheduleImageGenerator'
 import { useAudioPlayer } from '@/components/AudioPlayerContext'
+import { getGenreColors } from '@/lib/genre-colors'
 
 export default function ShowProfilePage() {
   const { showId } = useParams<{ showId: string }>()
@@ -37,6 +38,7 @@ export default function ShowProfilePage() {
   
   const presenters = getPresentersByIds(show.presenters)
   const { togglePlay } = useAudioPlayer()
+  const genreColors = getGenreColors(show.genre)
   
   return (
     <div>
@@ -49,7 +51,16 @@ export default function ShowProfilePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className="mb-4" style={{ backgroundColor: show.color }}>{show.genre}</Badge>
+              <Badge 
+                className="mb-4 border" 
+                style={{ 
+                  backgroundColor: genreColors.bg,
+                  color: genreColors.text,
+                  borderColor: genreColors.border
+                }}
+              >
+                {show.genre}
+              </Badge>
               <h1 className="text-5xl font-bold mb-6">{show.name}</h1>
               <p className="text-xl text-muted-foreground mb-6">
                 {show.description}

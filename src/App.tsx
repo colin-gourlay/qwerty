@@ -26,6 +26,7 @@ import SocialLinks from '@/components/SocialLinks'
 import CoverageMap from '@/components/CoverageMap'
 import FrequencyInfo from '@/components/FrequencyInfo'
 import MobileAppDownload from '@/components/MobileAppDownload'
+import { getGenreColors } from '@/lib/genre-colors'
 
 export default function App() {
   return (
@@ -267,6 +268,8 @@ function SchedulePage() {
                   const show = shows.find(s => s.id === slot.showId)
                   if (!show) return null
                   
+                  const genreColors = getGenreColors(show.genre)
+                  
                   return (
                     <Link key={idx} to={`/shows/${show.id}`}>
                       <Card className="p-4 hover:shadow-md transition-shadow">
@@ -278,15 +281,19 @@ function SchedulePage() {
                           </div>
                           <div 
                             className="w-1 h-12 rounded-full flex-shrink-0"
-                            style={{ backgroundColor: show.color }}
+                            style={{ backgroundColor: genreColors.bg }}
                           />
                           <div className="flex-1 min-w-0">
                             <h3 className="font-semibold text-lg truncate">{show.name}</h3>
                             <p className="text-sm text-muted-foreground truncate">{show.genre}</p>
                           </div>
                           <Badge 
-                            className="flex-shrink-0"
-                            style={{ backgroundColor: show.color }}
+                            className="flex-shrink-0 border"
+                            style={{ 
+                              backgroundColor: genreColors.bg,
+                              color: genreColors.text,
+                              borderColor: genreColors.border
+                            }}
                           >
                             {show.genre}
                           </Badge>
@@ -320,47 +327,52 @@ function ShowsPage() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {shows.map((show) => (
-          <Link key={show.id} to={`/shows/${show.id}`}>
-            <div className="rounded-lg border bg-card overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
-              <div 
-                className="aspect-video bg-muted relative"
-                style={{
-                  backgroundColor: show.color ? `${show.color}/20` : undefined
-                }}
-              >
-                <img 
-                  src={show.image} 
-                  alt={show.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6 flex-1 flex flex-col">
-                <div className="mb-2">
-                  <span 
-                    className="inline-block text-xs font-semibold px-2 py-1 rounded"
-                    style={{
-                      backgroundColor: show.color,
-                      color: 'white'
-                    }}
-                  >
-                    {show.genre}
-                  </span>
+        {shows.map((show) => {
+          const genreColors = getGenreColors(show.genre)
+          
+          return (
+            <Link key={show.id} to={`/shows/${show.id}`}>
+              <div className="rounded-lg border bg-card overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
+                <div 
+                  className="aspect-video bg-muted relative"
+                  style={{
+                    backgroundColor: show.color ? `${show.color}/20` : undefined
+                  }}
+                >
+                  <img 
+                    src={show.image} 
+                    alt={show.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="font-semibold text-lg mb-2">{show.name}</h3>
-                {show.schedule && (
-                  <p className="text-sm text-muted-foreground mb-2">{show.schedule}</p>
-                )}
-                <p className="text-sm text-muted-foreground line-clamp-3 flex-1">
-                  {show.description}
-                </p>
-                <Button variant="ghost" size="sm" className="mt-4 w-full">
-                  Learn More
-                </Button>
+                <div className="p-6 flex-1 flex flex-col">
+                  <div className="mb-2">
+                    <span 
+                      className="inline-block text-xs font-semibold px-2.5 py-1 rounded-md border"
+                      style={{
+                        backgroundColor: genreColors.bg,
+                        color: genreColors.text,
+                        borderColor: genreColors.border
+                      }}
+                    >
+                      {show.genre}
+                    </span>
+                  </div>
+                  <h3 className="font-semibold text-lg mb-2">{show.name}</h3>
+                  {show.schedule && (
+                    <p className="text-sm text-muted-foreground mb-2">{show.schedule}</p>
+                  )}
+                  <p className="text-sm text-muted-foreground line-clamp-3 flex-1">
+                    {show.description}
+                  </p>
+                  <Button variant="ghost" size="sm" className="mt-4 w-full">
+                    Learn More
+                  </Button>
+                </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          )
+        })}
         </div>
       </div>
     </div>

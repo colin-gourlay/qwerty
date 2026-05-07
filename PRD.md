@@ -179,6 +179,22 @@ Animations should create a sense of liveness and broadcast energy without distra
 - **Navigation**: Mobile menu slides from edge with backdrop fade, desktop links have subtle underline animation
 - **Schedule Highlight**: Current time slot subtly highlighted with animated border or background pulse
 
+## Genre Badge Color System
+
+Each show genre has a distinctive color variant derived from the brand palette, creating visual hierarchy and instant recognition across the site. These colors maintain brand consistency while providing differentiation between content types.
+
+**Genre Color Mappings** (WCAG AA Compliant):
+- **Music & Talk** (oklch(0.75 0.15 60)): Warm yellow-orange with dark text - Energetic morning show vibe
+- **Chart & Pop** (oklch(0.65 0.18 35)): Vibrant orange-red with white text - Contemporary and bold
+- **Soul, Funk & Disco** (oklch(0.68 0.15 300)): Rich purple-magenta with white text - Groovy and sophisticated
+- **News & Talk** (oklch(0.55 0.10 240)): Deep blue with white text - Authoritative and trustworthy
+- **Chill & Ambient** (oklch(0.40 0.08 260)): Dark indigo with white text - Nocturnal and calming
+- **Specialist** (oklch(0.70 0.12 180)): Bright cyan with dark text - Explorative and fresh
+- **Easy Listening** (oklch(0.72 0.08 120)): Soft green with dark text - Relaxed and comforting
+- **Mixed** (oklch(0.68 0.12 80)): Yellow-green with dark text - Eclectic and versatile
+
+**Implementation**: Genre colors are centrally managed in `/src/lib/genre-colors.ts` with a `getGenreColors()` helper function that returns background, text, and border colors for each genre. This ensures consistency across all badge instances (schedule page, shows page, show profile pages) and makes updating colors site-wide simple and maintainable.
+
 ## Component Selection
 
 - **Components**: 
@@ -187,7 +203,7 @@ Animations should create a sense of liveness and broadcast energy without distra
   - Tabs (shadcn) - Schedule view (by day) and shows/presenters filtering
   - Sheet (shadcn) - Mobile navigation drawer
   - Avatar (shadcn) - Presenter headshots in on-air widget and cards
-  - Badge (shadcn) - "LIVE" indicator, show genres/categories
+  - Badge (shadcn) - "LIVE" indicator, show genres/categories with custom color variants
   - Slider (shadcn) - Audio player volume control
   - Separator (shadcn) - Section dividers on long pages
   - Tooltip (shadcn) - Hover details on schedule grid items
