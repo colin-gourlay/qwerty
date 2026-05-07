@@ -68,13 +68,13 @@ function Header() {
 
   const navItems = [
     { path: '/', label: 'Home', icon: Radio },
-    { path: '/about', label: 'About', icon: Info },
+    { path: '/listen', label: 'Listen', icon: Headphones },
     { path: '/schedule', label: 'Schedule', icon: Calendar },
     { path: '/shows', label: 'Shows', icon: Play },
     { path: '/presenters', label: 'Presenters', icon: Users },
-    { path: '/listen', label: 'Listen', icon: Headphones },
-    { path: '/get-involved', label: 'Get Involved', icon: HandHeart },
     { path: '/news', label: 'News', icon: Newspaper },
+    { path: '/about', label: 'About', icon: Info },
+    { path: '/get-involved', label: 'Get Involved', icon: HandHeart },
   ]
 
   const isActive = (path: string) => location.pathname === path
