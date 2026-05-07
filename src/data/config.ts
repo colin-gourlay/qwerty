@@ -21,7 +21,6 @@ export const STATION_CONFIG: StationConfig = {
   },
   frequency: {
     fm: '107.6',
-    dab: 'East Coast FM',
     online: 'eastcoastfm.co.uk/listen'
   },
   apps: {
@@ -45,7 +44,7 @@ export const RECEPTION_TIPS = {
       name: 'North Berwick',
       quality: 'excellent',
       frequency: '107.6 FM',
-      tips: 'Excellent reception throughout the town. Try DAB for crystal clear digital quality.'
+      tips: 'Excellent reception throughout the town. Position your radio near a window for best results.'
     },
     {
       name: 'Dunbar',
@@ -95,15 +94,6 @@ export const RECEPTION_TIPS = {
       ]
     },
     {
-      title: 'DAB Digital Radio',
-      tips: [
-        'Look for "East Coast FM" in your DAB station list',
-        'Requires a DAB+ compatible radio',
-        'Crystal clear sound with no interference',
-        'May require initial scan to find the station'
-      ]
-    },
-    {
       title: 'Online Streaming',
       tips: [
         'Visit eastcoastfm.co.uk and click "Listen Live"',
@@ -117,7 +107,7 @@ export const RECEPTION_TIPS = {
       tips: [
         'If signal is weak, try repositioning your antenna',
         'Check you\'re tuned to exactly 107.6 FM',
-        'Switch to DAB or online stream for guaranteed reception',
+        'Switch to online stream for guaranteed reception',
         'Contact us if you have persistent reception issues'
       ]
     }

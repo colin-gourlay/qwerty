@@ -36,7 +36,7 @@ export default function FrequencyInfo() {
           East Coast FM broadcasts across East Lothian on multiple platforms. Choose the option that works best for you.
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           <Card className="p-6 text-center hover:shadow-lg transition-shadow">
             <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
               <Radio className="h-8 w-8 text-primary" weight="duotone" />
@@ -47,19 +47,6 @@ export default function FrequencyInfo() {
             </div>
             <p className="text-sm text-muted-foreground">
               Traditional FM broadcasting across East Lothian
-            </p>
-          </Card>
-
-          <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <Broadcast className="h-8 w-8 text-primary" weight="duotone" />
-            </div>
-            <h3 className="font-semibold text-xl mb-2">DAB Digital</h3>
-            <div className="text-3xl font-bold text-primary mb-2">
-              {STATION_CONFIG.frequency?.dab}
-            </div>
-            <p className="text-sm text-muted-foreground">
-              Crystal clear digital radio quality
             </p>
           </Card>
 

@@ -167,63 +167,29 @@ export default function WaysToListenPage() {
             <Broadcast className="h-8 w-8 text-primary" weight="duotone" />
             Traditional Radio
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card className="p-8 hover:shadow-lg transition-shadow bg-gradient-to-br from-primary/5 to-primary/10">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
-                  <Radio className="h-8 w-8 text-primary" weight="duotone" />
-                </div>
-                <div className="flex-1">
-                  <Badge className="mb-2">Most Popular</Badge>
-                  <h3 className="font-semibold text-2xl mb-2">FM Radio</h3>
-                  <div className="text-4xl font-bold text-primary mb-3">107.6 FM</div>
-                  <p className="text-sm text-muted-foreground">
-                    The classic way to listen. Simply tune your FM radio to 107.6 and enjoy crystal clear reception 
-                    across East Lothian.
-                  </p>
-                </div>
+          <Card className="p-8 hover:shadow-lg transition-shadow bg-gradient-to-br from-primary/5 to-primary/10">
+            <div className="flex items-start gap-4 mb-6">
+              <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
+                <Radio className="h-8 w-8 text-primary" weight="duotone" />
               </div>
-              <div className="bg-card rounded-lg p-4 border">
-                <h4 className="font-semibold text-sm mb-2">Coverage Area</h4>
-                <p className="text-xs text-muted-foreground">
-                  Haddington, North Berwick, Dunbar, Musselburgh, Tranent, Prestonpans, East Linton, Gullane, 
-                  and surrounding areas
+              <div className="flex-1">
+                <Badge className="mb-2">Most Popular</Badge>
+                <h3 className="font-semibold text-2xl mb-2">FM Radio</h3>
+                <div className="text-4xl font-bold text-primary mb-3">107.6 FM</div>
+                <p className="text-sm text-muted-foreground">
+                  The classic way to listen. Simply tune your FM radio to 107.6 and enjoy crystal clear reception 
+                  across East Lothian.
                 </p>
               </div>
-            </Card>
-
-            <Card className="p-8 hover:shadow-lg transition-shadow">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center">
-                  <Waveform className="h-8 w-8 text-secondary-foreground" weight="duotone" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-2xl mb-2">DAB Digital Radio</h3>
-                  <div className="text-2xl font-bold text-secondary-foreground mb-3">East Coast FM</div>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Superior digital quality with no interference. Look for "East Coast FM" on your DAB+ radio's station list.
-                  </p>
-                </div>
-              </div>
-              <div className="bg-muted rounded-lg p-4">
-                <h4 className="font-semibold text-sm mb-2">Benefits</h4>
-                <ul className="text-xs text-muted-foreground space-y-1">
-                  <li className="flex items-center gap-2">
-                    <div className="w-1 h-1 rounded-full bg-accent" />
-                    Crystal clear digital sound
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1 h-1 rounded-full bg-accent" />
-                    No static or interference
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1 h-1 rounded-full bg-accent" />
-                    On-screen station information
-                  </li>
-                </ul>
-              </div>
-            </Card>
-          </div>
+            </div>
+            <div className="bg-card rounded-lg p-4 border">
+              <h4 className="font-semibold text-sm mb-2">Coverage Area</h4>
+              <p className="text-xs text-muted-foreground">
+                Haddington, North Berwick, Dunbar, Musselburgh, Tranent, Prestonpans, East Linton, Gullane, 
+                and surrounding areas
+              </p>
+            </div>
+          </Card>
         </section>
 
         <section className="mb-16">

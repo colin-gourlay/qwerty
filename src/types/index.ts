@@ -85,7 +85,6 @@ export interface StationConfig {
   }
   frequency?: {
     fm: string
-    dab: string
     online: string
   }
   apps?: {
