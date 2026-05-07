@@ -121,20 +121,31 @@ The palette draws from coastal themes - sea, sky, sunrise - reflecting the stati
 
 ## Font Selection
 
-Typography should balance readability for long-form content with distinctive character that reinforces brand identity - clean without being sterile, modern without being trendy.
+Typography should balance readability for long-form content with distinctive character that reinforces brand identity - clean without being sterile, modern without being trendy. The chosen fonts work together to create a professional yet approachable broadcast aesthetic.
 
-- **Primary Font**: Space Grotesk - Geometric sans with technical precision and subtle personality, perfect for headings and UI
-- **Secondary Font**: Inter - Highly legible sans-serif for body text and smaller UI elements
-- **Accent Font**: JetBrains Mono - Monospace font for schedule times and technical elements, adds visual interest
+- **Primary Font (Headings)**: Space Grotesk - Geometric sans with technical precision and subtle personality, perfect for headings and UI elements. Its unique character adds distinctiveness without sacrificing legibility.
+- **Secondary Font (Body)**: Inter - Highly optimized sans-serif designed specifically for screen readability. Its generous x-height and open letterforms ensure excellent legibility at all sizes.
+- **Accent Font (Technical)**: JetBrains Mono - Professional monospace font for schedule times, frequencies, and technical elements. Adds visual interest and reinforces the technical/broadcast nature of radio.
 
 **Typographic Hierarchy**:
-- H1 (Page Titles): Space Grotesk Bold / 48px / -0.02em letter spacing / 1.1 line height
-- H2 (Section Headings): Space Grotesk SemiBold / 36px / -0.01em / 1.2 line height
-- H3 (Card Titles): Space Grotesk Medium / 24px / 0 / 1.3 line height
-- Body Text: Inter Regular / 16px / 0 / 1.6 line height
-- Small/Meta: Inter Regular / 14px / 0 / 1.5 line height
-- Schedule Times: JetBrains Mono Medium / 14px / 0 / 1.4 line height
-- Buttons: Space Grotesk SemiBold / 16px / 0.01em / 1
+- **H1 (Page Titles)**: Space Grotesk Bold / 48px (mobile: 36px) / -0.02em letter spacing / 1.1 line height
+- **H2 (Section Headings)**: Space Grotesk SemiBold / 36px (mobile: 30px) / -0.01em / 1.2 line height
+- **H3 (Card Titles/Subsections)**: Space Grotesk Medium / 24px (mobile: 20px) / 0 / 1.3 line height
+- **H4 (Minor Headings)**: Space Grotesk SemiBold / 20px / 0 / 1.4 line height
+- **H5 (List Headings)**: Space Grotesk SemiBold / 18px / 0 / 1.4 line height
+- **H6 (Micro Headings)**: Space Grotesk SemiBold / 16px / 0 / 1.5 line height
+- **Body Text**: Inter Regular / 16px (mobile: 15px) / 0 / 1.6 line height
+- **Small/Meta**: Inter Regular / 14px / 0 / 1.5 line height
+- **Schedule Times/Frequencies**: JetBrains Mono Medium / 14px / 0 / 1.4 line height
+- **Buttons**: Space Grotesk SemiBold / 16px / 0.01em / 1
+
+**Implementation Notes**:
+- All three fonts are loaded from Google Fonts with weights 400, 500, 600, 700 (where available)
+- Font loading uses `display=swap` for optimal performance
+- Mobile typography scales down by approximately 25% for better readability on smaller screens
+- Line heights are generous (1.6 for body text) to improve readability and create breathing room
+- Letter spacing is slightly tightened on larger headings (-0.02em, -0.01em) for visual tightness
+- Buttons use the heading font for consistency with CTAs and UI elements
 
 ## Animations
 
