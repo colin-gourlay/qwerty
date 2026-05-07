@@ -27,6 +27,7 @@ import CoverageMap from '@/components/CoverageMap'
 import FrequencyInfo from '@/components/FrequencyInfo'
 import MobileAppDownload from '@/components/MobileAppDownload'
 import { getGenreColors } from '@/lib/genre-colors'
+import { getTimeSlotColors, getTimeOfDayPeriods } from '@/lib/time-slot-colors'
 
 export default function App() {
   return (
@@ -243,6 +244,7 @@ function HomePage() {
 
 function SchedulePage() {
   const weekDays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+  const timeOfDayPeriods = getTimeOfDayPeriods()
   
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -254,6 +256,29 @@ function SchedulePage() {
           </p>
         </div>
         <ScheduleImageGenerator />
+      </div>
+
+      <div className="mb-8">
+        <h3 className="text-sm font-semibold text-muted-foreground mb-3">Time of Day</h3>
+        <div className="flex flex-wrap gap-3">
+          {timeOfDayPeriods.map((period) => (
+            <div key={period.label} className="flex items-center gap-2">
+              <div 
+                className="w-4 h-4 rounded-full border-2"
+                style={{ 
+                  backgroundColor: period.color,
+                  borderColor: period.color
+                }}
+              />
+              <div className="text-sm">
+                <span className="font-medium">{period.label}</span>
+                <span className="text-muted-foreground ml-1.5 font-mono text-xs">
+                  {period.range}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="grid gap-8">
@@ -269,13 +294,26 @@ function SchedulePage() {
                   if (!show) return null
                   
                   const genreColors = getGenreColors(show.genre)
+                  const timeColors = getTimeSlotColors(slot.startTime)
                   
                   return (
                     <Link key={idx} to={`/shows/${show.id}`}>
-                      <Card className="p-4 hover:shadow-md transition-shadow">
+                      <Card 
+                        className="p-4 hover:shadow-md transition-all duration-200 border-l-4"
+                        style={{ 
+                          borderLeftColor: timeColors.accent,
+                          backgroundColor: `color-mix(in oklch, ${timeColors.bg} 30%, white)`
+                        }}
+                      >
                         <div className="flex items-center gap-4">
                           <div className="flex-shrink-0">
-                            <div className="font-mono text-sm font-semibold text-muted-foreground">
+                            <div 
+                              className="font-mono text-sm font-semibold px-3 py-1.5 rounded-md"
+                              style={{
+                                backgroundColor: timeColors.bg,
+                                color: timeColors.text
+                              }}
+                            >
                               {slot.startTime} - {slot.endTime}
                             </div>
                           </div>

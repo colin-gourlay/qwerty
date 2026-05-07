@@ -27,11 +27,11 @@ The site includes multiple interconnected pages (home, schedule, shows, presente
 - **Success criteria**: Correct show displays within 60 seconds of schedule change, handles gaps gracefully
 
 ### Weekly Schedule Grid
-- **Functionality**: Visual timetable showing all shows by day and time
-- **Purpose**: Helps listeners plan when to tune in for favorite shows
+- **Functionality**: Visual timetable showing all shows by day and time with brand-colored time slot indicators that visually segment the broadcast day
+- **Purpose**: Helps listeners plan when to tune in for favorite shows and provides instant visual orientation for time of day
 - **Trigger**: Navigate to Schedule page
-- **Progression**: User clicks Schedule → Grid renders with days as columns → Shows fill time slots → User can click show for details → Can generate shareable schedule images
-- **Success criteria**: Schedule is scannable, time slots are clear, works on mobile with horizontal scroll or stacked layout, image generation produces high-quality graphics
+- **Progression**: User clicks Schedule → Time of day legend displays at top with color-coded periods (Morning, Afternoon, Evening, Late Night) → Grid renders with days as sections → Each show slot displays with color-coded time badge and left border matching the time period → Shows fill time slots → User can click show for details → Can generate shareable schedule images
+- **Success criteria**: Schedule is scannable, time slot colors create clear visual rhythm throughout the day, time badges are easily readable with sufficient contrast, color legend is intuitive and accessible, works on mobile with horizontal scroll or stacked layout, image generation produces high-quality graphics
 
 ### Show Schedule Image Generator
 - **Functionality**: Generate shareable social media images for show schedules with custom branding
@@ -194,6 +194,18 @@ Each show genre has a distinctive color variant derived from the brand palette, 
 - **Mixed** (oklch(0.68 0.12 80)): Yellow-green with dark text - Eclectic and versatile
 
 **Implementation**: Genre colors are centrally managed in `/src/lib/genre-colors.ts` with a `getGenreColors()` helper function that returns background, text, and border colors for each genre. This ensures consistency across all badge instances (schedule page, shows page, show profile pages) and makes updating colors site-wide simple and maintainable.
+
+## Time Slot Color System
+
+The schedule page uses brand-aligned time-based color indicators to create visual rhythm and help listeners quickly identify shows by time of day. Each time period has a distinct color derived from the brand palette, maintaining consistency while adding functional clarity.
+
+**Time Period Color Mappings**:
+- **Morning (6:00 - 12:00)** (oklch(0.75 0.15 60)): Warm yellow-orange - Energetic, bright start to the day
+- **Afternoon (12:00 - 17:00)** (oklch(0.65 0.18 35)): Vibrant orange-red - Bold midday energy
+- **Evening (17:00 - 22:00)** (oklch(0.58 0.11 215)): Coastal teal - Primary brand color for peak listening time
+- **Late Night (22:00 - 6:00)** (oklch(0.40 0.08 260)): Deep indigo - Nocturnal and calming atmosphere
+
+**Implementation**: Time slot colors are centrally managed in `/src/lib/time-slot-colors.ts` with a `getTimeSlotColors()` helper function that returns background, text, border, and accent colors based on the start time of each show. The schedule page displays a color legend at the top showing all four time periods with their ranges, and each schedule card features a color-coded left border and time badge that corresponds to its broadcast period. This creates immediate visual scanning ability and reinforces the brand's sophisticated use of color throughout the day.
 
 ## Component Selection
 
