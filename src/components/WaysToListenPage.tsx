@@ -241,7 +241,7 @@ export default function WaysToListenPage() {
                 <Badge className="mb-3 bg-accent text-accent-foreground">Recommended</Badge>
                 <h3 className="font-semibold text-2xl mb-2">Listen Live Online</h3>
                 <p className="text-muted-foreground mb-4">
-                  Stream {STATION_CONFIG.name} directly from our website. Works on any device with an internet connection—
+                  Stream {STATION_CONFIG.name} directly from our website. Works on any device with an internet connection - 
                   perfect for listeners beyond our FM coverage area or anyone who wants guaranteed reception.
                 </p>
                 <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
