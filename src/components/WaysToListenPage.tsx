@@ -9,7 +9,11 @@ import {
   Waveform,
   Play,
   Microphone,
-  ChatCenteredText
+  ChatCenteredText,
+  CheckCircle,
+  NumberCircleOne,
+  NumberCircleTwo,
+  NumberCircleThree
 } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
@@ -32,6 +36,127 @@ export default function WaysToListenPage() {
             we've got you covered across East Lothian and beyond.
           </p>
         </div>
+
+        <section className="mb-16">
+          <Card className="bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10 border-primary/20 overflow-hidden">
+            <div className="p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+                  <CheckCircle className="h-7 w-7 text-primary-foreground" weight="fill" />
+                </div>
+                <div>
+                  <h2 className="text-2xl sm:text-3xl font-bold">Quick Start Guide</h2>
+                  <p className="text-sm text-muted-foreground">New to {STATION_CONFIG.name}? Get listening in 3 easy steps</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-6">
+                <Card className="bg-card p-6 hover:shadow-lg transition-all hover:-translate-y-1">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-4 shadow-lg">
+                      <NumberCircleOne className="h-10 w-10 text-white" weight="fill" />
+                    </div>
+                    <h3 className="font-bold text-lg mb-2">Choose Your Method</h3>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Pick the listening option that works best for you
+                    </p>
+                    <div className="space-y-2 w-full">
+                      <div className="flex items-center gap-2 text-xs text-left">
+                        <Radio className="h-4 w-4 text-primary flex-shrink-0" weight="duotone" />
+                        <span>Traditional FM Radio (107.6)</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-left">
+                        <Globe className="h-4 w-4 text-primary flex-shrink-0" weight="duotone" />
+                        <span>Online Streaming</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-left">
+                        <DeviceMobile className="h-4 w-4 text-primary flex-shrink-0" weight="duotone" />
+                        <span>Mobile Apps</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-left">
+                        <Microphone className="h-4 w-4 text-primary flex-shrink-0" weight="duotone" />
+                        <span>Smart Speakers</span>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="bg-card p-6 hover:shadow-lg transition-all hover:-translate-y-1">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center mb-4 shadow-lg">
+                      <NumberCircleTwo className="h-10 w-10 text-white" weight="fill" />
+                    </div>
+                    <h3 className="font-bold text-lg mb-2">Tune In</h3>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Set your device to East Coast FM
+                    </p>
+                    <div className="space-y-3 w-full">
+                      <div className="bg-muted rounded-lg p-3">
+                        <div className="text-xs text-muted-foreground mb-1">FM Radio</div>
+                        <div className="text-xl font-bold text-primary">107.6 FM</div>
+                      </div>
+                      <div className="bg-muted rounded-lg p-3">
+                        <div className="text-xs text-muted-foreground mb-1">Smart Speaker</div>
+                        <div className="text-sm font-mono">"Play East Coast FM"</div>
+                      </div>
+                      <div className="bg-muted rounded-lg p-3">
+                        <div className="text-xs text-muted-foreground mb-1">Online</div>
+                        <Button
+                          size="sm"
+                          className="w-full gap-2 mt-1"
+                          onClick={togglePlay}
+                        >
+                          <Play weight="fill" className="h-4 w-4" />
+                          {isPlaying ? 'Playing' : 'Click Here'}
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="bg-card p-6 hover:shadow-lg transition-all hover:-translate-y-1">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center mb-4 shadow-lg">
+                      <NumberCircleThree className="h-10 w-10 text-white" weight="fill" />
+                    </div>
+                    <h3 className="font-bold text-lg mb-2">Enjoy!</h3>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      You're now listening to East Lothian's voice
+                    </p>
+                    <div className="space-y-2 w-full">
+                      <div className="bg-accent/10 rounded-lg p-3 border border-accent/20">
+                        <div className="flex items-center justify-center gap-2 text-accent font-medium">
+                          <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                          <span className="text-sm">Broadcasting 24/7</span>
+                        </div>
+                      </div>
+                      <div className="text-xs text-muted-foreground space-y-1">
+                        <div className="flex items-center gap-2">
+                          <CheckCircle className="h-3 w-3 text-green-500 flex-shrink-0" weight="fill" />
+                          <span>Music, talk & community</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <CheckCircle className="h-3 w-3 text-green-500 flex-shrink-0" weight="fill" />
+                          <span>Local news & events</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <CheckCircle className="h-3 w-3 text-green-500 flex-shrink-0" weight="fill" />
+                          <span>Serving East Lothian</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+
+              <div className="mt-6 text-center">
+                <p className="text-sm text-muted-foreground">
+                  Need more details? Scroll down for comprehensive instructions on each listening method.
+                </p>
+              </div>
+            </div>
+          </Card>
+        </section>
 
         <section className="mb-16">
           <FrequencyFinder />
