@@ -20,7 +20,7 @@ export const STATION_CONFIG: StationConfig = {
     youtube: '@EastCoastFM'
   },
   frequency: {
-    fm: '107.9',
+    fm: '107.6',
     dab: 'East Coast FM',
     online: 'eastcoastfm.co.uk/listen'
   },
@@ -38,49 +38,49 @@ export const RECEPTION_TIPS = {
     {
       name: 'Haddington',
       quality: 'excellent',
-      frequency: '107.9 FM',
+      frequency: '107.6 FM',
       tips: 'Strongest signal in the area. Should receive clearly on most FM radios indoors and outdoors.'
     },
     {
       name: 'North Berwick',
       quality: 'excellent',
-      frequency: '107.9 FM',
+      frequency: '107.6 FM',
       tips: 'Excellent reception throughout the town. Try DAB for crystal clear digital quality.'
     },
     {
       name: 'Dunbar',
       quality: 'excellent',
-      frequency: '107.9 FM',
+      frequency: '107.6 FM',
       tips: 'Strong FM signal. Coastal areas may experience slight interference during adverse weather.'
     },
     {
       name: 'Musselburgh',
       quality: 'good',
-      frequency: '107.9 FM',
+      frequency: '107.6 FM',
       tips: 'Good reception in most areas. For best results, position antenna near a window.'
     },
     {
       name: 'Tranent',
       quality: 'good',
-      frequency: '107.9 FM',
+      frequency: '107.6 FM',
       tips: 'Generally good signal. Higher elevations will receive stronger signal.'
     },
     {
       name: 'Prestonpans',
       quality: 'good',
-      frequency: '107.9 FM',
+      frequency: '107.6 FM',
       tips: 'Good coverage. Buildings may reduce signal strength - try adjusting your antenna.'
     },
     {
       name: 'East Linton',
       quality: 'good',
-      frequency: '107.9 FM',
+      frequency: '107.6 FM',
       tips: 'Reliable reception. Rural areas benefit from outdoor or car antenna.'
     },
     {
       name: 'Gullane',
       quality: 'good',
-      frequency: '107.9 FM',
+      frequency: '107.6 FM',
       tips: 'Good signal strength. Coastal position may affect reception in stormy conditions.'
     }
   ],
@@ -116,7 +116,7 @@ export const RECEPTION_TIPS = {
       title: 'Troubleshooting',
       tips: [
         'If signal is weak, try repositioning your antenna',
-        'Check you\'re tuned to exactly 107.9 FM',
+        'Check you\'re tuned to exactly 107.6 FM',
         'Switch to DAB or online stream for guaranteed reception',
         'Contact us if you have persistent reception issues'
       ]

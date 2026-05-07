@@ -46,9 +46,9 @@ export default function WaysToListenPage() {
                 <div className="flex-1">
                   <Badge className="mb-2">Most Popular</Badge>
                   <h3 className="font-semibold text-2xl mb-2">FM Radio</h3>
-                  <div className="text-4xl font-bold text-primary mb-3">107.9 FM</div>
+                  <div className="text-4xl font-bold text-primary mb-3">107.6 FM</div>
                   <p className="text-sm text-muted-foreground">
-                    The classic way to listen. Simply tune your FM radio to 107.9 and enjoy crystal clear reception 
+                    The classic way to listen. Simply tune your FM radio to 107.6 and enjoy crystal clear reception 
                     across East Lothian.
                   </p>
                 </div>
@@ -259,7 +259,7 @@ export default function WaysToListenPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0 mt-2" />
-                      <span>"Hey Google, tune into 107.9 FM"</span>
+                      <span>"Hey Google, tune into 107.6 FM"</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0 mt-2" />
@@ -480,7 +480,7 @@ export default function WaysToListenPage() {
         <section>
           <h2 className="text-3xl font-bold mb-6">Reception by Location</h2>
           <p className="text-muted-foreground mb-6">
-            Check the expected reception quality in your area on 107.9 FM:
+            Check the expected reception quality in your area on 107.6 FM:
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {RECEPTION_TIPS.locations.map((location, idx) => (
