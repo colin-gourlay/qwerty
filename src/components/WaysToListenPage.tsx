@@ -461,7 +461,7 @@ export default function WaysToListenPage() {
                 <div>
                   <div className="font-medium text-sm mb-1">Easy Setup</div>
                   <p className="text-xs text-muted-foreground">
-                    No app installation needed—just use your voice
+                    No app installation needed - just use your voice
                   </p>
                 </div>
               </div>
