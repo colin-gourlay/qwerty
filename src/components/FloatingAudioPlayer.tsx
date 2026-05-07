@@ -64,8 +64,8 @@ export default function FloatingAudioPlayer() {
                       {isPlaying ? (
                         <>
                           <span className="relative flex h-2 w-2 flex-shrink-0">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
                           </span>
                           <span className="truncate">Now Playing</span>
                         </>
@@ -81,8 +81,8 @@ export default function FloatingAudioPlayer() {
                       {isPlaying ? (
                         <>
                           <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
                           </span>
                           Now Playing
                         </>
@@ -100,7 +100,7 @@ export default function FloatingAudioPlayer() {
                 size="icon"
                 variant="ghost"
                 onClick={togglePlay}
-                className="h-12 w-12 rounded-full hover:bg-primary hover:text-primary-foreground transition-all flex-shrink-0"
+                className="h-12 w-12 rounded-full hover:bg-secondary hover:text-secondary-foreground transition-all flex-shrink-0"
               >
                 {isPlaying ? (
                   <Pause weight="fill" className="h-6 w-6" />

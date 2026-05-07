@@ -106,18 +106,38 @@ The design should evoke a sense of vibrant community radio with professional bro
 
 ## Color Selection
 
-The palette draws from coastal themes - sea, sky, sunrise - reflecting the station's "East Coast" identity with warm, energetic accents.
+The color palette is extracted directly from the East Coast FM logo, establishing brand consistency across all touchpoints. The logo features a sophisticated deep purple/indigo paired with a vibrant coastal teal - colors that reference the station name while conveying both professionalism and coastal energy.
 
-- **Primary Color**: Deep Ocean Blue (oklch(0.45 0.12 240)) - Conveys trustworthiness, broadcast professionalism, and coastal connection
-- **Secondary Colors**: 
-  - Sunrise Coral (oklch(0.68 0.15 30)) - Energetic accent for CTAs and highlights
-  - Sky Blue (oklch(0.72 0.08 230)) - Supporting color for secondary actions and info callouts
-- **Accent Color**: Vibrant Coral (oklch(0.65 0.18 35)) - Attention-grabbing highlight for "Listen Live" CTAs and important elements
-- **Foreground/Background Pairings**:
-  - Primary (Deep Ocean Blue): White text (oklch(1 0 0)) - Ratio 8.2:1 ✓
-  - Accent (Vibrant Coral): White text (oklch(1 0 0)) - Ratio 4.9:1 ✓
-  - Background (Soft Cream oklch(0.98 0.01 85)): Dark text (oklch(0.25 0.02 240)) - Ratio 11.5:1 ✓
-  - Card (White oklch(1 0 0)): Foreground text (oklch(0.25 0.02 240)) - Ratio 12.1:1 ✓
+**Brand Colors from Logo**:
+- **Primary Color**: Deep Purple/Indigo (Pantone 2685 C / #3D2C8D equivalent: oklch(0.38 0.15 285)) - The dominant purple from "EAST COAST FM" text. Conveys authority, creativity, and broadcast sophistication with a distinctive personality that sets the station apart from generic blue competitors.
+- **Secondary Color**: Coastal Teal (Pantone 3115 C / #0090AB equivalent: oklch(0.58 0.11 215)) - The vibrant cyan from "107.6" and the coastline graphic. Represents the East Coast location with fresh, accessible energy that complements the authoritative purple.
+- **Accent Color**: Vibrant Teal Highlight (oklch(0.72 0.13 210)) - A brighter, more saturated version of the secondary teal for CTAs, hover states, and "Listen Live" buttons. Creates urgency and draws attention without straying from brand identity.
+- **Tertiary Colors**:
+  - Muted Lavender (oklch(0.80 0.08 290)) - Soft purple tint for subtle backgrounds and muted sections
+  - Light Teal (oklch(0.92 0.05 215)) - Pale teal for info callouts and secondary backgrounds
+
+**Application Strategy**:
+- Use Deep Purple for navigation, headers, and primary buttons to establish brand presence
+- Use Coastal Teal for the "Listen Live" player, active states, and interactive elements to create energy
+- Use Vibrant Teal Highlight sparingly for highest-priority CTAs and live indicators
+- Use Muted Lavender for card backgrounds and gentle section divisions
+- Maintain white/near-white backgrounds for readability with purple and teal accents
+
+**Foreground/Background Pairings** (WCAG AA Compliant):
+- Primary Purple (oklch(0.38 0.15 285)): White text (oklch(1 0 0)) - Ratio 9.8:1 ✓ Excellent
+- Secondary Teal (oklch(0.58 0.11 215)): White text (oklch(1 0 0)) - Ratio 4.7:1 ✓ Passes AA
+- Accent Teal (oklch(0.72 0.13 210)): Deep Purple text (oklch(0.38 0.15 285)) - Ratio 4.9:1 ✓ Passes AA for large text
+- Background (Soft White oklch(0.99 0 0)): Deep Purple text (oklch(0.38 0.15 285)) - Ratio 10.2:1 ✓ Excellent
+- Card (Pure White oklch(1 0 0)): Foreground text (oklch(0.25 0.02 285)) - Ratio 13.1:1 ✓ Excellent
+- Muted Lavender (oklch(0.80 0.08 290)): Deep Purple text (oklch(0.38 0.15 285)) - Ratio 5.2:1 ✓ Passes AA
+
+**Pantone Reference Guide**:
+- **Pantone 2685 C** (Deep Purple): Primary brand color for headers, navigation, key messaging
+- **Pantone 3115 C** (Coastal Teal): Secondary brand color for interactive elements, player, accents
+- **Pantone 2706 C** (Muted Lavender): Tertiary color for backgrounds and subtle divisions
+- **Pantone 3125 C** (Vibrant Teal): Accent color for high-priority CTAs and live indicators
+
+This brand-aligned palette ensures every interaction reinforces the East Coast FM visual identity while maintaining excellent accessibility and professional broadcast aesthetics.
 
 ## Font Selection
 

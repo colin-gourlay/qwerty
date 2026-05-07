@@ -103,7 +103,7 @@ function Header() {
             ))}
             <Button 
               size="sm" 
-              className="gap-2 animate-pulse-subtle hover:animate-none"
+              className="gap-2 animate-pulse-subtle hover:animate-none bg-secondary hover:bg-secondary/90 text-secondary-foreground"
               onClick={togglePlay}
             >
               <Play weight="fill" className="h-4 w-4" />
@@ -150,7 +150,7 @@ function Header() {
                   )
                 })}
                 <Button 
-                  className="gap-2 w-full animate-pulse-subtle hover:animate-none"
+                  className="gap-2 w-full animate-pulse-subtle hover:animate-none bg-secondary hover:bg-secondary/90 text-secondary-foreground"
                   onClick={() => {
                     togglePlay()
                     setMobileMenuOpen(false)
@@ -183,13 +183,13 @@ function HomePage() {
 
   return (
     <div>
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-accent/10 py-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-accent/20 px-3 py-1 text-sm font-medium text-accent mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full bg-secondary/20 px-3 py-1 text-sm font-medium text-secondary mb-6">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
               </span>
               LIVE NOW
             </div>
@@ -202,7 +202,7 @@ function HomePage() {
             <div className="flex flex-wrap gap-4">
               <Button 
                 size="lg" 
-                className="gap-2 animate-pulse-subtle hover:animate-none"
+                className="gap-2 animate-pulse-subtle hover:animate-none bg-secondary hover:bg-secondary/90 text-secondary-foreground"
                 onClick={togglePlay}
               >
                 <Play weight="fill" className="h-5 w-5" />
