@@ -17,6 +17,7 @@ import { Badge } from '@/components/ui/badge'
 import { STATION_CONFIG, RECEPTION_TIPS } from '@/data/config'
 import { useAudioPlayer } from '@/components/AudioPlayerContext'
 import SoundWave from '@/components/SoundWave'
+import FrequencyFinder from '@/components/FrequencyFinder'
 
 export default function WaysToListenPage() {
   const { togglePlay, isPlaying } = useAudioPlayer()
@@ -31,6 +32,10 @@ export default function WaysToListenPage() {
             we've got you covered across East Lothian and beyond.
           </p>
         </div>
+
+        <section className="mb-16">
+          <FrequencyFinder />
+        </section>
 
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
