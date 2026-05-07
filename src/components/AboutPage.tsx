@@ -5,21 +5,26 @@ import stationLogo from '@/assets/images/station-logo.webp'
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <img 
-            src={stationLogo} 
-            alt={STATION_CONFIG.name}
-            className="h-24 w-auto mx-auto mb-6"
-          />
-          <h1 className="text-4xl font-bold mb-4">About {STATION_CONFIG.name}</h1>
-          <p className="text-xl text-muted-foreground">
-            {STATION_CONFIG.tagline}
-          </p>
+    <div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <img 
+              src={stationLogo} 
+              alt={STATION_CONFIG.name}
+              className="h-24 w-auto mx-auto mb-6"
+            />
+            <h1 className="text-5xl font-bold mb-4">About {STATION_CONFIG.name}</h1>
+            <p className="text-xl text-muted-foreground">
+              {STATION_CONFIG.tagline}
+            </p>
+          </div>
         </div>
+      </section>
 
-        <div className="prose prose-lg max-w-none mb-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="prose prose-lg max-w-none mb-12">
           <Card className="p-8 mb-8">
             <h2 className="text-2xl font-bold mb-4">Who We Are</h2>
             <p className="text-muted-foreground mb-4">
@@ -187,6 +192,7 @@ export default function AboutPage() {
               </a>
             </div>
           </Card>
+        </div>
         </div>
       </div>
     </div>

@@ -306,12 +306,20 @@ function SchedulePage() {
 
 function ShowsPage() {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h1 className="text-4xl font-bold mb-8">Our Shows</h1>
-      <p className="text-muted-foreground mb-8 max-w-2xl">
-        Discover the diverse range of programming on East Coast FM. From music and entertainment to news and specialist shows, there's something for everyone.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-accent/10 via-background to-primary/10 py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <h1 className="text-5xl font-bold mb-4">Our Shows</h1>
+            <p className="text-xl text-muted-foreground">
+              Discover the diverse range of programming on East Coast FM. From music and entertainment to news and specialist shows, there's something for everyone.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {shows.map((show) => (
           <Link key={show.id} to={`/shows/${show.id}`}>
             <div className="rounded-lg border bg-card overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
@@ -353,6 +361,7 @@ function ShowsPage() {
             </div>
           </Link>
         ))}
+        </div>
       </div>
     </div>
   )
