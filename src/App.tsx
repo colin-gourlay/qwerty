@@ -185,8 +185,8 @@ function HomePage() {
 
   return (
     <div>
-      <section className="relative overflow-hidden gradient-primary py-20 page-section">
-        <div className="absolute inset-0 gradient-radial-secondary opacity-60"></div>
+      <section className="relative overflow-hidden gradient-primary-textured py-20 page-section">
+        <div className="absolute inset-0 pattern-radio-waves opacity-40"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-sm font-medium text-white mb-6 border border-white/30">
@@ -249,8 +249,8 @@ function SchedulePage() {
   
   return (
     <div>
-      <section className="relative overflow-hidden gradient-secondary py-20 page-section">
-        <div className="absolute inset-0 gradient-radial-primary opacity-50"></div>
+      <section className="relative overflow-hidden gradient-secondary-textured py-20 page-section">
+        <div className="absolute inset-0 pattern-dots opacity-30"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
@@ -363,8 +363,8 @@ function SchedulePage() {
 function ShowsPage() {
   return (
     <div>
-      <section className="relative overflow-hidden gradient-accent py-20 page-section">
-        <div className="absolute inset-0 gradient-radial-primary opacity-40"></div>
+      <section className="relative overflow-hidden gradient-accent-textured py-20 page-section">
+        <div className="absolute inset-0 pattern-circles opacity-30"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-5xl font-bold mb-4 text-white drop-shadow-lg">Our Shows</h1>
@@ -432,8 +432,8 @@ function ShowsPage() {
 function PresentersPage() {
   return (
     <div>
-      <section className="relative overflow-hidden gradient-warm py-20 page-section">
-        <div className="absolute inset-0 gradient-radial-secondary opacity-50"></div>
+      <section className="relative overflow-hidden gradient-warm-textured py-20 page-section">
+        <div className="absolute inset-0 pattern-diagonal-lines opacity-20"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-5xl font-bold mb-4 text-white drop-shadow-lg">Meet Our Presenters</h1>
@@ -485,8 +485,8 @@ function NewsPage() {
 function ContactPage() {
   return (
     <div>
-      <section className="relative overflow-hidden gradient-cool py-20 page-section">
-        <div className="absolute inset-0 gradient-radial-secondary opacity-40"></div>
+      <section className="relative overflow-hidden gradient-cool-textured py-20 page-section">
+        <div className="absolute inset-0 pattern-grid opacity-20"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-5xl font-bold mb-4 text-white drop-shadow-lg">Contact Us</h1>

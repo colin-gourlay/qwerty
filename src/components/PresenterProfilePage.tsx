@@ -47,7 +47,8 @@ export default function PresenterProfilePage() {
   return (
     <div>
       <section className="relative overflow-hidden py-20 bg-gradient-to-br from-primary/10 via-background to-accent/10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 pattern-zigzag opacity-20"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <h1 className="text-5xl font-bold mb-4">{presenter.name}</h1>

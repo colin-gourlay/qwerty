@@ -48,7 +48,8 @@ export default function ShowProfilePage() {
           backgroundColor: show.color ? `${show.color}/10` : undefined
         }}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 pattern-hexagons opacity-20"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <Badge 

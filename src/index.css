@@ -381,3 +381,190 @@
     filter: hue-rotate(360deg);
   }
 }
+
+.pattern-dots {
+  background-image: radial-gradient(circle, oklch(1 0 0 / 0.15) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.pattern-grid {
+  background-image: 
+    linear-gradient(oklch(1 0 0 / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(1 0 0 / 0.08) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.pattern-diagonal-lines {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 15px,
+    oklch(1 0 0 / 0.06) 15px,
+    oklch(1 0 0 / 0.06) 16px
+  );
+}
+
+.pattern-waves {
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    oklch(1 0 0 / 0.05) 2px,
+    transparent 4px,
+    transparent 8px
+  );
+  background-size: 50px 100%;
+}
+
+.pattern-circles {
+  background-image: 
+    radial-gradient(circle at 25% 25%, oklch(1 0 0 / 0.08) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, oklch(1 0 0 / 0.08) 2px, transparent 2px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+.pattern-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+.pattern-zigzag {
+  background-image: 
+    linear-gradient(135deg, oklch(1 0 0 / 0.06) 25%, transparent 25%),
+    linear-gradient(225deg, oklch(1 0 0 / 0.06) 25%, transparent 25%),
+    linear-gradient(45deg, oklch(1 0 0 / 0.06) 25%, transparent 25%),
+    linear-gradient(315deg, oklch(1 0 0 / 0.06) 25%, transparent 25%);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 0, 10px -10px, 0 10px;
+}
+
+.pattern-hexagons {
+  background-image: 
+    linear-gradient(60deg, oklch(1 0 0 / 0.08) 25%, transparent 25%),
+    linear-gradient(120deg, oklch(1 0 0 / 0.08) 25%, transparent 25%);
+  background-size: 30px 52px;
+  background-position: 0 0, 15px 26px;
+}
+
+.pattern-soundwave {
+  background-image: repeating-radial-gradient(
+    circle at 0% 50%,
+    transparent 0px,
+    oklch(1 0 0 / 0.04) 10px,
+    transparent 20px,
+    transparent 30px
+  );
+}
+
+.pattern-radio-waves {
+  background-image: 
+    repeating-radial-gradient(circle at 50% 50%, transparent 0px, oklch(1 0 0 / 0.05) 40px, transparent 80px),
+    repeating-radial-gradient(circle at 50% 50%, transparent 0px, oklch(1 0 0 / 0.03) 60px, transparent 120px);
+}
+
+.texture-overlay {
+  position: relative;
+}
+
+.texture-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+}
+
+.gradient-primary-textured {
+  background: 
+    radial-gradient(circle at 20% 50%, oklch(1 0 0 / 0.1) 0%, transparent 50%),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 30px,
+      oklch(1 0 0 / 0.03) 30px,
+      oklch(1 0 0 / 0.03) 31px
+    ),
+    linear-gradient(135deg, 
+      oklch(0.38 0.15 285) 0%, 
+      oklch(0.45 0.14 275) 50%, 
+      oklch(0.58 0.11 215) 100%
+    );
+  animation: gradient-shift 8s ease-in-out infinite;
+  background-size: 200% 200%, 60px 60px, 200% 200%;
+}
+
+.gradient-secondary-textured {
+  background: 
+    radial-gradient(circle at 80% 20%, oklch(1 0 0 / 0.08) 0%, transparent 50%),
+    radial-gradient(circle, oklch(1 0 0 / 0.12) 1px, transparent 1px),
+    linear-gradient(135deg, 
+      oklch(0.58 0.11 215) 0%, 
+      oklch(0.65 0.12 210) 50%, 
+      oklch(0.72 0.13 210) 100%
+    );
+  animation: gradient-shift 8s ease-in-out infinite;
+  background-size: 200% 200%, 25px 25px, 200% 200%;
+  background-position: 0% 0%, 0 0, 0% 50%;
+}
+
+.gradient-accent-textured {
+  background: 
+    linear-gradient(
+      90deg,
+      transparent 0px,
+      oklch(1 0 0 / 0.04) 2px,
+      transparent 4px
+    ),
+    repeating-radial-gradient(
+      circle at 50% 50%, 
+      transparent 0px, 
+      oklch(1 0 0 / 0.03) 50px, 
+      transparent 100px
+    ),
+    linear-gradient(135deg, 
+      oklch(0.72 0.13 210) 0%, 
+      oklch(0.58 0.11 215) 50%, 
+      oklch(0.38 0.15 285) 100%
+    );
+  animation: gradient-shift 8s ease-in-out infinite;
+  background-size: 40px 100%, 200px 200px, 200% 200%;
+}
+
+.gradient-warm-textured {
+  background: 
+    repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 20px,
+      oklch(1 0 0 / 0.05) 20px,
+      oklch(1 0 0 / 0.05) 21px
+    ),
+    radial-gradient(circle at 30% 70%, oklch(1 0 0 / 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, 
+      oklch(0.75 0.15 60) 0%, 
+      oklch(0.65 0.18 35) 50%, 
+      oklch(0.58 0.11 215) 100%
+    );
+  animation: gradient-shift 8s ease-in-out infinite;
+  background-size: 50px 50px, 200% 200%, 200% 200%;
+}
+
+.gradient-cool-textured {
+  background: 
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      oklch(1 0 0 / 0.05) 50%,
+      transparent 100%
+    ),
+    radial-gradient(circle, oklch(1 0 0 / 0.08) 1.5px, transparent 1.5px),
+    linear-gradient(135deg, 
+      oklch(0.40 0.08 260) 0%, 
+      oklch(0.38 0.15 285) 50%, 
+      oklch(0.58 0.11 215) 100%
+    );
+  animation: gradient-shift 8s ease-in-out infinite;
+  background-size: 100px 100%, 30px 30px, 200% 200%;
+  background-position: 0% 0%, 0 0, 0% 50%;
+}
