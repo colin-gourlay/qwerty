@@ -247,16 +247,24 @@ function SchedulePage() {
   const timeOfDayPeriods = getTimeOfDayPeriods()
   
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4">
-        <div>
-          <h1 className="text-4xl font-bold mb-2">Weekly Schedule</h1>
-          <p className="text-muted-foreground">
-            Tune in to your favorite shows throughout the week
-          </p>
+    <div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-secondary/10 via-background to-accent/10 py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+              <div>
+                <h1 className="text-5xl font-bold mb-4">Weekly Schedule</h1>
+                <p className="text-xl text-muted-foreground">
+                  Tune in to your favorite shows throughout the week
+                </p>
+              </div>
+              <ScheduleImageGenerator />
+            </div>
+          </div>
         </div>
-        <ScheduleImageGenerator />
-      </div>
+      </section>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
       <div className="mb-8">
         <h3 className="text-sm font-semibold text-muted-foreground mb-3">Time of Day</h3>
@@ -345,6 +353,7 @@ function SchedulePage() {
           )
         })}
       </div>
+      </div>
     </div>
   )
 }
@@ -419,11 +428,19 @@ function ShowsPage() {
 
 function PresentersPage() {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h1 className="text-4xl font-bold mb-8">Meet Our Presenters</h1>
-      <p className="text-muted-foreground mb-8 max-w-2xl">
-        Get to know the talented team behind East Coast FM. Our presenters bring passion, expertise, and personality to everything they do.
-      </p>
+    <div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <h1 className="text-5xl font-bold mb-4">Meet Our Presenters</h1>
+            <p className="text-xl text-muted-foreground">
+              Get to know the talented team behind East Coast FM. Our presenters bring passion, expertise, and personality to everything they do.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {presenters.map((presenter) => (
           <Link key={presenter.id} to={`/presenters/${presenter.id}`}>
@@ -447,6 +464,7 @@ function PresentersPage() {
           </Link>
         ))}
       </div>
+      </div>
     </div>
   )
 }
@@ -462,12 +480,22 @@ function NewsPage() {
 
 function ContactPage() {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h1 className="text-4xl font-bold mb-8">Contact Us</h1>
+    <div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-accent/10 via-background to-primary/10 py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <h1 className="text-5xl font-bold mb-4">Contact Us</h1>
+            <p className="text-xl text-muted-foreground">
+              {STATION_CONFIG.description}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
       
       <div className="grid lg:grid-cols-2 gap-8 mb-12">
         <div>
-          <p className="text-muted-foreground mb-8">{STATION_CONFIG.description}</p>
           <div className="grid gap-6">
             <Card className="p-6">
               <div className="flex items-start gap-4">
@@ -545,6 +573,7 @@ function ContactPage() {
 
       <div className="border-t pt-12">
         <FrequencyInfo />
+      </div>
       </div>
     </div>
   )
