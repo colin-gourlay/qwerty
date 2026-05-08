@@ -6,8 +6,8 @@ import stationLogo from '@/assets/images/station-logo.webp'
 export default function AboutPage() {
   return (
     <div>
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden gradient-mesh py-20 page-section">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <img 
               src={stationLogo} 

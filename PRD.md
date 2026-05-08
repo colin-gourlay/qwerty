@@ -178,6 +178,15 @@ Animations should create a sense of liveness and broadcast energy without distra
 - **Now Playing**: Smooth slide-in when show changes, rotation of album artwork or show thumbnail
 - **Navigation**: Mobile menu slides from edge with backdrop fade, desktop links have subtle underline animation
 - **Schedule Highlight**: Current time slot subtly highlighted with animated border or background pulse
+- **Gradient Animations**: Custom animated gradient backgrounds with smooth color transitions create dynamic, branded visual interest across page sections
+  - `gradient-primary`: Deep purple to coastal teal animated gradient with 8-second cycle
+  - `gradient-secondary`: Coastal teal spectrum animated gradient for secondary sections
+  - `gradient-accent`: Vibrant teal to purple animated gradient for accent areas
+  - `gradient-warm`: Morning-inspired warm gradient (yellow-orange to teal) for energetic sections
+  - `gradient-cool`: Evening-inspired cool gradient (indigo to teal) for calming sections
+  - `gradient-mesh`: Multi-layered radial gradient mesh with 12-second shift animation for sophisticated backgrounds
+  - All gradients use 200% background-size with animated position shifts for smooth, continuous movement
+  - Gradients complement brand colors while adding depth and premium feel to the interface
 
 ## Genre Badge Color System
 

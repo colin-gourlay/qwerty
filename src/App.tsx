@@ -185,33 +185,34 @@ function HomePage() {
 
   return (
     <div>
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden gradient-primary py-20 page-section">
+        <div className="absolute inset-0 gradient-radial-secondary opacity-60"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-secondary/20 px-3 py-1 text-sm font-medium text-secondary mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-sm font-medium text-white mb-6 border border-white/30">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
               </span>
               LIVE NOW
             </div>
-            <h1 className="text-5xl sm:text-6xl font-bold mb-6">
+            <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-white drop-shadow-lg">
               {STATION_CONFIG.name}
             </h1>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xl text-white/90 mb-8 drop-shadow-md">
               {STATION_CONFIG.description}
             </p>
             <div className="flex flex-wrap gap-4">
               <Button 
                 size="lg" 
-                className="gap-2 animate-pulse-subtle hover:animate-none bg-secondary hover:bg-secondary/90 text-secondary-foreground"
+                className="gap-2 animate-pulse-subtle hover:animate-none bg-white hover:bg-white/90 text-primary shadow-xl hover:shadow-2xl transition-all duration-300"
                 onClick={togglePlay}
               >
                 <Play weight="fill" className="h-5 w-5" />
                 {isPlaying ? 'Now Playing' : 'Listen Live'}
                 {isPlaying && <SoundWave />}
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="outline" asChild className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 shadow-lg">
                 <Link to="/schedule">View Schedule</Link>
               </Button>
             </div>
@@ -219,7 +220,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-16 page-section">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold mb-8">Featured Shows</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -248,13 +249,14 @@ function SchedulePage() {
   
   return (
     <div>
-      <section className="relative overflow-hidden bg-gradient-to-br from-secondary/10 via-background to-accent/10 py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden gradient-secondary py-20 page-section">
+        <div className="absolute inset-0 gradient-radial-primary opacity-50"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
               <div>
-                <h1 className="text-5xl font-bold mb-4">Weekly Schedule</h1>
-                <p className="text-xl text-muted-foreground">
+                <h1 className="text-5xl font-bold mb-4 text-white drop-shadow-lg">Weekly Schedule</h1>
+                <p className="text-xl text-white/90 drop-shadow-md">
                   Tune in to your favorite shows throughout the week
                 </p>
               </div>
@@ -361,11 +363,12 @@ function SchedulePage() {
 function ShowsPage() {
   return (
     <div>
-      <section className="relative overflow-hidden bg-gradient-to-br from-accent/10 via-background to-primary/10 py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden gradient-accent py-20 page-section">
+        <div className="absolute inset-0 gradient-radial-primary opacity-40"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-5xl font-bold mb-4">Our Shows</h1>
-            <p className="text-xl text-muted-foreground">
+            <h1 className="text-5xl font-bold mb-4 text-white drop-shadow-lg">Our Shows</h1>
+            <p className="text-xl text-white/90 drop-shadow-md">
               Discover the diverse range of programming on East Coast FM. From music and entertainment to news and specialist shows, there's something for everyone.
             </p>
           </div>
@@ -429,11 +432,12 @@ function ShowsPage() {
 function PresentersPage() {
   return (
     <div>
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden gradient-warm py-20 page-section">
+        <div className="absolute inset-0 gradient-radial-secondary opacity-50"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-5xl font-bold mb-4">Meet Our Presenters</h1>
-            <p className="text-xl text-muted-foreground">
+            <h1 className="text-5xl font-bold mb-4 text-white drop-shadow-lg">Meet Our Presenters</h1>
+            <p className="text-xl text-white/90 drop-shadow-md">
               Get to know the talented team behind East Coast FM. Our presenters bring passion, expertise, and personality to everything they do.
             </p>
           </div>
@@ -481,11 +485,12 @@ function NewsPage() {
 function ContactPage() {
   return (
     <div>
-      <section className="relative overflow-hidden bg-gradient-to-br from-accent/10 via-background to-primary/10 py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden gradient-cool py-20 page-section">
+        <div className="absolute inset-0 gradient-radial-secondary opacity-40"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-5xl font-bold mb-4">Contact Us</h1>
-            <p className="text-xl text-muted-foreground">
+            <h1 className="text-5xl font-bold mb-4 text-white drop-shadow-lg">Contact Us</h1>
+            <p className="text-xl text-white/90 drop-shadow-md">
               {STATION_CONFIG.description}
             </p>
           </div>
