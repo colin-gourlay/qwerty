@@ -1,7 +1,7 @@
 import { Card } from '@/components/ui/card'
 import { Radio, Heart, Users, Broadcast, GraduationCap, Palette, Handshake, Megaphone } from '@phosphor-icons/react'
 import { STATION_CONFIG } from '@/data/config'
-import stationLogo from '@/assets/images/station-logo.webp'
+import stationLogo from '@/assets/images/station-logo.png'
 
 export default function AboutPage() {
   return (

@@ -6,7 +6,7 @@ import { STATION_CONFIG } from '@/data/config'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import SoundWave from './SoundWave'
-import stationLogo from '@/assets/images/station-logo.webp'
+import stationLogo from '@/assets/images/station-logo.png'
 import { useCurrentShow } from '@/hooks/use-current-show'
 
 export default function FloatingAudioPlayer() {
