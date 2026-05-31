@@ -82,12 +82,12 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-28 items-center justify-between">
           <Link to="/" className="flex items-center group">
             <img 
               src={stationLogo} 
               alt={STATION_CONFIG.name}
-              className="h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 drop-shadow-md"
+              className="h-24 w-auto object-contain transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 drop-shadow-md"
             />
           </Link>
 
