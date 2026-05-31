@@ -96,7 +96,7 @@ function Header() {
             <img 
               src={stationLogo} 
               alt={STATION_CONFIG.name}
-              className={`w-auto object-contain transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 drop-shadow-md ${isScrolled ? 'h-16' : 'h-64'}`}
+              className={`w-auto object-contain transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:brightness-110 drop-shadow-md ${isScrolled ? 'h-16 opacity-90' : 'h-64 opacity-100'}`}
             />
           </Link>
 
