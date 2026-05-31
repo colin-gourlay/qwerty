@@ -22,7 +22,7 @@ export default function GetInvolvedPage() {
             <div>
               <h2 className="text-2xl font-bold mb-2">Everyone's Welcome</h2>
               <p className="text-lg text-muted-foreground">
-                East Coast FM relies entirely on its team of volunteers. We are a friendly, mixed bunch, of all ages and abilities and we are always looking for new members.
+                Sundown Radio relies entirely on its team of volunteers. We are a friendly, mixed bunch, of all ages and abilities and we are always looking for new members.
               </p>
             </div>
           </div>

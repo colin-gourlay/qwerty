@@ -11,7 +11,7 @@ export default function HistoryPage() {
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Our History</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            From our first broadcast in 2008 to becoming East Lothian's voice, discover the milestones that shaped East Coast FM into the community station it is today.
+            From our first broadcast in 2008 to becoming East Lothian's voice, discover the milestones that shaped Sundown Radio into the community station it is today.
           </p>
         </div>
 

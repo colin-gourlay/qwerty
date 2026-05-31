@@ -15,18 +15,18 @@ import AdvertiserLogo from '@/components/AdvertiserLogo'
 export default function AdvertisingPage() {
   const handleDownloadRates = () => {
     const content = generateAdvertisingRatesPDF()
-    downloadTextAsPDF('East-Coast-FM-Advertising-Rates.txt', content)
+    downloadTextAsPDF('Sundown-Radio-Advertising-Rates.txt', content)
   }
 
   const handleDownloadBookingForm = () => {
     const content = generateBookingFormPDF()
-    downloadTextAsPDF('East-Coast-FM-Booking-Form.txt', content)
+    downloadTextAsPDF('Sundown-Radio-Booking-Form.txt', content)
   }
 
   const handleDownloadDemographic = (area: 'haddington' | 'east-lothian' | 'lothians' | 'south-scotland') => {
     const content = generateDemographicPDF(area)
     const areaName = area.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('-')
-    downloadTextAsPDF(`East-Coast-FM-Demographics-${areaName}.txt`, content)
+    downloadTextAsPDF(`Sundown-Radio-Demographics-${areaName}.txt`, content)
   }
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -38,7 +38,7 @@ export default function AdvertisingPage() {
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Advertise With Us</h1>
           <p className="text-xl text-muted-foreground">
-            East Coast FM offers a diverse mix of advertising solutions either for broadcast on the station or on our website.
+            Sundown Radio offers a diverse mix of advertising solutions either for broadcast on the station or on our website.
           </p>
         </div>
 

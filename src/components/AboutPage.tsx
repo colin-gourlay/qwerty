@@ -29,7 +29,7 @@ export default function AboutPage() {
           <Card className="p-8 mb-8">
             <h2 className="text-2xl font-bold mb-4">Who We Are</h2>
             <p className="text-muted-foreground mb-4">
-              East Coast FM is a Community Radio Station serving the town of Haddington and surrounding area in East Lothian, Scotland. The station broadcasts from premises in the centre of Haddington, 24 hours a day, 7 days a week.
+              Sundown Radio is a Community Radio Station serving the town of Haddington and surrounding area in East Lothian, Scotland. The station broadcasts from premises in the centre of Haddington, 24 hours a day, 7 days a week.
             </p>
             <p className="text-muted-foreground mb-4">
               The programming is varied and includes daytime entertainment, specialist music programmes in the evenings, opportunities for pupils at local schools to create their own shows, local sports coverage and religious themes. The station has a clear focus on being involved with its community and local events, other charities and fundraising are regularly featured.
@@ -40,7 +40,7 @@ export default function AboutPage() {
           </Card>
 
           <Card className="p-8 mb-8 bg-gradient-to-br from-primary/5 to-accent/5">
-            <h2 className="text-2xl font-bold mb-6">East Coast FM's Objectives</h2>
+            <h2 className="text-2xl font-bold mb-6">Sundown Radio's Objectives</h2>
             <div className="grid gap-6">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">

@@ -1,11 +1,11 @@
-# 📻 East Coast FM
+# 📻 Sundown Radio
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Built with React](https://img.shields.io/badge/Built%20with-React%2019-61dafb)](https://react.dev)
 [![Styled with Tailwind](https://img.shields.io/badge/Styled%20with-Tailwind%20CSS-38bdf8)](https://tailwindcss.com)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178c6)](https://www.typescriptlang.org/)
 
-A modern, production-ready website for **East Coast FM**, a UK community radio station. Stream live radio, explore show schedules, discover presenters, and stay connected with your local station.
+A modern, production-ready website for **Sundown Radio**, a UK community radio station. Stream live radio, explore show schedules, discover presenters, and stay connected with your local station.
 
 ## ✨ Features
 
@@ -30,8 +30,8 @@ A modern, production-ready website for **East Coast FM**, a UK community radio s
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/east-coast-fm.git
-cd east-coast-fm
+git clone https://github.com/yourusername/sundown-radio.git
+cd sundown-radio
 
 # Install dependencies
 npm install

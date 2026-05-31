@@ -1,6 +1,6 @@
-# East Coast FM - Community Radio Station Website
+# Sundown Radio - Community Radio Station Website
 
-A modern, production-ready web platform for East Coast FM, a UK community radio station, delivering live streaming, show schedules, presenter profiles, news content, and listener engagement features.
+A modern, production-ready web platform for Sundown Radio, a UK community radio station, delivering live streaming, show schedules, presenter profiles, news content, and listener engagement features.
 
 **Experience Qualities**:
 1. **Professional** - Conveys credibility and broadcast-quality presentation befitting a real radio station
@@ -92,7 +92,7 @@ The site includes multiple interconnected pages (home, schedule, shows, presente
 ## Edge Case Handling
 
 - **Schedule Gaps** - Display "Music Mix" or station name when no specific show is scheduled
-- **Missing Presenter Data** - Show placeholder image and "East Coast FM" as fallback presenter name
+- **Missing Presenter Data** - Show placeholder image and "Sundown Radio" as fallback presenter name
 - **Invalid Audio Stream** - Display error message with retry button and troubleshooting tips
 - **Mobile Navigation** - Collapse to hamburger menu, ensure all pages remain accessible
 - **Slow Image Loading** - Use skeleton loaders and properly sized placeholders
@@ -109,7 +109,7 @@ The design should evoke a sense of vibrant community radio with professional bro
 The color palette is extracted directly from the East Coast FM logo, establishing brand consistency across all touchpoints. The logo features a sophisticated deep purple/indigo paired with a vibrant coastal teal - colors that reference the station name while conveying both professionalism and coastal energy.
 
 **Brand Colors from Logo**:
-- **Primary Color**: Deep Purple/Indigo (Pantone 2685 C / #3D2C8D equivalent: oklch(0.38 0.15 285)) - The dominant purple from "EAST COAST FM" text. Conveys authority, creativity, and broadcast sophistication with a distinctive personality that sets the station apart from generic blue competitors.
+- **Primary Color**: Deep Purple/Indigo (Pantone 2685 C / #3D2C8D equivalent: oklch(0.38 0.15 285)) - The dominant purple from "SUNDOWN RADIO" text. Conveys authority, creativity, and broadcast sophistication with a distinctive personality that sets the station apart from generic blue competitors.
 - **Secondary Color**: Coastal Teal (Pantone 3115 C / #0090AB equivalent: oklch(0.58 0.11 215)) - The vibrant cyan from "107.6" and the coastline graphic. Represents the East Coast location with fresh, accessible energy that complements the authoritative purple.
 - **Accent Color**: Vibrant Teal Highlight (oklch(0.72 0.13 210)) - A brighter, more saturated version of the secondary teal for CTAs, hover states, and "Listen Live" buttons. Creates urgency and draws attention without straying from brand identity.
 - **Tertiary Colors**:
@@ -137,7 +137,7 @@ The color palette is extracted directly from the East Coast FM logo, establishin
 - **Pantone 2706 C** (Muted Lavender): Tertiary color for backgrounds and subtle divisions
 - **Pantone 3125 C** (Vibrant Teal): Accent color for high-priority CTAs and live indicators
 
-This brand-aligned palette ensures every interaction reinforces the East Coast FM visual identity while maintaining excellent accessibility and professional broadcast aesthetics.
+This brand-aligned palette ensures every interaction reinforces the Sundown Radio visual identity while maintaining excellent accessibility and professional broadcast aesthetics.
 
 ## Font Selection
 
