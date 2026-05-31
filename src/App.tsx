@@ -194,21 +194,21 @@ function HomePage() {
 
   return (
     <div>
-      <section className="relative overflow-hidden gradient-primary-textured py-20 page-section">
+      <section className="relative overflow-hidden gradient-primary-textured py-12 page-section">
         <div className="absolute inset-0 pattern-radio-waves opacity-40"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-sm font-medium text-white mb-6 border border-white/30">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-sm font-medium text-white mb-4 border border-white/30">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
               </span>
               LIVE NOW
             </div>
-            <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-white drop-shadow-lg">
+            <h1 className="text-5xl sm:text-6xl font-bold mb-4 text-white drop-shadow-lg">
               {STATION_CONFIG.name}
             </h1>
-            <p className="text-xl text-white/90 mb-8 drop-shadow-md">
+            <p className="text-xl text-white/90 mb-6 drop-shadow-md">
               {STATION_CONFIG.description}
             </p>
             <div className="flex flex-wrap gap-4">
