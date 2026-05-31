@@ -81,16 +81,16 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-64 items-center justify-between">
-          <Link to="/" className="flex items-center group">
+        <div className="flex h-72 items-center justify-between gap-8">
+          <Link to="/" className="flex items-center group flex-shrink-0">
             <img 
               src={stationLogo} 
               alt={STATION_CONFIG.name}
-              className="h-60 w-auto object-contain transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 drop-shadow-md"
+              className="h-64 w-auto object-contain transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 drop-shadow-md"
             />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-4 lg:gap-6 flex-wrap justify-end">
             {navItems.map((item) => (
               <Link
                 key={item.path}
