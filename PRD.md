@@ -179,13 +179,16 @@ Animations should create a sense of liveness and broadcast energy without distra
 - **Navigation**: Mobile menu slides from edge with backdrop fade, desktop links have subtle underline animation
 - **Schedule Highlight**: Current time slot subtly highlighted with animated border or background pulse
 - **Gradient Animations**: Custom animated gradient backgrounds with smooth color transitions create dynamic, branded visual interest across page sections
-  - `gradient-primary`: Deep purple to coastal teal animated gradient with 8-second cycle
-  - `gradient-secondary`: Coastal teal spectrum animated gradient for secondary sections
-  - `gradient-accent`: Vibrant teal to purple animated gradient for accent areas
-  - `gradient-warm`: Morning-inspired warm gradient (yellow-orange to teal) for energetic sections
-  - `gradient-cool`: Evening-inspired cool gradient (indigo to teal) for calming sections
-  - `gradient-mesh`: Multi-layered radial gradient mesh with 12-second shift animation for sophisticated backgrounds
-  - All gradients use 200% background-size with animated position shifts for smooth, continuous movement
+  - `gradient-hero`: Complex multi-layered purple-to-teal gradient with radial overlays for the homepage hero (10s cycle) - creates premium, welcoming first impression
+  - `gradient-schedule`: Bright teal-to-cyan gradient with diagonal line patterns for the schedule page - energetic and organized
+  - `gradient-shows`: Multi-tone teal-to-purple gradient with circular and linear patterns for shows page (11s cycle) - showcases content variety
+  - `gradient-presenters`: Warm yellow-orange-to-teal gradient with diagonal and vertical patterns for presenters page (10s cycle) - friendly and approachable
+  - `gradient-contact`: Deep indigo with dual radial purple/teal spots and dot pattern for contact page (12s cycle) - professional and inviting
+  - `gradient-about`: Medium purple-to-teal with grid pattern for about page (10s cycle) - organized and informative
+  - `gradient-news`: Orange-to-teal with checkered pattern for news page - dynamic and attention-grabbing
+  - `gradient-listen`: Teal-to-purple with concentric circle patterns for ways to listen page (13s cycle) - broadcasting/radio wave theme
+  - All gradients use 200%+ background-size with animated position shifts for smooth, continuous movement
+  - Each page section has distinct visual character while maintaining brand consistency through shared purple/teal color foundation
   - Gradients complement brand colors while adding depth and premium feel to the interface
 
 ## Genre Badge Color System
