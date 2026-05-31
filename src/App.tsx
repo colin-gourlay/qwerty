@@ -5,7 +5,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { STATION_CONFIG, STREAM_URL } from '@/data/config'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ShowProfilePage from '@/components/ShowProfilePage'
 import PresenterProfilePage from '@/components/PresenterProfilePage'
 import ScheduleImageGenerator from '@/components/ScheduleImageGenerator'
@@ -63,8 +63,18 @@ export default function App() {
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const location = useLocation()
   const { togglePlay, isPlaying } = useAudioPlayer()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const navItems = [
     { path: '/listen', label: 'Listen', icon: Headphones },
@@ -79,14 +89,14 @@ function Header() {
   const isActive = (path: string) => location.pathname === path
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
+    <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60 transition-all duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-72 items-center justify-between gap-8">
+        <div className={`flex items-center justify-between gap-8 transition-all duration-300 ${isScrolled ? 'h-20' : 'h-72'}`}>
           <Link to="/" className="flex items-center group flex-shrink-0">
             <img 
               src={stationLogo} 
               alt={STATION_CONFIG.name}
-              className="h-64 w-auto object-contain transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 drop-shadow-md"
+              className={`w-auto object-contain transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 drop-shadow-md ${isScrolled ? 'h-16' : 'h-64'}`}
             />
           </Link>
 
