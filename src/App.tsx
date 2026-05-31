@@ -91,7 +91,7 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60 transition-all duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`flex items-center justify-between gap-8 transition-all duration-300 ${isScrolled ? 'h-20' : 'h-72'}`}>
+        <div className={`flex items-center justify-between gap-8 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
           <Link to="/" className="flex items-center group flex-shrink-0">
             <img 
               src={stationLogo} 
