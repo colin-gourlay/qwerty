@@ -13,7 +13,7 @@ interface FeaturedShowCardProps {
 export function FeaturedShowCard({ show }: FeaturedShowCardProps) {
   const genreColors = getGenreColors(show.genre)
   const scheduleLabel = show.broadcastSummary ?? show.schedule
-  const showLinkLabel = `Explore ${show.name}${show.strapline ? `, ${show.strapline}` : ''}${scheduleLabel ? `, ${scheduleLabel}` : ''}`
+  const showLinkLabel = [show.name, show.strapline, scheduleLabel].filter(Boolean).join(' · ')
 
   return (
     <Link
