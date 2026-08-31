@@ -320,7 +320,6 @@ function HomePage() {
                       <div className="mt-auto flex items-center justify-end border-t pt-4">
                         <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
                           Explore
-                          <span className="sr-only"> {show.name}</span>
                           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                         </span>
                       </div>
