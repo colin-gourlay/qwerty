@@ -27,7 +27,7 @@ import SocialLinks from '@/components/SocialLinks'
 import CoverageMap from '@/components/CoverageMap'
 import FrequencyInfo from '@/components/FrequencyInfo'
 import MobileAppDownload from '@/components/MobileAppDownload'
-import SundownHeroPanel from '@/components/SundownHeroPanel'
+import SundownHeroPanel from '@/components/layout/SundownHeroPanel'
 import { getGenreColors } from '@/lib/genre-colors'
 import { getTimeSlotColors, getTimeOfDayPeriods } from '@/lib/time-slot-colors'
 
@@ -202,7 +202,6 @@ function Header() {
 
 function HomePage() {
   const { togglePlay, isPlaying } = useAudioPlayer()
-  const fmFrequency = `${STATION_CONFIG.frequency.fm} FM`
 
   return (
     <div>
@@ -242,7 +241,7 @@ function HomePage() {
               </div>
             </div>
 
-            <SundownHeroPanel frequency={fmFrequency} coverageArea={STATION_CONFIG.coverageArea} />
+            <SundownHeroPanel frequency={STATION_CONFIG.broadcastLabel} coverageArea={STATION_CONFIG.coverageArea} />
           </div>
         </div>
       </section>
