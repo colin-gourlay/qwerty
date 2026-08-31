@@ -114,11 +114,8 @@ export default function MobileAppDownload() {
                   </p>
                 </div>
               </div>
-              <p
-                className="rounded-lg bg-muted/60 p-4 text-sm mb-4"
-                role="note"
-                aria-label="Voice command example"
-              >
+              <p className="rounded-lg bg-muted/60 p-4 text-sm mb-4">
+                <span className="sr-only">Voice command example: </span>
                 {`“Alexa, play ${STATION_CONFIG.name} on TuneIn”`}
               </p>
               {STATION_CONFIG.tunein ? (
