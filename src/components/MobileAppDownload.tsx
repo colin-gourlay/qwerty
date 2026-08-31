@@ -109,7 +109,7 @@ export default function MobileAppDownload() {
                 </div>
               </div>
               <div className="rounded-lg bg-muted/60 p-4 text-sm mb-4">
-                “Alexa, play {STATION_CONFIG.name} on TuneIn”
+                {`“Alexa, play ${STATION_CONFIG.name} on TuneIn”`}
               </div>
               {STATION_CONFIG.tunein ? (
                 <Button
