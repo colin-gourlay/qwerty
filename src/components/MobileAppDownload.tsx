@@ -42,10 +42,11 @@ export default function MobileAppDownload() {
                     href={STATION_CONFIG.apps.ios} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    aria-label={`Download the ${STATION_CONFIG.name} iPhone and iPad app from the App Store`}
+                    aria-label={`Download the ${STATION_CONFIG.name} iPhone and iPad app from the App Store (opens in a new tab)`}
                   >
                     <AppleLogo className="h-5 w-5" weight="fill" />
                     Download on the App Store
+                    <span className="sr-only"> (opens in a new tab)</span>
                   </a>
                 </Button>
               ) : (
@@ -85,10 +86,11 @@ export default function MobileAppDownload() {
                     href={STATION_CONFIG.apps.android} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    aria-label={`Get the ${STATION_CONFIG.name} Android app on Google Play`}
+                    aria-label={`Get the ${STATION_CONFIG.name} Android app on Google Play (opens in a new tab)`}
                   >
                     <GooglePlayLogo className="h-5 w-5" weight="fill" />
                     Get it on Google Play
+                    <span className="sr-only"> (opens in a new tab)</span>
                   </a>
                 </Button>
               ) : (
@@ -114,10 +116,10 @@ export default function MobileAppDownload() {
                   </p>
                 </div>
               </div>
-              <p className="rounded-lg bg-muted/60 p-4 text-sm mb-4">
+              <blockquote className="rounded-lg bg-muted/60 p-4 text-sm mb-4" role="note">
                 <span className="sr-only">Voice command example: </span>
                 {`“Alexa, play ${STATION_CONFIG.name} on TuneIn”`}
-              </p>
+              </blockquote>
               {STATION_CONFIG.tunein ? (
                 <Button
                   variant="outline"
@@ -128,10 +130,11 @@ export default function MobileAppDownload() {
                     href={STATION_CONFIG.tunein}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Open the ${STATION_CONFIG.name} TuneIn listing for Alexa setup`}
+                    aria-label={`Open the ${STATION_CONFIG.name} TuneIn listing for Alexa setup (opens in a new tab)`}
                   >
                     <Radio className="h-5 w-5" />
                     Open TuneIn listing
+                    <span className="sr-only"> (opens in a new tab)</span>
                   </a>
                 </Button>
               ) : (
@@ -154,9 +157,10 @@ export default function MobileAppDownload() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-primary hover:text-primary/80"
-                aria-label={`Open the ${STATION_CONFIG.name} Radio Garden listing`}
+                aria-label={`Open the ${STATION_CONFIG.name} Radio Garden listing (opens in a new tab)`}
               >
                 Open {STATION_CONFIG.name} in Radio Garden
+                <span className="sr-only"> (opens in a new tab)</span>
               </a>
               .
             </div>
