@@ -206,8 +206,7 @@ function Header() {
 
 function HomePage() {
   const { togglePlay, isPlaying } = useAudioPlayer()
-  const featuredShows = shows.filter((show) => show.featured)
-  const homepageShows = (featuredShows.length > 0 ? featuredShows : shows).slice(0, MAX_HOMEPAGE_SHOWS)
+  const homepageShows = shows.filter((show) => show.featured).slice(0, MAX_HOMEPAGE_SHOWS)
 
   return (
     <div>
