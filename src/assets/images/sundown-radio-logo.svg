@@ -9,11 +9,17 @@
     </linearGradient>
   </defs>
   <style>
-    .wordmark { fill: #0F172A; }
-    .tagline { fill: #475569; }
-    @media (prefers-color-scheme: dark) {
-      .wordmark { fill: #F8FAFC; }
-      .tagline { fill: #CBD5E1; }
+    .wordmark {
+      fill: #F8FAFC;
+      stroke: #0F172A;
+      stroke-width: 1.5;
+      paint-order: stroke;
+    }
+    .tagline {
+      fill: #F8FAFC;
+      stroke: #1E293B;
+      stroke-width: 1;
+      paint-order: stroke;
     }
   </style>
   <path d="M20 116C30 88 54 70 83 70C112 70 136 88 146 116" stroke="url(#sunGradient)" stroke-width="16" stroke-linecap="round"/>
