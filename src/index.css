@@ -573,11 +573,14 @@
 }
 
 .gradient-hero {
+  --hero-horizon-start: 58%;
+  --hero-horizon-end: 60%;
+
   background: 
     radial-gradient(circle at 18% 22%, oklch(0.86 0.16 72 / 0.34) 0%, transparent 36%),
     radial-gradient(circle at 70% 38%, oklch(0.70 0.17 24 / 0.28) 0%, transparent 46%),
     radial-gradient(circle at 84% 76%, oklch(0.45 0.18 310 / 0.3) 0%, transparent 42%),
-    linear-gradient(180deg, transparent 0 58%, oklch(0.18 0.05 255 / 0.7) 58% 60%, transparent 60%),
+    linear-gradient(180deg, transparent 0 var(--hero-horizon-start), oklch(0.18 0.05 255 / 0.7) var(--hero-horizon-start) var(--hero-horizon-end), transparent var(--hero-horizon-end)),
     repeating-radial-gradient(
       circle at 52% 54%,
       transparent 0px, 

@@ -4,6 +4,7 @@ export const STATION_CONFIG: StationConfig = {
   name: 'Sundown Radio',
   tagline: 'Your Voice on the Coast',
   description: 'Broadcasting from the heart of East Lothian, bringing you the best in music, talk, and community programming 24/7.',
+  coverageArea: 'East Lothian',
   streamUrl: 'http://radio.canstream.co.uk:8117/live.mp3',
   phone: '01620 826444',
   whatsapp: '07555610811',
