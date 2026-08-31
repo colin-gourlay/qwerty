@@ -85,7 +85,7 @@ export default function PresenterProfilePage() {
                   </Button>
                 )}
                 <ShareButton 
-                  title={`${presenter.name} - East Coast FM`}
+                  title={`${presenter.name} - Sundown Radio`}
                   description={presenter.bio}
                   size="lg"
                 />
@@ -144,7 +144,7 @@ export default function PresenterProfilePage() {
                   <div className="flex items-start gap-3">
                     <CalendarBlank className="h-6 w-6 text-accent flex-shrink-0" weight="fill" />
                     <div>
-                      <div className="font-semibold mb-1">Joined East Coast FM</div>
+                      <div className="font-semibold mb-1">Joined Sundown Radio</div>
                       <p className="text-sm text-muted-foreground">
                         {new Date(presenter.joinedDate).toLocaleDateString('en-GB', { 
                           month: 'long', 

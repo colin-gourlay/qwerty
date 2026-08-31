@@ -1,8 +1,8 @@
 export function generateAdvertisingRatesPDF() {
   const content = `
-EAST COAST FM - ADVERTISING RATES
+SUNDOWN RADIO - ADVERTISING RATES
 Broadcasting from the heart of East Lothian
-107.6 FM | www.eastcoastfm.co.uk
+107.6 FM | www.sundownradio.co.uk
 
 ═══════════════════════════════════════════════════════════════════
 
@@ -53,19 +53,19 @@ ADDITIONAL SERVICES
 All prices exclude VAT where applicable.
 Long-term contracts (6+ months) eligible for discounts.
 
-Contact: advertising@eastcoastfm.co.uk
+Contact: advertising@sundownradio.co.uk
 Phone: 01620 826444
 Address: 2B Station Yards, Haddington, EH41 3PP
 
 ═══════════════════════════════════════════
-East Coast FM - Charity Registration No. SC042784
+Sundown Radio - Charity Registration No. SC042784
 `
   return content
 }
 
 export function generateBookingFormPDF() {
   const content = `
-EAST COAST FM - ADVERTISING BOOKING FORM
+SUNDOWN RADIO - ADVERTISING BOOKING FORM
 ═══════════════════════════════════════════════════════════════════
 
 CONTACT INFORMATION
@@ -131,13 +131,13 @@ PAYMENT INFORMATION
 ────────────────────────────────────────────
 ☐ Invoice me (payment terms: net 30 days)
 ☐ Direct bank transfer
-☐ Cheque (payable to East Coast FM)
+☐ Cheque (payable to Sundown Radio)
 ☐ Other: ________________________________________________________
 
 
 TERMS & CONDITIONS
 ────────────────────────────────────────────
-I agree to East Coast FM's advertising terms and conditions.
+I agree to Sundown Radio's advertising terms and conditions.
 I understand that payment is due within 30 days of invoice date.
 I confirm the information provided is accurate and complete.
 
@@ -149,12 +149,12 @@ Print Name: _____________________________________________________
 ═══════════════════════════════════════════
 
 Please return completed form to:
-Email: advertising@eastcoastfm.co.uk
-Mail:  East Coast FM, 2B Station Yards, Haddington, EH41 3PP
+Email: advertising@sundownradio.co.uk
+Mail:  Sundown Radio, 2B Station Yards, Haddington, EH41 3PP
 Phone: 01620 826444
 
 ═══════════════════════════════════════════
-East Coast FM - Charity Registration No. SC042784
+Sundown Radio - Charity Registration No. SC042784
 `
   return content
 }
@@ -417,7 +417,7 @@ Strong Online Listening Areas:
   const data = demographics[area]
   
   return `
-EAST COAST FM - DEMOGRAPHIC INFORMATION
+SUNDOWN RADIO - DEMOGRAPHIC INFORMATION
 ${data.title}
 ═══════════════════════════════════════════════════════════════════
 
@@ -438,12 +438,12 @@ target audience effectively.
 
 ═══════════════════════════════════════════
 
-Contact: advertising@eastcoastfm.co.uk
+Contact: advertising@sundownradio.co.uk
 Phone: 01620 826444
 Address: 2B Station Yards, Haddington, EH41 3PP
 
 ═══════════════════════════════════════════
-East Coast FM - Charity Registration No. SC042784
+Sundown Radio - Charity Registration No. SC042784
 Broadcasting from the heart of East Lothian on 107.6 FM
 `
 }

@@ -88,7 +88,7 @@ export default function WaysToListenPage() {
                     </div>
                     <h3 className="font-bold text-lg mb-2">Tune In</h3>
                     <p className="text-sm text-muted-foreground mb-4">
-                      Set your device to East Coast FM
+                      Set your device to Sundown Radio
                     </p>
                     <div className="space-y-3 w-full">
                       <div className="bg-muted rounded-lg p-3">
@@ -97,7 +97,7 @@ export default function WaysToListenPage() {
                       </div>
                       <div className="bg-muted rounded-lg p-3">
                         <div className="text-xs text-muted-foreground mb-1">Smart Speaker</div>
-                        <div className="text-sm font-mono">"Play East Coast FM"</div>
+                        <div className="text-sm font-mono">"Play Sundown Radio"</div>
                       </div>
                       <div className="bg-muted rounded-lg p-3">
                         <div className="text-xs text-muted-foreground mb-1">Online</div>
@@ -287,7 +287,7 @@ export default function WaysToListenPage() {
                     <div className="flex-1">
                       <h4 className="font-semibold text-sm mb-1">Say to your Alexa device:</h4>
                       <div className="bg-muted rounded-md p-3 font-mono text-sm">
-                        "Alexa, play East Coast FM"
+                        "Alexa, play Sundown Radio"
                       </div>
                     </div>
                   </div>
@@ -298,22 +298,22 @@ export default function WaysToListenPage() {
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2" />
-                      <span>"Alexa, ask TuneIn to play East Coast FM"</span>
+                      <span>"Alexa, ask TuneIn to play Sundown Radio"</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2" />
-                      <span>"Alexa, open East Coast FM"</span>
+                      <span>"Alexa, open Sundown Radio"</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2" />
-                      <span>"Alexa, resume East Coast FM"</span>
+                      <span>"Alexa, resume Sundown Radio"</span>
                     </li>
                   </ul>
                 </div>
 
                 <div className="bg-blue-50 dark:bg-blue-950/20 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
                   <p className="text-xs text-muted-foreground">
-                    <strong className="text-foreground">Tip:</strong> You can also enable the East Coast FM skill 
+                    <strong className="text-foreground">Tip:</strong> You can also enable the Sundown Radio skill 
                     in the Alexa app for enhanced features and easier access.
                   </p>
                 </div>
@@ -340,7 +340,7 @@ export default function WaysToListenPage() {
                     <div className="flex-1">
                       <h4 className="font-semibold text-sm mb-1">Say to your Google device:</h4>
                       <div className="bg-muted rounded-md p-3 font-mono text-sm">
-                        "Hey Google, play East Coast FM"
+                        "Hey Google, play Sundown Radio"
                       </div>
                     </div>
                   </div>
@@ -351,7 +351,7 @@ export default function WaysToListenPage() {
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0 mt-2" />
-                      <span>"Hey Google, play East Coast FM on TuneIn"</span>
+                      <span>"Hey Google, play Sundown Radio on TuneIn"</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0 mt-2" />
@@ -366,7 +366,7 @@ export default function WaysToListenPage() {
 
                 <div className="bg-green-50 dark:bg-green-950/20 rounded-lg p-4 border border-green-200 dark:border-green-800">
                   <p className="text-xs text-muted-foreground">
-                    <strong className="text-foreground">Tip:</strong> Set East Coast FM as your default radio 
+                    <strong className="text-foreground">Tip:</strong> Set Sundown Radio as your default radio 
                     station in the Google Home app for quick access with "Hey Google, play the radio".
                   </p>
                 </div>

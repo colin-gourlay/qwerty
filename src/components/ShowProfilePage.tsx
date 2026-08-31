@@ -81,7 +81,7 @@ export default function ShowProfilePage() {
                   <Link to="/schedule">View Full Schedule</Link>
                 </Button>
                 <ShareButton 
-                  title={`${show.name} - East Coast FM`}
+                  title={`${show.name} - Sundown Radio`}
                   description={show.description}
                   size="lg"
                 />

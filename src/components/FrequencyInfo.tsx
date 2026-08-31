@@ -33,7 +33,7 @@ export default function FrequencyInfo() {
       <div>
         <h2 className="text-3xl font-bold mb-4">How to Tune In</h2>
         <p className="text-muted-foreground mb-6">
-          East Coast FM broadcasts across East Lothian on multiple platforms. Choose the option that works best for you.
+          Sundown Radio broadcasts across East Lothian on multiple platforms. Choose the option that works best for you.
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
