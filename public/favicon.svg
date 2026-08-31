@@ -1,14 +1,14 @@
-<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="faviconTitle">
-  <title id="faviconTitle">Sundown Radio favicon</title>
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sundownFaviconTitle">
+  <title id="sundownFaviconTitle">Sundown Radio favicon</title>
   <defs>
-    <linearGradient id="faviconSunGradient" x1="30" y1="62" x2="150" y2="150" gradientUnits="userSpaceOnUse">
+    <linearGradient id="sundownFaviconSunGradient" x1="30" y1="62" x2="150" y2="150" gradientUnits="userSpaceOnUse">
       <stop stop-color="#FACC15"/>
       <stop offset="0.5" stop-color="#FB7185"/>
       <stop offset="1" stop-color="#8B5CF6"/>
     </linearGradient>
   </defs>
   <rect width="180" height="180" rx="36" fill="#0F172A"/>
-  <path d="M22 118C34 84 59 62 90 62C121 62 146 84 158 118" stroke="url(#faviconSunGradient)" stroke-width="14" stroke-linecap="round"/>
-  <circle cx="90" cy="100" r="24" fill="url(#faviconSunGradient)"/>
+  <path d="M22 118C34 84 59 62 90 62C121 62 146 84 158 118" stroke="url(#sundownFaviconSunGradient)" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="90" cy="100" r="24" fill="url(#sundownFaviconSunGradient)"/>
   <path d="M28 134H152" stroke="#CBD5E1" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
 </svg>
