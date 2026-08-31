@@ -128,34 +128,31 @@ export const shows: Show[] = [
   },
   {
     id: 'late-night-sessions',
-    name: 'The Sundown Sessions',
-    description: 'Dave guides you through the quiet hours with smooth sounds and mellow vibes. Perfect for night owls, shift workers, and anyone who appreciates music after dark.',
-    presenters: ['dave-thompson'],
-    genre: 'Chill & Ambient',
-    image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800',
-    color: 'oklch(0.40 0.08 260)',
-    strapline: 'Ambient sounds and chill music after dark',
-    broadcastSummary: 'Every night · 11pm–2am',
+    name: 'Sundown Sessions',
+    description: 'Discover your next favourite sound through exclusive tracks, artist interviews and hand-curated playlists, with each broadcast blending new discoveries, first plays and music chosen for after-dark listening.',
+    presenters: [],
+    genre: 'Alternative',
+    image: '/images/shows/sundown-sessions-banner.png',
+    color: 'oklch(0.38 0.12 295)',
+    strapline: 'Alternative Music After Dark',
+    broadcastSummary: 'Tuesday · 8pm–10pm',
     featured: true,
-    fullDescription: 'Late Night Sessions offers sanctuary in the quiet hours. Broadcasting from 11 PM to 2 AM every night, Dave Thompson creates a sonic cocoon of ambient, downtempo, and chill music perfect for unwinding, studying, or keeping company during late shifts.\n\nWith 15 years of late-night broadcasting experience, Dave understands the unique rhythm of the nocturnal world. His carefully curated selections create a consistent atmosphere that feels like a friend keeping you company through the quiet hours, whether you\'re unable to sleep, working the night shift, or simply enjoying the peace.',
-    schedule: 'Every Night, 11:00 PM - 2:00 AM',
+    fullDescription: 'Sundown Sessions is an alternative music discovery programme broadcasting every Tuesday from 8pm to 10pm (UK time).\n\nEach carefully curated broadcast blends new discoveries, exclusive first plays, artist interviews and music chosen for after-dark listening. Tune in to find your next favourite sound.',
+    schedule: 'Tuesday, 8:00 PM - 10:00 PM',
     features: [
-      'Ambient Soundscapes - Extended instrumental passages',
-      'Midnight Messages - Dedications for night workers and insomniacs',
-      'Chill Classics - Downtempo favorites from across the decades',
-      'New Age Explorations - Discovering ambient pioneers',
-      'Sleep Sounds - Special selections for listeners drifting off',
-      'Night Shift Roll Call - Shout-outs to essential workers'
+      'Exclusive Tracks - First plays and new discoveries',
+      'Artist Interviews - In-depth conversations with musicians',
+      'Hand-Curated Playlists - Music chosen for after-dark listening',
+      'New Discoveries - Alternative artists you need to hear'
     ],
     highlights: [
-      'Longest-running late night show in the region',
-      'Trusted companion for thousands of night workers',
-      'Featured in studies about radio\'s role in wellbeing',
-      'Cult following among ambient music enthusiasts'
+      'Alternative Music After Dark',
+      'Exclusive first plays and artist interviews',
+      'Carefully curated for discovery-led listening'
     ],
     contact: {
-      email: 'latenight@sundownradio.radio',
-      social: 'Message us using #LateNightSessions'
+      email: 'sundownsessions@sundownradio.radio',
+      social: 'Share your discoveries with #SundownSessions'
     }
   },
   {
