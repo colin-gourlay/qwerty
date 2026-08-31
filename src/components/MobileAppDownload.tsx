@@ -158,7 +158,7 @@ export default function MobileAppDownload() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-primary hover:text-primary/80"
-                aria-label={`Prefer a radio directory? Open ${STATION_CONFIG.name} in Radio Garden (opens in a new tab)`}
+                aria-label={`Open ${STATION_CONFIG.name} in Radio Garden (opens in a new tab)`}
               >
                 Open {STATION_CONFIG.name} in Radio Garden
               </a>
