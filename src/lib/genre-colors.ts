@@ -24,6 +24,11 @@ export const genreColorMap: Record<string, { bg: string; text: string; border: s
     text: 'oklch(1 0 0)',
     border: 'oklch(0.35 0.10 260)'
   },
+  'Alternative': {
+    bg: 'oklch(0.38 0.12 295)',
+    text: 'oklch(1 0 0)',
+    border: 'oklch(0.30 0.14 295)'
+  },
   'Specialist': {
     bg: 'oklch(0.70 0.12 180)',
     text: 'oklch(0.25 0.05 180)',
