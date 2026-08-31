@@ -1,6 +1,22 @@
-import { FacebookLogo, TwitterLogo, InstagramLogo, YoutubeLogo, RadioButton } from '@phosphor-icons/react'
+import { FacebookLogo, TwitterLogo, InstagramLogo, YoutubeLogo, RadioButton, LinkSimple, TiktokLogo, LinkedinLogo, PinterestLogo, ThreadsLogo, MastodonLogo } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { STATION_CONFIG } from '@/data/config'
+
+const normalizeUrl = (value: string | undefined, baseUrl: string): string | undefined => {
+  if (!value) return undefined
+  if (value.startsWith('http://') || value.startsWith('https://')) return value
+  return `${baseUrl}/${value.replace('@', '')}`
+}
+
+const getDisplayHandle = (value: string | undefined, fallback: string): string => {
+  if (!value) return fallback
+  if (value.startsWith('http://') || value.startsWith('https://')) {
+    const segments = value.replace(/\/$/, '').split('/')
+    const handle = segments[segments.length - 1]
+    return handle ? `@${handle}` : fallback
+  }
+  return value
+}
 
 interface SocialLinksProps {
   variant?: 'default' | 'large'
@@ -39,34 +55,29 @@ export default function SocialLinks({
 }: SocialLinksProps) {
   const iconSize = variant === 'large' ? 24 : 20
   const buttonSize = variant === 'large' ? 'default' : 'icon'
-  const normalizeUrl = (value: string | undefined, baseUrl: string): string | undefined => {
-    if (!value) return undefined
-    if (value.startsWith('http://') || value.startsWith('https://')) return value
-    return `${baseUrl}/${value.replace('@', '')}`
-  }
 
   const socialLinks = [
-    {
+    ...(facebook ? [{
       name: 'Facebook',
       icon: FacebookLogo,
       url: normalizeUrl(facebook, 'https://facebook.com'),
-      handle: facebook ?? 'Facebook',
+      handle: facebook,
       color: 'hover:text-[#1877F2]'
-    },
-    {
+    }] : []),
+    ...(x || twitter ? [{
       name: 'X',
       icon: TwitterLogo,
       url: normalizeUrl(x ?? twitter, 'https://x.com'),
-      handle: x ?? twitter ?? 'X',
+      handle: getDisplayHandle(x ?? twitter, 'X'),
       color: 'hover:text-[#1DA1F2]'
-    },
-    {
+    }] : []),
+    ...(instagram ? [{
       name: 'Instagram',
       icon: InstagramLogo,
       url: normalizeUrl(instagram, 'https://instagram.com'),
-      handle: instagram ?? 'Instagram',
+      handle: instagram,
       color: 'hover:text-[#E4405F]'
-    },
+    }] : []),
     ...(youtube ? [{
       name: 'YouTube',
       icon: YoutubeLogo,
@@ -90,52 +101,51 @@ export default function SocialLinks({
     }] : []),
     ...(tiktok ? [{
       name: 'TikTok',
-      icon: RadioButton,
+      icon: TiktokLogo,
       url: tiktok,
-      handle: 'TikTok',
+      handle: getDisplayHandle(tiktok, 'TikTok'),
       color: 'hover:text-foreground'
     }] : []),
     ...(linkedin ? [{
       name: 'LinkedIn',
-      icon: RadioButton,
+      icon: LinkedinLogo,
       url: linkedin,
-      handle: 'LinkedIn',
+      handle: getDisplayHandle(linkedin, 'LinkedIn'),
       color: 'hover:text-[#0A66C2]'
     }] : []),
     ...(pinterest ? [{
       name: 'Pinterest',
-      icon: RadioButton,
+      icon: PinterestLogo,
       url: pinterest,
-      handle: 'Pinterest',
+      handle: getDisplayHandle(pinterest, 'Pinterest'),
       color: 'hover:text-[#E60023]'
     }] : []),
     ...(threads ? [{
       name: 'Threads',
-      icon: RadioButton,
+      icon: ThreadsLogo,
       url: threads,
-      handle: 'Threads',
+      handle: getDisplayHandle(threads, 'Threads'),
       color: 'hover:text-foreground'
     }] : []),
     ...(bluesky ? [{
       name: 'Bluesky',
-      icon: RadioButton,
+      icon: LinkSimple,
       url: bluesky,
-      handle: 'Bluesky',
+      handle: getDisplayHandle(bluesky, 'Bluesky'),
       color: 'hover:text-[#1185FE]'
     }] : []),
     ...(mastodon ? [{
       name: 'Mastodon',
-      icon: RadioButton,
+      icon: MastodonLogo,
       url: mastodon,
-      handle: 'Mastodon',
+      handle: getDisplayHandle(mastodon, 'Mastodon'),
       color: 'hover:text-[#6364FF]'
     }] : [])
-  ].filter((social) => Boolean(social.url))
+  ]
 
   return (
     <div className={`flex items-center gap-2 ${className}`}>
       {socialLinks.map((social) => {
-        if (!social.url) return null
         const Icon = social.icon
         return (
           <Button

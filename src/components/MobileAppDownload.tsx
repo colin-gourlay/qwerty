@@ -35,12 +35,11 @@ export default function MobileAppDownload() {
                   </p>
                 </div>
               </div>
-              <Button 
-                className="w-full gap-2 h-12 text-base"
-                asChild
-                disabled={!STATION_CONFIG.apps?.ios}
-              >
-                {STATION_CONFIG.apps?.ios ? (
+              {STATION_CONFIG.apps?.ios ? (
+                <Button 
+                  className="w-full gap-2 h-12 text-base"
+                  asChild
+                >
                   <a 
                     href={STATION_CONFIG.apps.ios} 
                     target="_blank" 
@@ -49,13 +48,13 @@ export default function MobileAppDownload() {
                     <AppleLogo className="h-5 w-5" weight="fill" />
                     Download on the App Store
                   </a>
-                ) : (
-                  <span className="inline-flex items-center gap-2">
-                    <AppleLogo className="h-5 w-5" weight="fill" />
-                    App Store link coming soon
-                  </span>
-                )}
-              </Button>
+                </Button>
+              ) : (
+                <div className="w-full gap-2 h-12 text-base rounded-md border border-input bg-muted/40 text-muted-foreground inline-flex items-center justify-center">
+                  <AppleLogo className="h-5 w-5" weight="fill" />
+                  App Store link coming soon
+                </div>
+              )}
               {!STATION_CONFIG.apps?.ios && (
                 <p className="text-xs text-muted-foreground mt-3">
                   Our Apple App Store listing is being reactivated and will be published here once available.

@@ -18,7 +18,7 @@ import AdvertisingPage from '@/components/AdvertisingPage'
 import { shows } from '@/data/shows'
 import { schedule } from '@/data/schedule'
 import { presenters } from '@/data/presenters'
-import { upcomingGigs } from '@/data/gigs'
+import { hasUpcomingGigs, upcomingGigs } from '@/data/gigs'
 import stationLogo from '@/assets/images/sundown-radio-logo.svg'
 import SoundWave from '@/components/SoundWave'
 import { AudioPlayerProvider, useAudioPlayer } from '@/components/AudioPlayerContext'
@@ -261,7 +261,7 @@ function HomePage() {
       <section className="pb-16 page-section">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold mb-4">Upcoming Gigs</h2>
-          {upcomingGigs.length > 0 ? (
+          {hasUpcomingGigs ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {upcomingGigs.map((gig) => (
                 <Card key={gig.id} className="p-6">
