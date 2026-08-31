@@ -38,16 +38,29 @@ export default function MobileAppDownload() {
               <Button 
                 className="w-full gap-2 h-12 text-base"
                 asChild
+                disabled={!STATION_CONFIG.apps?.ios}
               >
-                <a 
-                  href={STATION_CONFIG.apps?.ios} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  <AppleLogo className="h-5 w-5" weight="fill" />
-                  Download on the App Store
-                </a>
+                {STATION_CONFIG.apps?.ios ? (
+                  <a 
+                    href={STATION_CONFIG.apps.ios} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <AppleLogo className="h-5 w-5" weight="fill" />
+                    Download on the App Store
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center gap-2">
+                    <AppleLogo className="h-5 w-5" weight="fill" />
+                    App Store link coming soon
+                  </span>
+                )}
               </Button>
+              {!STATION_CONFIG.apps?.ios && (
+                <p className="text-xs text-muted-foreground mt-3">
+                  Our Apple App Store listing is being reactivated and will be published here once available.
+                </p>
+              )}
             </Card>
 
             <Card className="p-6 hover:shadow-lg transition-shadow">
@@ -106,6 +119,27 @@ export default function MobileAppDownload() {
                   </a>
                 </Button>
               </div>
+            </Card>
+          )}
+
+          {STATION_CONFIG.radioGarden ? (
+            <Card className="p-6 mb-8">
+              <h3 className="font-semibold text-xl mb-2">Radio Garden</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Listen via our official Radio Garden listing.
+              </p>
+              <Button variant="outline" asChild>
+                <a href={STATION_CONFIG.radioGarden} target="_blank" rel="noopener noreferrer">
+                  Open in Radio Garden
+                </a>
+              </Button>
+            </Card>
+          ) : (
+            <Card className="p-6 mb-8 bg-muted/40 border-dashed">
+              <h3 className="font-semibold text-xl mb-2">Radio Garden</h3>
+              <p className="text-sm text-muted-foreground">
+                We&apos;re verifying our official Radio Garden listing URL and will publish the canonical link here once confirmed.
+              </p>
             </Card>
           )}
 
