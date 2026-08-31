@@ -253,7 +253,7 @@ function HomePage() {
           <div className="flex flex-col gap-3 mb-8 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-2">Programme discovery</p>
-              <h2 className="text-3xl font-bold">On Sundown Radio</h2>
+              <h2 className="text-3xl font-bold">On {STATION_CONFIG.name}</h2>
             </div>
             <Link to="/shows" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80">
               Browse all shows
@@ -291,7 +291,7 @@ function HomePage() {
                         <span
                           className="mb-3 inline-flex rounded-full border border-white/30 bg-white/15 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm"
                         >
-                          Sundown Radio programme
+                          {STATION_CONFIG.name} programme
                         </span>
                         <h3 className="text-2xl font-bold leading-tight drop-shadow-md">{show.name}</h3>
                       </div>
