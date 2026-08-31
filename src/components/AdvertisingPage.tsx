@@ -237,7 +237,7 @@ export default function AdvertisingPage() {
               </div>
               <h2 className="text-3xl font-bold mb-3">What Our Advertisers Say</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Don't just take our word for it. Hear from local businesses who have experienced the benefits of advertising with East Coast FM.
+                Don't just take our word for it. Hear from local businesses who have experienced the benefits of advertising with Sundown Radio.
               </p>
             </div>
 
@@ -286,9 +286,9 @@ export default function AdvertisingPage() {
                 If you are interested or want to know more, drop us an email and we'll be happy to discuss your advertising needs.
               </p>
               <Button size="lg" asChild className="gap-2">
-                <a href="mailto:advertising@eastcoastfm.co.uk">
+                <a href="mailto:advertising@sundownradio.co.uk">
                   <Envelope className="h-5 w-5" weight="bold" />
-                  advertising@eastcoastfm.co.uk
+                  advertising@sundownradio.co.uk
                 </a>
               </Button>
             </div>

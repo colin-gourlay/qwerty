@@ -7,27 +7,27 @@ export const STATION_CONFIG: StationConfig = {
   streamUrl: 'http://radio.canstream.co.uk:8117/live.mp3',
   phone: '01620 826444',
   text: '07835 90 20 30',
-  email: 'studio@eastcoastfm.co.uk',
+  email: 'studio@sundownradio.co.uk',
   address: {
     street: '2B Haddington Station Industrial Site',
     city: 'Haddington',
     postcode: 'EH41 3PP'
   },
   social: {
-    twitter: '@EastCoastFM',
-    facebook: 'EastCoastFM',
-    instagram: 'eastcoastfm',
-    youtube: '@EastCoastFM'
+    twitter: '@SundownRadio',
+    facebook: 'SundownRadio',
+    instagram: 'sundownradio',
+    youtube: '@SundownRadio'
   },
   frequency: {
     fm: '107.6',
-    online: 'eastcoastfm.co.uk/listen'
+    online: 'sundownradio.co.uk/listen'
   },
   apps: {
-    ios: 'https://apps.apple.com/app/east-coast-fm',
-    android: 'https://play.google.com/store/apps/details?id=com.appsidious.eastcoastfm'
+    ios: 'https://apps.apple.com/app/sundown-radio',
+    android: 'https://play.google.com/store/apps/details?id=com.appsidious.sundownradio'
   },
-  tunein: 'https://tunein.com/radio/East-Coast-FM-s116429/'
+  tunein: 'https://tunein.com/radio/Sundown-Radio-s116429/'
 }
 
 export const STREAM_URL = STATION_CONFIG.streamUrl
@@ -96,7 +96,7 @@ export const RECEPTION_TIPS = {
     {
       title: 'Online Streaming',
       tips: [
-        'Visit eastcoastfm.co.uk and click "Listen Live"',
+        'Visit sundownradio.co.uk and click "Listen Live"',
         'Works on all devices with internet connection',
         'Ideal for areas outside FM coverage',
         'Recommended for best audio quality'

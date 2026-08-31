@@ -134,7 +134,7 @@ export default function GetInvolvedPage() {
                 <h3 className="text-2xl font-bold">Learn New Skills</h3>
               </div>
               <p className="text-muted-foreground mb-4">
-                If you don't have the skills you'd like to have, we can help you get them. We have an ever increasing list of former members who have gone on from volunteering at East Coast FM to study media at university, or to work for commercial stations and the BBC.
+                If you don't have the skills you'd like to have, we can help you get them. We have an ever increasing list of former members who have gone on from volunteering at Sundown Radio to study media at university, or to work for commercial stations and the BBC.
               </p>
             </Card>
 
@@ -155,7 +155,7 @@ export default function GetInvolvedPage() {
             <Heart className="h-12 w-12 mx-auto mb-4" weight="duotone" />
             <h2 className="text-3xl font-bold mb-3">Whatever You Can Bring</h2>
             <p className="text-lg opacity-95">
-              If you'd like to gain experience, no matter what your age, regardless of any additional need you might have, you will be made very welcome at East Coast FM.
+              If you'd like to gain experience, no matter what your age, regardless of any additional need you might have, you will be made very welcome at Sundown Radio.
             </p>
           </div>
         </Card>

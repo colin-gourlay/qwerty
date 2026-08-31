@@ -9,7 +9,7 @@ export const shows: Show[] = [
     genre: 'Music & Talk',
     image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800',
     color: 'oklch(0.75 0.15 60)',
-    fullDescription: 'The Breakfast Club has been East Coast FM\'s flagship morning show since 2015, consistently rated as the region\'s favorite way to start the day. Host Sarah Jenkins brings her infectious energy and genuine warmth to every broadcast, creating a show that feels less like radio and more like having coffee with a friend who happens to have great taste in music.\n\nEach morning from 6 AM to 10 AM, The Breakfast Club delivers the perfect blend of entertainment, information, and interaction. From breaking news and traffic updates to celebrity interviews and listener competitions, every show is packed with content designed to inform, entertain, and energize your morning routine.',
+    fullDescription: 'The Breakfast Club has been Sundown Radio\'s flagship morning show since 2015, consistently rated as the region\'s favorite way to start the day. Host Sarah Jenkins brings her infectious energy and genuine warmth to every broadcast, creating a show that feels less like radio and more like having coffee with a friend who happens to have great taste in music.\n\nEach morning from 6 AM to 10 AM, The Breakfast Club delivers the perfect blend of entertainment, information, and interaction. From breaking news and traffic updates to celebrity interviews and listener competitions, every show is packed with content designed to inform, entertain, and energize your morning routine.',
     schedule: 'Monday to Friday, 6:00 AM - 10:00 AM',
     features: [
       'Wake Up Call Service - We\'ll call you to make sure you\'re up!',
@@ -27,8 +27,8 @@ export const shows: Show[] = [
     ],
     contact: {
       phone: '01234 567 891',
-      email: 'breakfast@eastcoastfm.radio',
-      social: 'Use #ECFMBreakfast to get involved'
+      email: 'breakfast@sundownradio.radio',
+      social: 'Use #SundownBreakfast to get involved'
     }
   },
   {
@@ -57,8 +57,8 @@ export const shows: Show[] = [
     ],
     contact: {
       phone: '01234 567 892',
-      email: 'drivetime@eastcoastfm.radio',
-      social: 'Tweet us using #ECFMDriveTime'
+      email: 'drivetime@sundownradio.radio',
+      social: 'Tweet us using #SundownDriveTime'
     }
   },
   {
@@ -86,7 +86,7 @@ export const shows: Show[] = [
       'Annual sold-out club night featuring the show\'s music'
     ],
     contact: {
-      email: 'jenny@eastcoastfm.radio',
+      email: 'jenny@sundownradio.radio',
       social: 'Follow @DJJennyPatel and use #WeekendGrooves'
     }
   },
@@ -98,7 +98,7 @@ export const shows: Show[] = [
     genre: 'News & Talk',
     image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800',
     color: 'oklch(0.55 0.10 240)',
-    fullDescription: 'Community Matters is East Coast FM\'s flagship current affairs program, bringing you the stories that shape our region. Veteran journalist Tom Harrison applies his decades of experience to uncover the truth behind local headlines and give voice to those who might otherwise go unheard.\n\nEach week, Tom and his guests tackle everything from local planning decisions and education policy to environmental issues and community projects. The show combines hard-hitting journalism with accessible discussion, ensuring listeners understand the issues that affect their daily lives and have the information they need to engage with their community.',
+    fullDescription: 'Community Matters is Sundown Radio\'s flagship current affairs program, bringing you the stories that shape our region. Veteran journalist Tom Harrison applies his decades of experience to uncover the truth behind local headlines and give voice to those who might otherwise go unheard.\n\nEach week, Tom and his guests tackle everything from local planning decisions and education policy to environmental issues and community projects. The show combines hard-hitting journalism with accessible discussion, ensuring listeners understand the issues that affect their daily lives and have the information they need to engage with their community.',
     schedule: 'Wednesday, 7:00 PM - 8:00 PM & Sunday, 10:00 AM - 11:00 AM',
     features: [
       'Investigative Reports - In-depth coverage of local issues',
@@ -116,7 +116,7 @@ export const shows: Show[] = [
     ],
     contact: {
       phone: '01234 567 893',
-      email: 'tom@eastcoastfm.radio',
+      email: 'tom@sundownradio.radio',
       social: 'Share your story with #CommunityMatters'
     }
   },
@@ -145,7 +145,7 @@ export const shows: Show[] = [
       'Cult following among ambient music enthusiasts'
     ],
     contact: {
-      email: 'latenight@eastcoastfm.radio',
+      email: 'latenight@sundownradio.radio',
       social: 'Message us using #LateNightSessions'
     }
   },
@@ -174,8 +174,8 @@ export const shows: Show[] = [
       'Music library of over 10,000 specialist recordings'
     ],
     contact: {
-      email: 'discovery@eastcoastfm.radio',
-      social: 'Share discoveries with #ECFMDiscovery'
+      email: 'discovery@sundownradio.radio',
+      social: 'Share discoveries with #SundownDiscovery'
     }
   },
   {
@@ -203,7 +203,7 @@ export const shows: Show[] = [
       'Inspired successful podcast spin-off'
     ],
     contact: {
-      email: 'sundaychill@eastcoastfm.radio',
+      email: 'sundaychill@sundownradio.radio',
       social: 'Share your Sunday with #SundayChill'
     }
   },
@@ -215,7 +215,7 @@ export const shows: Show[] = [
     genre: 'Mixed',
     image: 'https://images.unsplash.com/photo-1509114397022-ed747cca3f65?w=800',
     color: 'oklch(0.68 0.12 80)',
-    fullDescription: 'Afternoon Mix is East Coast FM\'s most eclectic show, where anything goes. Hosted by various presenters including Sarah Jenkins and Marcus Wright, this show bridges the gap between morning energy and evening wind-down with a perfectly balanced musical selection.\n\nExpect to hear everything from 80s pop classics to current chart hits, indie rock to R&B, with the occasional curveball thrown in to keep things interesting. It\'s radio for people who love all kinds of music and aren\'t confined to a single genre.',
+    fullDescription: 'Afternoon Mix is Sundown Radio\'s most eclectic show, where anything goes. Hosted by various presenters including Sarah Jenkins and Marcus Wright, this show bridges the gap between morning energy and evening wind-down with a perfectly balanced musical selection.\n\nExpect to hear everything from 80s pop classics to current chart hits, indie rock to R&B, with the occasional curveball thrown in to keep things interesting. It\'s radio for people who love all kinds of music and aren\'t confined to a single genre.',
     schedule: 'Monday to Friday, 12:00 PM - 4:00 PM',
     features: [
       'Eclectic Mix - Genre-hopping music selection',
@@ -226,14 +226,14 @@ export const shows: Show[] = [
       'Afternoon Quiz - Daily trivia with prizes'
     ],
     highlights: [
-      'Most diverse playlist on East Coast FM',
+      'Most diverse playlist on Sundown Radio',
       'Popular with workplaces and offices',
       'Gateway show for new listeners',
       'Successful training ground for new presenters'
     ],
     contact: {
       phone: '01234 567 890',
-      email: 'afternoon@eastcoastfm.radio',
+      email: 'afternoon@sundownradio.radio',
       social: 'Request tracks with #AfternoonMix'
     }
   }

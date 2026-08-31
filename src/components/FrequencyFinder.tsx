@@ -155,7 +155,7 @@ export default function FrequencyFinder() {
           method: 'dab',
           icon: Broadcast,
           title: 'DAB Digital Radio',
-          description: 'Search for "East Coast FM" on your DAB radio for crystal clear quality',
+          description: 'Search for "Sundown Radio" on your DAB radio for crystal clear quality',
           priority: 2
         },
         ...baseRecommendations
@@ -407,7 +407,7 @@ export default function FrequencyFinder() {
                 <Radio className="h-4 w-4" />
                 <AlertDescription>
                   {result.quality === 'none' 
-                    ? "You're outside our FM coverage area, but you can still enjoy East Coast FM through online streaming, our mobile app, or TuneIn Radio!"
+                    ? "You're outside our FM coverage area, but you can still enjoy Sundown Radio through online streaming, our mobile app, or TuneIn Radio!"
                     : "FM reception may be limited in your area. We recommend our online streaming service or mobile app for the best listening experience."}
                 </AlertDescription>
               </Alert>

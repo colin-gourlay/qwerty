@@ -388,7 +388,7 @@ function ShowsPage() {
           <div className="max-w-3xl">
             <h1 className="text-5xl font-bold mb-4 text-white drop-shadow-lg">Our Shows</h1>
             <p className="text-xl text-white/90 drop-shadow-md">
-              Discover the diverse range of programming on East Coast FM. From music and entertainment to news and specialist shows, there's something for everyone.
+              Discover the diverse range of programming on Sundown Radio. From music and entertainment to news and specialist shows, there's something for everyone.
             </p>
           </div>
         </div>
@@ -457,7 +457,7 @@ function PresentersPage() {
           <div className="max-w-3xl">
             <h1 className="text-5xl font-bold mb-4 text-white drop-shadow-lg">Meet Our Presenters</h1>
             <p className="text-xl text-white/90 drop-shadow-md">
-              Get to know the talented team behind East Coast FM. Our presenters bring passion, expertise, and personality to everything they do.
+              Get to know the talented team behind Sundown Radio. Our presenters bring passion, expertise, and personality to everything they do.
             </p>
           </div>
         </div>
