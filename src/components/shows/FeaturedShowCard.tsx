@@ -33,7 +33,7 @@ export function FeaturedShowCard({ show }: FeaturedShowCardProps) {
             aria-hidden="true"
           ></div>
           <div
-            className="absolute bottom-8 left-8 h-24 w-24 rounded-full border border-white/15"
+            className="absolute bottom-8 left-8 h-24 w-24 rounded-full border border-white/25"
             aria-hidden="true"
           ></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(255,255,255,0.22),transparent_26%),linear-gradient(0deg,rgba(15,23,42,0.72),transparent_60%)]" aria-hidden="true"></div>
