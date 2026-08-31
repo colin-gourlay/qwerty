@@ -289,11 +289,6 @@ function HomePage() {
                       ></div>
                       <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(255,255,255,0.22),transparent_26%),linear-gradient(0deg,rgba(15,23,42,0.72),transparent_60%)]" aria-hidden="true"></div>
                       <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                        <span
-                          className="mb-3 inline-flex rounded-full border border-white/30 bg-white/15 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm"
-                        >
-                          {STATION_CONFIG.name} programme
-                        </span>
                         <h3 className="text-2xl font-bold leading-tight drop-shadow-md">{show.name}</h3>
                       </div>
                     </div>
