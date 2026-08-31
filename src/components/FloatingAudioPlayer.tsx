@@ -26,14 +26,15 @@ export default function FloatingAudioPlayer() {
           size="icon"
           className="h-14 w-14 rounded-full shadow-lg hover:shadow-xl transition-all"
           onClick={() => setIsMinimized(false)}
+          aria-label="Expand audio player"
         >
           {isPlaying ? (
             <>
               <SoundWave />
-              <Pause weight="fill" className="h-6 w-6" />
+              <Pause weight="fill" className="h-6 w-6" aria-hidden="true" />
             </>
           ) : (
-            <Play weight="fill" className="h-6 w-6" />
+            <Play weight="fill" className="h-6 w-6" aria-hidden="true" />
           )}
         </Button>
       </motion.div>
@@ -63,7 +64,7 @@ export default function FloatingAudioPlayer() {
                     <div className="text-xs text-muted-foreground flex items-center gap-2">
                       {isPlaying ? (
                         <>
-                          <span className="relative flex h-2 w-2 flex-shrink-0">
+                          <span className="relative flex h-2 w-2 flex-shrink-0" aria-hidden="true">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
                           </span>
@@ -80,7 +81,7 @@ export default function FloatingAudioPlayer() {
                     <div className="text-xs text-muted-foreground flex items-center gap-2">
                       {isPlaying ? (
                         <>
-                          <span className="relative flex h-2 w-2">
+                          <span className="relative flex h-2 w-2" aria-hidden="true">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
                           </span>
@@ -100,12 +101,13 @@ export default function FloatingAudioPlayer() {
                 size="icon"
                 variant="ghost"
                 onClick={togglePlay}
+                aria-label={isPlaying ? 'Pause' : 'Play'}
                 className="h-12 w-12 rounded-full hover:bg-secondary hover:text-secondary-foreground transition-all flex-shrink-0"
               >
                 {isPlaying ? (
-                  <Pause weight="fill" className="h-6 w-6" />
+                  <Pause weight="fill" className="h-6 w-6" aria-hidden="true" />
                 ) : (
-                  <Play weight="fill" className="h-6 w-6" />
+                  <Play weight="fill" className="h-6 w-6" aria-hidden="true" />
                 )}
               </Button>
 
@@ -141,12 +143,13 @@ export default function FloatingAudioPlayer() {
                 size="icon"
                 variant="ghost"
                 onClick={toggleMute}
+                aria-label={isMuted ? 'Unmute' : 'Mute'}
                 className="hidden sm:flex"
               >
                 {isMuted ? (
-                  <SpeakerSlash className="h-5 w-5" />
+                  <SpeakerSlash className="h-5 w-5" aria-hidden="true" />
                 ) : (
-                  <SpeakerHigh className="h-5 w-5" />
+                  <SpeakerHigh className="h-5 w-5" aria-hidden="true" />
                 )}
               </Button>
 
@@ -156,6 +159,7 @@ export default function FloatingAudioPlayer() {
                   onValueChange={(value) => setVolume(value[0] / 100)}
                   max={100}
                   step={1}
+                  aria-label="Volume"
                   className="cursor-pointer"
                 />
               </div>
@@ -164,8 +168,9 @@ export default function FloatingAudioPlayer() {
                 size="icon"
                 variant="ghost"
                 onClick={() => setIsMinimized(true)}
+                aria-label="Minimise audio player"
               >
-                <X className="h-5 w-5" />
+                <X className="h-5 w-5" aria-hidden="true" />
               </Button>
             </div>
           </div>

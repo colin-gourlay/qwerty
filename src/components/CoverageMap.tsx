@@ -195,32 +195,37 @@ export default function CoverageMap({ className = '' }: CoverageMapProps) {
           height={dimensions.height}
           className="w-full h-auto"
           style={{ maxHeight: '600px' }}
+          role="img"
+          aria-label="Signal strength map of East Lothian showing FM radio coverage by postcode area"
         />
-        {hoveredArea && (
-          <div className="absolute top-8 right-8 bg-card border rounded-lg p-4 shadow-lg max-w-xs">
-            <div className="flex items-center gap-2 mb-2">
-              <div 
-                className="w-3 h-3 rounded-full"
-                style={{ backgroundColor: signalStrengthConfig[hoveredArea.signalStrength].color }}
-              />
-              <span className="font-mono font-bold text-lg">{hoveredArea.postcode}</span>
+        <div aria-live="polite" aria-atomic="true">
+          {hoveredArea && (
+            <div className="absolute top-8 right-8 bg-card border rounded-lg p-4 shadow-lg max-w-xs">
+              <div className="flex items-center gap-2 mb-2">
+                <div 
+                  className="w-3 h-3 rounded-full"
+                  style={{ backgroundColor: signalStrengthConfig[hoveredArea.signalStrength].color }}
+                  aria-hidden="true"
+                />
+                <span className="font-mono font-bold text-lg">{hoveredArea.postcode}</span>
+              </div>
+              <div className="text-sm font-semibold text-muted-foreground mb-1">
+                {hoveredArea.area}
+              </div>
+              <div className="flex items-center gap-1 mb-2">
+                <span className="text-xs font-medium">
+                  {signalStrengthConfig[hoveredArea.signalStrength].label}
+                </span>
+                <span className="text-xs text-muted-foreground">
+                  {signalStrengthConfig[hoveredArea.signalStrength].icon}
+                </span>
+              </div>
+              <p className="text-xs text-muted-foreground">
+                {hoveredArea.description}
+              </p>
             </div>
-            <div className="text-sm font-semibold text-muted-foreground mb-1">
-              {hoveredArea.area}
-            </div>
-            <div className="flex items-center gap-1 mb-2">
-              <span className="text-xs font-medium">
-                {signalStrengthConfig[hoveredArea.signalStrength].label}
-              </span>
-              <span className="text-xs text-muted-foreground">
-                {signalStrengthConfig[hoveredArea.signalStrength].icon}
-              </span>
-            </div>
-            <p className="text-xs text-muted-foreground">
-              {hoveredArea.description}
-            </p>
-          </div>
-        )}
+          )}
+        </div>
       </div>
 
       <div className="p-6 border-t bg-card space-y-4">
@@ -233,13 +238,25 @@ export default function CoverageMap({ className = '' }: CoverageMapProps) {
                 <Badge 
                   key={area.postcode}
                   variant="outline" 
-                  className="gap-1.5 cursor-pointer hover:bg-accent/50 transition-colors justify-start"
+                  className="gap-1.5 cursor-pointer hover:bg-accent/50 transition-colors justify-start focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`${area.postcode} – ${area.area}: ${config.label} signal`}
                   onMouseEnter={() => setHoveredPostcode(area.postcode)}
                   onMouseLeave={() => setHoveredPostcode(null)}
+                  onFocus={() => setHoveredPostcode(area.postcode)}
+                  onBlur={() => setHoveredPostcode(null)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      setHoveredPostcode(prev => prev === area.postcode ? null : area.postcode)
+                    }
+                  }}
                 >
                   <div 
                     className="w-2 h-2 rounded-full flex-shrink-0"
                     style={{ backgroundColor: config.color }}
+                    aria-hidden="true"
                   />
                   <span className="text-xs font-mono">{area.postcode}</span>
                 </Badge>
@@ -249,7 +266,7 @@ export default function CoverageMap({ className = '' }: CoverageMapProps) {
         </div>
         <div className="pt-3 border-t">
           <p className="text-xs text-muted-foreground">
-            💡 Hover over postcode areas for detailed signal information. Signal strength may vary based on terrain, buildings, and weather conditions.
+            Hover or focus postcode areas for detailed signal information. Signal strength may vary based on terrain, buildings, and weather conditions.
           </p>
         </div>
       </div>
