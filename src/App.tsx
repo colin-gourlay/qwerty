@@ -31,8 +31,6 @@ import SundownHeroPanel from '@/components/layout/SundownHeroPanel'
 import { getGenreColors } from '@/lib/genre-colors'
 import { getTimeSlotColors, getTimeOfDayPeriods } from '@/lib/time-slot-colors'
 
-const PROGRAMME_DISCOVERY_ITEM_LABEL = 'programme'
-
 export default function App() {
   return (
     <AudioPlayerProvider streamUrl={STREAM_URL}>
@@ -265,6 +263,7 @@ function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {homepageShows.map((show) => {
               const genreColors = getGenreColors(show.genre)
+              const scheduleLabel = show.broadcastSummary ?? show.schedule
 
               return (
                 <Link
@@ -293,7 +292,7 @@ function HomePage() {
                         <span
                           className="mb-3 inline-flex rounded-full border border-white/30 bg-white/15 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm"
                         >
-                          {STATION_CONFIG.name} {PROGRAMME_DISCOVERY_ITEM_LABEL}
+                          {STATION_CONFIG.name} programme
                         </span>
                         <h3 className="text-2xl font-bold leading-tight drop-shadow-md">{show.name}</h3>
                       </div>
@@ -310,9 +309,9 @@ function HomePage() {
                         >
                           {show.genre}
                         </span>
-                        {(show.broadcastSummary ?? show.schedule) && (
+                        {scheduleLabel && (
                           <span className="inline-flex rounded-full border bg-muted px-3 py-1 text-xs font-semibold text-muted-foreground">
-                            {show.broadcastSummary ?? show.schedule}
+                            {scheduleLabel}
                           </span>
                         )}
                       </div>
