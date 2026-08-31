@@ -31,6 +31,10 @@ import SundownHeroPanel from '@/components/layout/SundownHeroPanel'
 import { getGenreColors } from '@/lib/genre-colors'
 import { getTimeSlotColors, getTimeOfDayPeriods } from '@/lib/time-slot-colors'
 
+const MAX_HOMEPAGE_SHOWS = 3
+const DEFAULT_PROGRAMME_COLOR = 'oklch(0.40 0.08 260)'
+const PROGRAMME_ART_END_COLOR = 'oklch(0.16 0.05 260)'
+
 export default function App() {
   return (
     <AudioPlayerProvider streamUrl={STREAM_URL}>
@@ -203,7 +207,7 @@ function Header() {
 function HomePage() {
   const { togglePlay, isPlaying } = useAudioPlayer()
   const featuredShows = shows.filter((show) => show.featured)
-  const homepageShows = (featuredShows.length > 0 ? featuredShows : shows).slice(0, 3)
+  const homepageShows = (featuredShows.length > 0 ? featuredShows : shows).slice(0, MAX_HOMEPAGE_SHOWS)
 
   return (
     <div>
@@ -270,13 +274,12 @@ function HomePage() {
                   key={show.id}
                   to={`/shows/${show.id}`}
                   className="group block h-full rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                  aria-label={`Explore ${show.name}`}
                 >
                   <div className="flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
                     <div
                       className="relative aspect-[4/3] overflow-hidden bg-slate-950"
                       style={{
-                        background: `linear-gradient(135deg, ${show.color ?? 'oklch(0.40 0.08 260)'} 0%, oklch(0.16 0.05 260) 100%)`
+                        background: `linear-gradient(135deg, ${show.color ?? DEFAULT_PROGRAMME_COLOR} 0%, ${PROGRAMME_ART_END_COLOR} 100%)`
                       }}
                     >
                       <div
