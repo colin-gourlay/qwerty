@@ -593,6 +593,7 @@
       oklch(0.38 0.12 14) 68%,
       oklch(0.63 0.15 62) 100%
     );
+  background-size: cover;
 }
 
 .gradient-schedule {

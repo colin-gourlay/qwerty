@@ -7,10 +7,10 @@ interface SundownHeroPanelProps {
 
 export default function SundownHeroPanel({ frequency, coverageArea }: SundownHeroPanelProps) {
   return (
-    <div className="hidden lg:block" aria-hidden="true">
+    <div className="hidden lg:block">
       <div className="relative rounded-2xl border border-amber-100/20 bg-slate-950/30 p-6 shadow-2xl backdrop-blur-sm">
-        <div className="absolute -inset-6 -z-10 rounded-full bg-amber-300/15 blur-3xl"></div>
-        <div className="relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-slate-950/45">
+        <div className="absolute -inset-6 -z-10 rounded-full bg-amber-300/15 blur-3xl" aria-hidden="true"></div>
+        <div className="relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-slate-950/45" aria-hidden="true">
           <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-amber-100/20"></div>
           <div className="absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full border border-rose-300/25"></div>
           <div className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-amber-200 via-rose-400 to-violet-500 shadow-2xl shadow-rose-950/50"></div>
