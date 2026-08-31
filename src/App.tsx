@@ -27,6 +27,7 @@ import SocialLinks from '@/components/SocialLinks'
 import CoverageMap from '@/components/CoverageMap'
 import FrequencyInfo from '@/components/FrequencyInfo'
 import MobileAppDownload from '@/components/MobileAppDownload'
+import SundownHeroPanel from '@/components/layout/SundownHeroPanel'
 import { getGenreColors } from '@/lib/genre-colors'
 import { getTimeSlotColors, getTimeOfDayPeriods } from '@/lib/time-slot-colors'
 
@@ -205,37 +206,42 @@ function HomePage() {
   return (
     <div>
       <section className="relative overflow-hidden gradient-hero py-12 page-section">
-        <div className="absolute inset-0 pattern-radio-waves opacity-30"></div>
+        <div className="absolute inset-0 pattern-radio-waves opacity-20"></div>
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-amber-200/50 to-transparent" aria-hidden="true"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-sm font-medium text-white mb-4 border border-white/30">
-              <span className="relative flex h-2 w-2" aria-hidden="true">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
-              </span>
-              LIVE NOW
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_22rem]">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-2 rounded-full bg-slate-950/45 backdrop-blur-sm px-3 py-1 text-sm font-medium text-amber-100 mb-4 border border-amber-200/30">
+                <span className="relative flex h-2 w-2" aria-hidden="true">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-200 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-200"></span>
+                </span>
+                LIVE NOW
+              </div>
+              <h1 className="text-5xl sm:text-6xl font-bold mb-4 text-white drop-shadow-lg">
+                {STATION_CONFIG.name}
+              </h1>
+              <p className="text-xl text-amber-50/90 mb-6 drop-shadow-md">
+                {STATION_CONFIG.description}
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Button
+                  size="lg"
+                  className="gap-2 animate-pulse-subtle hover:animate-none bg-amber-200 hover:bg-amber-100 text-slate-950 shadow-xl hover:shadow-2xl transition-all duration-300"
+                  onClick={togglePlay}
+                  aria-pressed={isPlaying}
+                >
+                  <Play weight="fill" className="h-5 w-5" aria-hidden="true" />
+                  {isPlaying ? 'Now Playing' : 'Listen Live'}
+                  {isPlaying && <SoundWave />}
+                </Button>
+                <Button size="lg" variant="outline" asChild className="bg-slate-950/20 backdrop-blur-sm border-amber-100/40 text-white hover:bg-amber-100/15 shadow-lg">
+                  <Link to="/schedule">View Schedule</Link>
+                </Button>
+              </div>
             </div>
-            <h1 className="text-5xl sm:text-6xl font-bold mb-4 text-white drop-shadow-lg">
-              {STATION_CONFIG.name}
-            </h1>
-            <p className="text-xl text-white/90 mb-6 drop-shadow-md">
-              {STATION_CONFIG.description}
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button 
-                size="lg" 
-                className="gap-2 animate-pulse-subtle hover:animate-none bg-white hover:bg-white/90 text-primary shadow-xl hover:shadow-2xl transition-all duration-300"
-                onClick={togglePlay}
-                aria-pressed={isPlaying}
-              >
-                <Play weight="fill" className="h-5 w-5" aria-hidden="true" />
-                {isPlaying ? 'Now Playing' : 'Listen Live'}
-                {isPlaying && <SoundWave />}
-              </Button>
-              <Button size="lg" variant="outline" asChild className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 shadow-lg">
-                <Link to="/schedule">View Schedule</Link>
-              </Button>
-            </div>
+
+            <SundownHeroPanel frequency={STATION_CONFIG.broadcastLabel} coverageArea={STATION_CONFIG.coverageArea} />
           </div>
         </div>
       </section>

@@ -68,6 +68,8 @@ export interface StationConfig {
   name: string
   tagline: string
   description: string
+  broadcastLabel: string
+  coverageArea: string
   streamUrl: string
   phone: string
   whatsapp: string
