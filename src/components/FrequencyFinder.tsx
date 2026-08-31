@@ -298,7 +298,9 @@ export default function FrequencyFinder() {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="flex gap-3">
             <div className="flex-1">
+              <label htmlFor="postcode-input" className="sr-only">UK postcode</label>
               <Input
+                id="postcode-input"
                 type="text"
                 placeholder="Enter UK postcode (e.g., EH41 4HA)"
                 value={postcode}
@@ -318,15 +320,15 @@ export default function FrequencyFinder() {
           </div>
 
           {error && (
-            <Alert variant="destructive">
-              <Warning className="h-4 w-4" />
+            <Alert variant="destructive" role="alert">
+              <Warning className="h-4 w-4" aria-hidden="true" />
               <AlertDescription>{error}</AlertDescription>
             </Alert>
           )}
         </form>
 
         {result && (
-          <div className="mt-6 space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
+          <div className="mt-6 space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500" aria-live="polite" aria-atomic="true">
             <div className="flex items-center gap-3 p-4 rounded-lg bg-muted/50">
               <MapPin className="h-5 w-5 text-primary flex-shrink-0" weight="fill" />
               <div className="flex-1">

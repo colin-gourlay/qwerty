@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
 import { Radio, Calendar, Users, Newspaper, Play, List, X, Phone, ChatCircle, Envelope, MapPin, Headphones, Info, Heart, HandHeart } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { STATION_CONFIG, STREAM_URL } from '@/data/config'
@@ -34,8 +34,14 @@ export default function App() {
     <AudioPlayerProvider streamUrl={STREAM_URL}>
       <BrowserRouter>
         <div className="min-h-screen bg-background flex flex-col pb-20">
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-md focus:bg-primary focus:text-primary-foreground focus:shadow-lg"
+          >
+            Skip to main content
+          </a>
           <Header />
-          <main className="flex-1">
+          <main id="main-content" className="flex-1">
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
@@ -100,7 +106,7 @@ function Header() {
             />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-4 lg:gap-6 flex-wrap justify-end">
+          <nav aria-label="Main navigation" className="hidden md:flex items-center gap-4 lg:gap-6 flex-wrap justify-end">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -116,8 +122,9 @@ function Header() {
               size="sm" 
               className="gap-2 animate-pulse-subtle hover:animate-none bg-secondary hover:bg-secondary/90 text-secondary-foreground"
               onClick={togglePlay}
+              aria-pressed={isPlaying}
             >
-              <Play weight="fill" className="h-4 w-4" />
+              <Play weight="fill" className="h-4 w-4" aria-hidden="true" />
               {isPlaying ? 'Now Playing' : 'Listen Live'}
               {isPlaying && <SoundWave />}
             </Button>
@@ -128,7 +135,7 @@ function Header() {
               asChild
             >
               <Link to="/donate">
-                <Heart weight="fill" className="h-4 w-4" />
+                <Heart weight="fill" className="h-4 w-4" aria-hidden="true" />
                 Donate
               </Link>
             </Button>
@@ -136,12 +143,13 @@ function Header() {
 
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon">
-                <List className="h-5 w-5" />
+              <Button variant="ghost" size="icon" aria-label="Open navigation menu">
+                <List className="h-5 w-5" aria-hidden="true" />
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px]">
-              <nav className="flex flex-col gap-4 mt-8">
+              <SheetTitle className="sr-only">Navigation menu</SheetTitle>
+              <nav aria-label="Mobile navigation" className="flex flex-col gap-4 mt-8">
                 {navItems.map((item) => {
                   const Icon = item.icon
                   return (
@@ -155,7 +163,7 @@ function Header() {
                           : 'hover:bg-accent'
                       }`}
                     >
-                      <Icon className="h-5 w-5" />
+                      <Icon className="h-5 w-5" aria-hidden="true" />
                       <span className="font-medium">{item.label}</span>
                     </Link>
                   )
@@ -166,8 +174,9 @@ function Header() {
                     togglePlay()
                     setMobileMenuOpen(false)
                   }}
+                  aria-pressed={isPlaying}
                 >
-                  <Play weight="fill" className="h-4 w-4" />
+                  <Play weight="fill" className="h-4 w-4" aria-hidden="true" />
                   {isPlaying ? 'Now Playing' : 'Listen Live'}
                   {isPlaying && <SoundWave />}
                 </Button>
@@ -176,7 +185,7 @@ function Header() {
                   asChild
                 >
                   <Link to="/donate" onClick={() => setMobileMenuOpen(false)}>
-                    <Heart weight="fill" className="h-4 w-4" />
+                    <Heart weight="fill" className="h-4 w-4" aria-hidden="true" />
                     Donate
                   </Link>
                 </Button>
@@ -199,7 +208,7 @@ function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-sm font-medium text-white mb-4 border border-white/30">
-              <span className="relative flex h-2 w-2">
+              <span className="relative flex h-2 w-2" aria-hidden="true">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
               </span>
@@ -216,8 +225,9 @@ function HomePage() {
                 size="lg" 
                 className="gap-2 animate-pulse-subtle hover:animate-none bg-white hover:bg-white/90 text-primary shadow-xl hover:shadow-2xl transition-all duration-300"
                 onClick={togglePlay}
+                aria-pressed={isPlaying}
               >
-                <Play weight="fill" className="h-5 w-5" />
+                <Play weight="fill" className="h-5 w-5" aria-hidden="true" />
                 {isPlaying ? 'Now Playing' : 'Listen Live'}
                 {isPlaying && <SoundWave />}
               </Button>
@@ -514,7 +524,7 @@ function ContactPage() {
             <Card className="p-6">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <ChatCircle className="h-6 w-6 text-primary" weight="duotone" />
+                  <ChatCircle className="h-6 w-6 text-primary" weight="duotone" aria-hidden="true" />
                 </div>
                 <div className="flex-1">
                   <div className="font-semibold text-lg mb-1">Text Message</div>
@@ -531,7 +541,7 @@ function ContactPage() {
             <Card className="p-6">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Phone className="h-6 w-6 text-primary" weight="duotone" />
+                  <Phone className="h-6 w-6 text-primary" weight="duotone" aria-hidden="true" />
                 </div>
                 <div className="flex-1">
                   <div className="font-semibold text-lg mb-1">Phone</div>
@@ -548,7 +558,7 @@ function ContactPage() {
             <Card className="p-6">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Envelope className="h-6 w-6 text-primary" weight="duotone" />
+                  <Envelope className="h-6 w-6 text-primary" weight="duotone" aria-hidden="true" />
                 </div>
                 <div className="flex-1">
                   <div className="font-semibold text-lg mb-1">Email</div>
@@ -565,7 +575,7 @@ function ContactPage() {
             <Card className="p-6">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <MapPin className="h-6 w-6 text-primary" weight="duotone" />
+                  <MapPin className="h-6 w-6 text-primary" weight="duotone" aria-hidden="true" />
                 </div>
                 <div className="flex-1">
                   <div className="font-semibold text-lg mb-1">Address</div>
@@ -601,7 +611,7 @@ function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-                <Radio className="h-6 w-6 text-primary-foreground" weight="bold" />
+                <Radio className="h-6 w-6 text-primary-foreground" weight="bold" aria-hidden="true" />
               </div>
               <div>
                 <div className="font-bold">{STATION_CONFIG.name}</div>
@@ -618,7 +628,7 @@ function Footer() {
           </div>
           <div>
             <h3 className="font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
+            <ul aria-label="Quick links" className="space-y-2 text-sm">
               <li><Link to="/" className="text-muted-foreground hover:text-foreground">Home</Link></li>
               <li><Link to="/about" className="text-muted-foreground hover:text-foreground">About</Link></li>
               <li><Link to="/history" className="text-muted-foreground hover:text-foreground">History</Link></li>
@@ -633,21 +643,21 @@ function Footer() {
           </div>
           <div>
             <h3 className="font-semibold mb-4">Contact</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <ul aria-label="Contact information" className="space-y-2 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
-                <ChatCircle className="h-4 w-4 flex-shrink-0" />
+                <ChatCircle className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
                 <span>{STATION_CONFIG.text}</span>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 flex-shrink-0" />
+                <Phone className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
                 <span>{STATION_CONFIG.phone}</span>
               </li>
               <li className="flex items-center gap-2">
-                <Envelope className="h-4 w-4 flex-shrink-0" />
+                <Envelope className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
                 <span>{STATION_CONFIG.email}</span>
               </li>
               <li className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 flex-shrink-0 mt-0.5" />
+                <MapPin className="h-4 w-4 flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <span>{STATION_CONFIG.address.city}, {STATION_CONFIG.address.postcode}</span>
               </li>
             </ul>
