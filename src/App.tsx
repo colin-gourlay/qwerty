@@ -277,7 +277,7 @@ function HomePage() {
                 >
                   <div className="flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
                     <div
-                      className="relative aspect-[4/3] overflow-hidden bg-slate-950"
+                      className="relative aspect-[4/3] overflow-hidden"
                       style={{
                         background: `linear-gradient(135deg, ${show.color ?? DEFAULT_PROGRAMME_COLOR} 0%, ${PROGRAMME_ART_END_COLOR} 100%)`
                       }}
