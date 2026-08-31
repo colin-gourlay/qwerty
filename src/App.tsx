@@ -261,7 +261,7 @@ function HomePage() {
                   <Radio className="absolute left-6 top-6 h-8 w-8 text-amber-100" weight="duotone" />
                   <Broadcast className="absolute right-6 top-6 h-8 w-8 text-rose-200" weight="duotone" />
                 </div>
-                <div className="mt-4 flex items-center justify-between gap-4 text-xs font-semibold uppercase tracking-[0.28em] text-amber-100/85">
+                <div className="mt-4 flex items-center justify-between gap-4 text-xs font-semibold uppercase tracking-[0.28em] text-amber-50">
                   <span>{fmFrequency}</span>
                   <span>{STATION_CONFIG.coverageArea}</span>
                 </div>
