@@ -144,6 +144,7 @@ export default function MobileAppDownload() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-primary hover:text-primary/80"
+                aria-label={`Open the ${STATION_CONFIG.name} Radio Garden listing`}
               >
                 Open {STATION_CONFIG.name} in Radio Garden
               </a>
@@ -157,6 +158,7 @@ export default function MobileAppDownload() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-primary hover:text-primary/80"
+                aria-label={`Open the ${STATION_CONFIG.name} TuneIn listing`}
               >
                 Open {STATION_CONFIG.name} in TuneIn
               </a>
