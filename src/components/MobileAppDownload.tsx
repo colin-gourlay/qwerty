@@ -1,4 +1,4 @@
-import { DeviceMobile, AppleLogo, GooglePlayLogo, MicrophoneStage, WaveformSlash } from '@phosphor-icons/react'
+import { DeviceMobile, AppleLogo, GooglePlayLogo, SpeakerHigh, WaveformSlash } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { STATION_CONFIG } from '@/data/config'
@@ -99,7 +99,7 @@ export default function MobileAppDownload() {
             <Card className="p-6">
               <div className="flex items-start gap-4 mb-5">
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <MicrophoneStage className="h-7 w-7 text-primary" weight="duotone" />
+                  <SpeakerHigh className="h-7 w-7 text-primary" weight="duotone" />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-xl mb-2">Listen with Alexa</h3>
@@ -136,7 +136,7 @@ export default function MobileAppDownload() {
             </Card>
           </div>
 
-          {STATION_CONFIG.radioGarden ? (
+          {STATION_CONFIG.radioGarden && (
             <div className="text-center text-sm text-muted-foreground">
               Prefer a radio directory?{' '}
               <a
@@ -149,26 +149,6 @@ export default function MobileAppDownload() {
                 Open {STATION_CONFIG.name} in Radio Garden
               </a>
               .
-            </div>
-          ) : STATION_CONFIG.tunein ? (
-            <div className="text-center text-sm text-muted-foreground">
-              Prefer a radio directory?{' '}
-              <a
-                href={STATION_CONFIG.tunein}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-primary hover:text-primary/80"
-                aria-label={`Open the ${STATION_CONFIG.name} TuneIn listing`}
-              >
-                Open {STATION_CONFIG.name} in TuneIn
-              </a>
-              .
-            </div>
-          ) : (
-            <div className="text-center text-sm text-muted-foreground">
-              <p>
-                More listening directory links will be added here once they are confirmed.
-              </p>
             </div>
           )}
         </div>
