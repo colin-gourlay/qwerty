@@ -91,7 +91,7 @@ export interface StationConfig {
     bluesky?: string
     mastodon?: string
   }
-  frequency?: {
+  frequency: {
     fm: string
     online: string
   }

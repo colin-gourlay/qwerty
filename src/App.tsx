@@ -201,7 +201,7 @@ function Header() {
 
 function HomePage() {
   const { togglePlay, isPlaying } = useAudioPlayer()
-  const fmFrequency = STATION_CONFIG.frequency?.fm
+  const fmFrequency = `${STATION_CONFIG.frequency.fm} FM`
 
   return (
     <div>
@@ -262,7 +262,7 @@ function HomePage() {
                   <Broadcast className="absolute right-6 top-6 h-8 w-8 text-rose-200" weight="duotone" />
                 </div>
                 <div className="mt-4 flex items-center justify-between gap-4 text-xs font-semibold uppercase tracking-[0.28em] text-amber-100/85">
-                  {fmFrequency && <span>{fmFrequency} FM</span>}
+                  <span>{fmFrequency}</span>
                   <span>{STATION_CONFIG.coverageArea}</span>
                 </div>
               </div>
