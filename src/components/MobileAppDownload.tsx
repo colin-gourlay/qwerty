@@ -51,7 +51,7 @@ export default function MobileAppDownload() {
               ) : (
                 <div
                   className="w-full gap-2 h-12 text-base rounded-md border border-input bg-muted/40 text-muted-foreground inline-flex items-center justify-center"
-                  role="status"
+                  role="note"
                 >
                   <AppleLogo className="h-5 w-5" weight="fill" />
                   App Store link coming soon
@@ -94,7 +94,7 @@ export default function MobileAppDownload() {
               ) : (
                 <div
                   className="w-full gap-2 h-12 text-base rounded-md border border-input bg-muted/40 text-muted-foreground inline-flex items-center justify-center"
-                  role="status"
+                  role="note"
                 >
                   <GooglePlayLogo className="h-5 w-5" weight="fill" />
                   Google Play link coming soon
@@ -141,7 +141,7 @@ export default function MobileAppDownload() {
               ) : (
                 <div
                   className="w-full gap-2 h-12 text-base rounded-md border border-input bg-muted/40 text-muted-foreground inline-flex items-center justify-center"
-                  role="status"
+                  role="note"
                 >
                   <Radio className="h-5 w-5" />
                   TuneIn listing coming soon
@@ -158,9 +158,9 @@ export default function MobileAppDownload() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-primary hover:text-primary/80"
+                aria-label={`Prefer a radio directory? Open ${STATION_CONFIG.name} in Radio Garden (opens in a new tab)`}
               >
                 Open {STATION_CONFIG.name} in Radio Garden
-                <span className="sr-only"> (opens in a new tab)</span>
               </a>
               .
             </div>
