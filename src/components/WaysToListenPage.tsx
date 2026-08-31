@@ -287,7 +287,7 @@ export default function WaysToListenPage() {
                     <div className="flex-1">
                       <h4 className="font-semibold text-sm mb-1">Say to your Alexa device:</h4>
                       <div className="bg-muted rounded-md p-3 font-mono text-sm">
-                        "Alexa, play Sundown Radio"
+                        "Alexa, play Sundown Radio on TuneIn"
                       </div>
                     </div>
                   </div>
@@ -302,19 +302,15 @@ export default function WaysToListenPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2" />
-                      <span>"Alexa, open Sundown Radio"</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2" />
-                      <span>"Alexa, resume Sundown Radio"</span>
+                      <span>"Alexa, play Sundown Radio"</span>
                     </li>
                   </ul>
                 </div>
 
                 <div className="bg-blue-50 dark:bg-blue-950/20 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
                   <p className="text-xs text-muted-foreground">
-                    <strong className="text-foreground">Tip:</strong> You can also enable the Sundown Radio skill 
-                    in the Alexa app for enhanced features and easier access.
+                    <strong className="text-foreground">Tip:</strong> Sundown Radio is available via TuneIn on Alexa.
+                    Make sure TuneIn is linked in your Alexa app for the best experience.
                   </p>
                 </div>
               </div>
