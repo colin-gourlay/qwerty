@@ -2,7 +2,7 @@
 
 ## Scope
 
-This audit reviews the current `qwerty` station site as implemented in this repository. It uses the issue brief as the Sundown Sessions baseline:
+This audit reviews the current Sundown Radio station site as implemented in this repository. It uses the issue brief as the Sundown Sessions baseline:
 
 - Sundown Radio should feel **broader** while Sundown Sessions feels **deeper**
 - both sites should read as one brand family
@@ -13,12 +13,12 @@ This audit reviews the current `qwerty` station site as implemented in this repo
 
 ## Evidence reviewed
 
-- Route map and shared chrome: `/home/runner/work/qwerty/qwerty/src/App.tsx`
-- Player and live state: `/home/runner/work/qwerty/qwerty/src/components/AudioPlayerContext.tsx`, `/home/runner/work/qwerty/qwerty/src/components/FloatingAudioPlayer.tsx`, `/home/runner/work/qwerty/qwerty/src/hooks/use-current-show.ts`
-- Visual system: `/home/runner/work/qwerty/qwerty/src/index.css`
-- Station pages: `/home/runner/work/qwerty/qwerty/src/components/*.tsx`
-- Content/data model: `/home/runner/work/qwerty/qwerty/src/data/*.ts`
-- Historical documentation: `/home/runner/work/qwerty/qwerty/README.md`, `/home/runner/work/qwerty/qwerty/PRD.md`
+- Route map and shared chrome: `src/App.tsx`
+- Player and live state: `src/components/AudioPlayerContext.tsx`, `src/components/FloatingAudioPlayer.tsx`, `src/hooks/use-current-show.ts`
+- Visual system: `src/index.css`
+- Station pages: `src/components/*.tsx`
+- Content/data model: `src/data/*.ts`
+- Historical documentation: `README.md`, `PRD.md`
 
 ## Headline judgement
 
@@ -57,7 +57,7 @@ In short:
 | Coverage map and reception guidance | Coverage map, reception tabs and postcode-based frequency finder are substantial service features (`CoverageMap.tsx`, `FrequencyInfo.tsx`, `FrequencyFinder.tsx`). | **Station-specific** | Exactly the kind of functionality that should remain distinct from Show properties. | Keep. | Retain as a differentiating station utility; visual simplification can happen later without reducing scope. | Medium |
 | Calls to action | Listen Live and Donate are consistently promoted, but many pages accumulate extra share/download/action affordances. | **Legacy / divergent** | Sessions principles caution against surfacing functionality simply because it exists. | Yes. | Focus CTA hierarchy around listening, schedule discovery, show exploration and a small number of support actions. | Medium |
 | Cross-site journeys | I found no explicit route from station-level show pages into a deeper Sundown Sessions or other dedicated Show property. | **Legacy / divergent** | The brief specifically asks the station site to avoid duplicating deep show content when a natural cross-site journey would be better. | Yes. | Add explicit “visit the full show site” style pathways where a dedicated Show property exists. | High |
-| Responsive/mobile behaviour | The site uses responsive grids, a mobile sheet menu and a compactened player (`App.tsx`, `FloatingAudioPlayer.tsx`, page components). | **Aligned** | The mobile behaviour is materially considered rather than desktop-only. | No major structural change. | Keep the responsive foundations. | Low |
+| Responsive/mobile behaviour | The site uses responsive grids, a mobile sheet menu and a compact player (`App.tsx`, `FloatingAudioPlayer.tsx`, page components). | **Aligned** | The mobile behaviour is materially considered rather than desktop-only. | No major structural change. | Keep the responsive foundations. | Low |
 | Accessibility basics | There is a skip link, labelled nav, labelled controls, keyboardable postcode badges and live region support in the map (`App.tsx`, `CoverageMap.tsx`, player controls). | **Aligned** | These are solid foundations and should be retained. | Keep. | Preserve and extend. | Low |
 | Reduced-motion behaviour | I found no `prefers-reduced-motion` handling despite widespread animation and motion (`src/index.css`, `FloatingAudioPlayer.tsx`, `HistoryTimeline.tsx`). | **Legacy / divergent** | This directly conflicts with the issue’s accessibility and reduced-motion requirement. | Yes. | Add reduced-motion fallbacks before any further motion-heavy styling work. | High |
 | Imagery and artwork treatment | Shows, presenters and history all use remote stock-style imagery from Unsplash (`src/data/shows.ts`, `src/data/presenters.ts`, `src/data/history.ts`). | **Legacy / divergent** | This weakens editorial credibility and brand-family distinctiveness. | Yes. | Shift toward controlled station/show artwork and reduce dependence on generic stock imagery. | Medium |
