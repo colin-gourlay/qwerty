@@ -588,7 +588,7 @@
       oklch(0.38 0.12 14) 68%,
       oklch(0.63 0.15 62) 100%
     );
-  background-size: 220% 220%, 220% 220%, 180px 180px, 100% 100%;
+  background-size: 100% 100%, 100% 100%, 180px 180px, 100% 100%;
 }
 
 .gradient-schedule {
