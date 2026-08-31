@@ -111,7 +111,7 @@ export default function MobileAppDownload() {
               <div className="rounded-lg bg-muted/60 p-4 text-sm mb-4">
                 “Alexa, play {STATION_CONFIG.name} on TuneIn”
               </div>
-              {STATION_CONFIG.tunein && (
+              {STATION_CONFIG.tunein ? (
                 <Button
                   variant="outline"
                   className="w-full gap-2 h-12 text-base"
@@ -127,6 +127,11 @@ export default function MobileAppDownload() {
                     Open TuneIn listing
                   </a>
                 </Button>
+              ) : (
+                <div className="w-full gap-2 h-12 text-base rounded-md border border-input bg-muted/40 text-muted-foreground inline-flex items-center justify-center">
+                  <WaveformSlash className="h-5 w-5" />
+                  TuneIn listing coming soon
+                </div>
               )}
             </Card>
           </div>
