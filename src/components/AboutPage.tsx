@@ -164,7 +164,7 @@ export default function AboutPage() {
               <div className="flex-1">
                 <h2 className="text-2xl font-bold mb-2">Registered Charity</h2>
                 <p className="text-muted-foreground">
-                  East Coast FM is a registered Charity in Scotland with the Registration No. <span className="font-semibold text-foreground">SC042784</span>
+                  Sundown Radio is a registered Charity in Scotland with the Registration No. <span className="font-semibold text-foreground">SC042784</span>
                 </p>
               </div>
             </div>
@@ -173,7 +173,7 @@ export default function AboutPage() {
           <Card className="p-8 bg-gradient-to-br from-primary/5 to-accent/5">
             <h2 className="text-2xl font-bold mb-4">Get Involved</h2>
             <p className="text-muted-foreground mb-4">
-              East Coast FM is always looking for volunteers, whether you want to present a show, work behind the scenes, or contribute your skills in other ways. We provide full training and support to help you get started.
+              Sundown Radio is always looking for volunteers, whether you want to present a show, work behind the scenes, or contribute your skills in other ways. We provide full training and support to help you get started.
             </p>
             <p className="text-muted-foreground mb-6">
               If you're interested in volunteering, have an idea for a show, or want to support the station in any way, we'd love to hear from you.
