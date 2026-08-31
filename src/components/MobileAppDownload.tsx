@@ -1,4 +1,4 @@
-import { DeviceMobile, AppleLogo, GooglePlayLogo, Radio, SpeakerHigh } from '@phosphor-icons/react'
+import { DeviceMobile, AppleLogo, GooglePlayLogo, Radio } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { STATION_CONFIG } from '@/data/config'
@@ -105,7 +105,7 @@ export default function MobileAppDownload() {
             <Card className="p-6">
               <div className="flex items-start gap-4 mb-5">
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <SpeakerHigh className="h-7 w-7 text-primary" weight="duotone" />
+                  <Radio className="h-7 w-7 text-primary" weight="duotone" />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-xl mb-2">Listen with Alexa</h3>
