@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { shows } from '@/data/shows'
 import { schedule } from '@/data/schedule'
 import { STATION_CONFIG } from '@/data/config'
-import stationLogo from '@/assets/images/station-logo.png'
+import stationLogo from '@/assets/images/sundown-radio-logo.svg'
 import { toast } from 'sonner'
 
 interface ScheduleImageGeneratorProps {

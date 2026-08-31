@@ -1,0 +1,16 @@
+<svg width="640" height="180" viewBox="0 0 640 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sdrSundownLogoTitleA1 sdrSundownLogoDescA1">
+  <title id="sdrSundownLogoTitleA1">Sundown Radio</title>
+  <desc id="sdrSundownLogoDescA1">Sundown Radio logo featuring a sunset icon and station name</desc>
+  <defs>
+    <linearGradient id="sdrSundownLogoGradientA1" x1="26" y1="70" x2="110" y2="146" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FACC15"/>
+      <stop offset="0.5" stop-color="#FB7185"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+  <path d="M20 116C30 88 54 70 83 70C112 70 136 88 146 116" stroke="url(#sdrSundownLogoGradientA1)" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="83" cy="103" r="23" fill="url(#sdrSundownLogoGradientA1)"/>
+  <path d="M22 130H144" stroke="#64748B" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+  <text x="175" y="95" fill="#F8FAFC" stroke="#0F172A" stroke-width="1.5" paint-order="stroke" font-family="Arial, sans-serif" font-size="58" font-weight="700" letter-spacing="1.2">SUNDOWN</text>
+  <text x="177" y="137" fill="#F8FAFC" stroke="#1E293B" stroke-width="1" paint-order="stroke" font-family="Arial, sans-serif" font-size="30" font-weight="600" letter-spacing="5">RADIO</text>
+</svg>
