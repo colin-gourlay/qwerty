@@ -502,6 +502,13 @@ function NewsPage() {
 }
 
 function ContactPage() {
+  const whatsappNumber = STATION_CONFIG.whatsapp.replace(/\s/g, '').replace(/^\+/, '')
+  const whatsappInternationalNumber = whatsappNumber.startsWith('0')
+    ? `44${whatsappNumber.slice(1)}`
+    : whatsappNumber.startsWith('44')
+      ? whatsappNumber
+      : `44${whatsappNumber}`
+
   return (
     <div>
       <section className="relative overflow-hidden gradient-contact py-20 page-section">
@@ -529,12 +536,12 @@ function ContactPage() {
                 <div className="flex-1">
                   <div className="font-semibold text-lg mb-1">WhatsApp</div>
                   <a 
-                    href={`https://wa.me/44${STATION_CONFIG.text.replace(/\s/g, '').replace(/^0/, '')}`}
+                    href={`https://wa.me/${whatsappInternationalNumber}`}
                     className="text-muted-foreground hover:text-primary transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {STATION_CONFIG.text}
+                    {STATION_CONFIG.whatsapp}
                   </a>
                 </div>
               </div>
@@ -648,7 +655,7 @@ function Footer() {
             <ul aria-label="Contact information" className="space-y-2 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
                 <ChatCircle className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
-                <span>{STATION_CONFIG.text}</span>
+                <span>{STATION_CONFIG.whatsapp}</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
