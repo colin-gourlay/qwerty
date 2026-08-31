@@ -287,7 +287,7 @@ export default function WaysToListenPage() {
                     <div className="flex-1">
                       <h4 className="font-semibold text-sm mb-1">Say to your Alexa device:</h4>
                       <div className="bg-muted rounded-md p-3 font-mono text-sm">
-                        "Alexa, play Sundown Radio on TuneIn"
+                        "Alexa, play East Coast FM on TuneIn"
                       </div>
                     </div>
                   </div>
@@ -298,18 +298,18 @@ export default function WaysToListenPage() {
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2" />
-                      <span>"Alexa, ask TuneIn to play Sundown Radio"</span>
+                      <span>"Alexa, ask TuneIn to play East Coast FM"</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2" />
-                      <span>"Alexa, play Sundown Radio"</span>
+                      <span>"Alexa, play East Coast FM"</span>
                     </li>
                   </ul>
                 </div>
 
                 <div className="bg-blue-50 dark:bg-blue-950/20 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
                   <p className="text-xs text-muted-foreground">
-                    <strong className="text-foreground">Tip:</strong> Sundown Radio is available via TuneIn on Alexa.
+                    <strong className="text-foreground">Tip:</strong> East Coast FM is available via TuneIn on Alexa.
                     Make sure TuneIn is linked in your Alexa app for the best experience.
                   </p>
                 </div>
@@ -347,7 +347,7 @@ export default function WaysToListenPage() {
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0 mt-2" />
-                      <span>"Hey Google, play Sundown Radio on TuneIn"</span>
+                      <span>"Hey Google, play East Coast FM on TuneIn"</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0 mt-2" />
@@ -459,19 +459,31 @@ export default function WaysToListenPage() {
                   </div>
                 </div>
               </div>
-              <Button 
-                className="w-full gap-2 h-12 text-base"
-                asChild
-              >
-                <a 
-                  href={STATION_CONFIG.apps?.ios} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+              {STATION_CONFIG.apps?.ios ? (
+                <Button 
+                  className="w-full gap-2 h-12 text-base"
+                  asChild
                 >
+                  <a 
+                    href={STATION_CONFIG.apps.ios} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <AppleLogo className="h-5 w-5" weight="fill" />
+                    Download on the App Store
+                  </a>
+                </Button>
+              ) : (
+                <div className="w-full gap-2 h-12 text-base rounded-md border border-input bg-muted/40 text-muted-foreground inline-flex items-center justify-center">
                   <AppleLogo className="h-5 w-5" weight="fill" />
-                  Download on the App Store
-                </a>
-              </Button>
+                  App Store link coming soon
+                </div>
+              )}
+              {!STATION_CONFIG.apps?.ios && (
+                <p className="text-xs text-muted-foreground mt-3">
+                  Our Apple App Store listing is being reactivated and will be published here once available.
+                </p>
+              )}
             </Card>
 
             <Card className="p-6 hover:shadow-lg transition-shadow">
@@ -479,6 +491,7 @@ export default function WaysToListenPage() {
                 <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
                   <GooglePlayLogo className="h-8 w-8 text-white" weight="fill" />
                 </div>
+
                 <div className="flex-1">
                   <h3 className="font-semibold text-xl mb-2">Android App</h3>
                   <p className="text-sm text-muted-foreground mb-3">
@@ -506,6 +519,27 @@ export default function WaysToListenPage() {
               </Button>
             </Card>
           </div>
+
+          {STATION_CONFIG.radioGarden ? (
+            <Card className="p-6 mt-6">
+              <h3 className="font-semibold text-lg mb-2">Radio Garden</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Listen via our official Radio Garden listing.
+              </p>
+              <Button variant="outline" asChild>
+                <a href={STATION_CONFIG.radioGarden} target="_blank" rel="noopener noreferrer">
+                  Open in Radio Garden
+                </a>
+              </Button>
+            </Card>
+          ) : (
+            <Card className="p-6 mt-6 border-dashed bg-muted/40">
+              <h3 className="font-semibold text-lg mb-2">Radio Garden</h3>
+              <p className="text-sm text-muted-foreground">
+                We&apos;re validating our official Radio Garden URI and will add a canonical link here when verification is complete.
+              </p>
+            </Card>
+          )}
 
           <Card className="p-6 mt-6 bg-muted">
             <h3 className="font-semibold text-lg mb-4">App Features</h3>

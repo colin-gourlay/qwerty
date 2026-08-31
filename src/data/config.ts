@@ -14,17 +14,16 @@ export const STATION_CONFIG: StationConfig = {
     postcode: 'EH41 3PP'
   },
   social: {
-    twitter: '@SundownRadio',
-    facebook: 'SundownRadio',
-    instagram: 'sundownradio',
-    youtube: '@SundownRadio'
+    x: 'https://x.com/SundownRadio',
+    facebook: 'https://facebook.com/SundownRadio',
+    instagram: 'https://instagram.com/sundownradio',
+    youtube: 'https://youtube.com/@SundownRadio'
   },
   frequency: {
     fm: '107.6',
     online: 'sundownradio.co.uk/listen'
   },
   apps: {
-    ios: 'https://apps.apple.com/app/sundown-radio',
     android: 'https://play.google.com/store/apps/details?id=com.appsidious.sundownradio'
   },
   tunein: 'https://tunein.com/radio/Sundown-Radio-s116429/'

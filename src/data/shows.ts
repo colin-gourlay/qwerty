@@ -122,7 +122,7 @@ export const shows: Show[] = [
   },
   {
     id: 'late-night-sessions',
-    name: 'Late Night Sessions',
+    name: 'The Sundown Sessions',
     description: 'Dave guides you through the quiet hours with smooth sounds and mellow vibes. Perfect for night owls, shift workers, and anyone who appreciates music after dark.',
     presenters: ['dave-thompson'],
     genre: 'Chill & Ambient',

@@ -18,6 +18,7 @@ import AdvertisingPage from '@/components/AdvertisingPage'
 import { shows } from '@/data/shows'
 import { schedule } from '@/data/schedule'
 import { presenters } from '@/data/presenters'
+import { hasUpcomingGigs, upcomingGigs } from '@/data/gigs'
 import stationLogo from '@/assets/images/sundown-radio-logo.svg'
 import SoundWave from '@/components/SoundWave'
 import { AudioPlayerProvider, useAudioPlayer } from '@/components/AudioPlayerContext'
@@ -254,6 +255,32 @@ function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="pb-16 page-section">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold mb-4">Upcoming Gigs</h2>
+          {hasUpcomingGigs ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {upcomingGigs.map((gig) => (
+                <Card key={gig.id} className="p-6">
+                  <h3 className="font-semibold text-xl mb-2">{gig.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-1">{gig.date}</p>
+                  <p className="text-sm text-muted-foreground">{gig.venue}, {gig.city}</p>
+                  {gig.ticketUrl && (
+                    <Button variant="outline" size="sm" asChild className="mt-4">
+                      <a href={gig.ticketUrl} target="_blank" rel="noopener noreferrer">Get Tickets</a>
+                    </Button>
+                  )}
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <Card className="p-6 bg-muted/40 border-dashed">
+              <p className="text-muted-foreground">No upcoming gigs currently scheduled.</p>
+            </Card>
+          )}
         </div>
       </section>
 

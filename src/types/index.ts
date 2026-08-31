@@ -78,18 +78,35 @@ export interface StationConfig {
     postcode: string
   }
   social: {
-    twitter: string
-    facebook: string
-    instagram: string
+    x?: string
+    twitter?: string
+    facebook?: string
+    instagram?: string
+    tiktok?: string
+    linkedin?: string
+    pinterest?: string
     youtube?: string
+    threads?: string
+    bluesky?: string
+    mastodon?: string
   }
   frequency?: {
     fm: string
     online: string
   }
   apps?: {
-    ios: string
-    android: string
+    ios?: string
+    android?: string
   }
   tunein?: string
+  radioGarden?: string
+}
+
+export interface GigEvent {
+  id: string
+  title: string
+  date: string
+  venue: string
+  city: string
+  ticketUrl?: string
 }
