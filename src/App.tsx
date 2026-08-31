@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
-import { Radio, Calendar, Users, Newspaper, Play, List, X, Phone, ChatCircle, Envelope, MapPin, Headphones, Info, Heart, HandHeart } from '@phosphor-icons/react'
+import { Radio, Calendar, Users, Newspaper, Play, List, X, Phone, ChatCircle, Envelope, MapPin, Headphones, Info, Heart, HandHeart, Broadcast } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { Card } from '@/components/ui/card'
@@ -205,36 +205,66 @@ function HomePage() {
   return (
     <div>
       <section className="relative overflow-hidden gradient-hero py-12 page-section">
-        <div className="absolute inset-0 pattern-radio-waves opacity-30"></div>
+        <div className="absolute inset-0 pattern-radio-waves opacity-20"></div>
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-amber-200/50 to-transparent" aria-hidden="true"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-sm font-medium text-white mb-4 border border-white/30">
-              <span className="relative flex h-2 w-2" aria-hidden="true">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
-              </span>
-              LIVE NOW
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_22rem]">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-2 rounded-full bg-slate-950/45 backdrop-blur-sm px-3 py-1 text-sm font-medium text-amber-100 mb-4 border border-amber-200/30">
+                <span className="relative flex h-2 w-2" aria-hidden="true">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-200 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-200"></span>
+                </span>
+                LIVE NOW
+              </div>
+              <h1 className="text-5xl sm:text-6xl font-bold mb-4 text-white drop-shadow-lg">
+                {STATION_CONFIG.name}
+              </h1>
+              <p className="text-xl text-amber-50/90 mb-6 drop-shadow-md">
+                {STATION_CONFIG.description}
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Button
+                  size="lg"
+                  className="gap-2 animate-pulse-subtle hover:animate-none bg-amber-200 hover:bg-amber-100 text-slate-950 shadow-xl hover:shadow-2xl transition-all duration-300"
+                  onClick={togglePlay}
+                  aria-pressed={isPlaying}
+                >
+                  <Play weight="fill" className="h-5 w-5" aria-hidden="true" />
+                  {isPlaying ? 'Now Playing' : 'Listen Live'}
+                  {isPlaying && <SoundWave />}
+                </Button>
+                <Button size="lg" variant="outline" asChild className="bg-slate-950/20 backdrop-blur-sm border-amber-100/40 text-white hover:bg-amber-100/15 shadow-lg">
+                  <Link to="/schedule">View Schedule</Link>
+                </Button>
+              </div>
             </div>
-            <h1 className="text-5xl sm:text-6xl font-bold mb-4 text-white drop-shadow-lg">
-              {STATION_CONFIG.name}
-            </h1>
-            <p className="text-xl text-white/90 mb-6 drop-shadow-md">
-              {STATION_CONFIG.description}
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button 
-                size="lg" 
-                className="gap-2 animate-pulse-subtle hover:animate-none bg-white hover:bg-white/90 text-primary shadow-xl hover:shadow-2xl transition-all duration-300"
-                onClick={togglePlay}
-                aria-pressed={isPlaying}
-              >
-                <Play weight="fill" className="h-5 w-5" aria-hidden="true" />
-                {isPlaying ? 'Now Playing' : 'Listen Live'}
-                {isPlaying && <SoundWave />}
-              </Button>
-              <Button size="lg" variant="outline" asChild className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 shadow-lg">
-                <Link to="/schedule">View Schedule</Link>
-              </Button>
+
+            <div className="hidden lg:block" aria-hidden="true">
+              <div className="relative rounded-2xl border border-amber-100/20 bg-slate-950/30 p-6 shadow-2xl backdrop-blur-sm">
+                <div className="absolute -inset-6 -z-10 rounded-full bg-amber-300/15 blur-3xl"></div>
+                <div className="relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-slate-950/45">
+                  <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-amber-100/20"></div>
+                  <div className="absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full border border-rose-300/25"></div>
+                  <div className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-amber-200 via-rose-400 to-violet-500 shadow-2xl shadow-rose-950/50"></div>
+                  <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950 via-slate-950/85 to-transparent"></div>
+                  <div className="absolute bottom-8 left-6 right-6 flex items-end justify-between gap-3">
+                    <div className="h-16 w-1 rounded-full bg-amber-100/80"></div>
+                    <div className="h-10 w-1 rounded-full bg-amber-100/40"></div>
+                    <div className="h-20 w-1 rounded-full bg-amber-100/70"></div>
+                    <div className="h-12 w-1 rounded-full bg-amber-100/35"></div>
+                    <div className="h-24 w-1 rounded-full bg-amber-100/75"></div>
+                    <div className="h-14 w-1 rounded-full bg-amber-100/45"></div>
+                    <div className="h-18 w-1 rounded-full bg-amber-100/70"></div>
+                  </div>
+                  <Radio className="absolute left-6 top-6 h-8 w-8 text-amber-100" weight="duotone" />
+                  <Broadcast className="absolute right-6 top-6 h-8 w-8 text-rose-200" weight="duotone" />
+                </div>
+                <div className="mt-4 flex items-center justify-between gap-4 text-xs font-semibold uppercase tracking-[0.28em] text-amber-100/85">
+                  <span>107.6 FM</span>
+                  <span>East Lothian</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
