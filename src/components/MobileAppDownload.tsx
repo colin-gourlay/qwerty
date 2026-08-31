@@ -110,14 +110,18 @@ export default function MobileAppDownload() {
                 <div className="flex-1">
                   <h3 className="font-semibold text-xl mb-2">Listen with Alexa</h3>
                   <p className="text-sm text-muted-foreground mb-4">
-                    Ask your Echo or Alexa-enabled speaker to play {STATION_CONFIG.name} via TuneIn.
+                    {STATION_CONFIG.tunein
+                      ? `Ask your Echo or Alexa-enabled speaker to play ${STATION_CONFIG.name} via TuneIn.`
+                      : 'Alexa listening uses TuneIn. Setup details will be added here once the listing is confirmed.'}
                   </p>
                 </div>
               </div>
-              <div className="rounded-lg bg-muted/60 p-4 text-sm mb-4" role="note">
-                <span className="sr-only">Voice command example: </span>
-                {`“Alexa, play ${STATION_CONFIG.name} on TuneIn”`}
-              </div>
+              {STATION_CONFIG.tunein && (
+                <div className="rounded-lg bg-muted/60 p-4 text-sm mb-4" role="note">
+                  <span className="sr-only">Voice command example: </span>
+                  {`“Alexa, play ${STATION_CONFIG.name} on TuneIn”`}
+                </div>
+              )}
               {STATION_CONFIG.tunein ? (
                 <Button
                   variant="outline"
