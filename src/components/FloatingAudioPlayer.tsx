@@ -1,181 +1,140 @@
-import { Play, Pause, SpeakerHigh, SpeakerSlash, X } from '@phosphor-icons/react'
+import { Play, Pause, SpeakerHigh, SpeakerSlash, SpinnerGap } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { Slider } from '@/components/ui/slider'
 import { useAudioPlayer } from './AudioPlayerContext'
 import { STATION_CONFIG } from '@/data/config'
-import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
-import SoundWave from './SoundWave'
-import stationLogo from '@/assets/images/sundown-radio-logo.svg'
 import { useCurrentShow } from '@/hooks/use-current-show'
 
 export default function FloatingAudioPlayer() {
-  const { isPlaying, volume, isMuted, togglePlay, setVolume, toggleMute } = useAudioPlayer()
+  const { isPlaying, isBuffering, hasError, volume, isMuted, togglePlay, setVolume, toggleMute } = useAudioPlayer()
   const { currentShow, currentSlot } = useCurrentShow()
-  const [isMinimized, setIsMinimized] = useState(false)
-  const [isExpanded, setIsExpanded] = useState(false)
 
-  if (isMinimized) {
-    return (
-      <motion.div
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        className="fixed bottom-6 right-6 z-50"
-      >
-        <Button
-          size="icon"
-          className="h-14 w-14 rounded-full shadow-lg hover:shadow-xl transition-all"
-          onClick={() => setIsMinimized(false)}
-          aria-label="Expand audio player"
-        >
-          {isPlaying ? (
-            <>
-              <SoundWave />
-              <Pause weight="fill" className="h-6 w-6" aria-hidden="true" />
-            </>
-          ) : (
-            <Play weight="fill" className="h-6 w-6" aria-hidden="true" />
-          )}
-        </Button>
-      </motion.div>
-    )
-  }
+  const playbackLabel = isBuffering
+    ? 'Buffering…'
+    : hasError
+      ? 'Stream unavailable'
+      : isPlaying
+        ? 'Now on air'
+        : 'Ready to play'
+
+  const ariaLiveStatus = isBuffering
+    ? 'Buffering stream'
+    : hasError
+      ? 'Stream unavailable. Press play to retry.'
+      : isPlaying
+        ? `Playing ${currentShow ? currentShow.name : STATION_CONFIG.name}`
+        : undefined
 
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: 100, opacity: 0 }}
-        className="fixed bottom-0 left-0 right-0 z-50 border-t bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60 shadow-2xl"
-      >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 py-3">
-            <div className="flex items-center gap-3 flex-shrink-0 min-w-0">
-              <img 
-                src={stationLogo} 
-                alt={STATION_CONFIG.name}
-                className="h-10 w-auto object-contain flex-shrink-0"
+    <div
+      role="region"
+      aria-label={`${STATION_CONFIG.name} player`}
+      className="fixed bottom-0 left-0 right-0 z-50 border-t border-border/60 bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/75 shadow-2xl"
+    >
+      {/* Subtle brand accent line */}
+      <div className="h-0.5 bg-gradient-to-r from-primary/60 via-primary to-primary/60" aria-hidden="true" />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-3 py-3 min-h-[60px]">
+
+          {/* Station identity + live status */}
+          <div className="flex items-center gap-2.5 flex-shrink-0 min-w-0 flex-1 sm:flex-none">
+            <div className="flex flex-col min-w-0">
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-sm leading-tight text-foreground tracking-tight truncate">
+                  {STATION_CONFIG.name}
+                </span>
+                {isPlaying && !hasError && (
+                  <span
+                    className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold tracking-widest uppercase bg-primary text-primary-foreground flex-shrink-0"
+                    aria-label="Live"
+                  >
+                    <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-foreground opacity-75" />
+                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary-foreground" />
+                    </span>
+                    LIVE
+                  </span>
+                )}
+              </div>
+              <div className="text-xs text-muted-foreground truncate mt-0.5 leading-tight">
+                {hasError ? (
+                  <span className="text-destructive">Stream unavailable — tap play to retry</span>
+                ) : currentShow ? (
+                  <span className="truncate">{currentShow.name}</span>
+                ) : (
+                  <span>{playbackLabel}</span>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Programme info (medium+ screens) */}
+          {currentShow && currentSlot && !hasError && (
+            <div className="hidden md:flex flex-col min-w-0 flex-1 px-4 border-l border-border/50">
+              <span className="text-xs text-muted-foreground uppercase tracking-wider font-medium">On Air</span>
+              <span className="text-sm font-medium truncate text-foreground">{currentShow.name}</span>
+              <span className="text-xs text-muted-foreground">{currentSlot.startTime}–{currentSlot.endTime}</span>
+            </div>
+          )}
+
+          {/* Spacer on small screens so play button stays centred */}
+          <div className="flex-1 sm:hidden" aria-hidden="true" />
+
+          {/* Play / Pause button */}
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <Button
+              size="icon"
+              onClick={togglePlay}
+              aria-label={isBuffering ? 'Buffering' : isPlaying ? `Pause ${STATION_CONFIG.name}` : `Play ${STATION_CONFIG.name} live`}
+              aria-pressed={isPlaying}
+              disabled={isBuffering}
+              className="h-11 w-11 rounded-full shadow-md bg-primary text-primary-foreground hover:bg-primary/90 transition-all flex-shrink-0 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            >
+              {isBuffering ? (
+                <SpinnerGap className="h-5 w-5 animate-spin" aria-hidden="true" />
+              ) : isPlaying ? (
+                <Pause weight="fill" className="h-5 w-5" aria-hidden="true" />
+              ) : (
+                <Play weight="fill" className="h-5 w-5" aria-hidden="true" />
+              )}
+            </Button>
+
+            {/* Mute toggle */}
+            <Button
+              size="icon"
+              variant="ghost"
+              onClick={toggleMute}
+              aria-label={isMuted ? 'Unmute' : 'Mute'}
+              aria-pressed={isMuted}
+              className="hidden sm:flex h-9 w-9 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            >
+              {isMuted ? (
+                <SpeakerSlash className="h-4 w-4" aria-hidden="true" />
+              ) : (
+                <SpeakerHigh className="h-4 w-4" aria-hidden="true" />
+              )}
+            </Button>
+
+            {/* Volume slider */}
+            <div className="hidden md:block w-24" aria-label="Volume control">
+              <Slider
+                value={[isMuted ? 0 : volume * 100]}
+                onValueChange={(value) => setVolume(value[0] / 100)}
+                max={100}
+                step={1}
+                aria-label="Volume"
+                className="cursor-pointer"
               />
-              <div className="hidden sm:block min-w-0">
-                {currentShow ? (
-                  <>
-                    <div className="font-semibold text-sm truncate">{currentShow.name}</div>
-                    <div className="text-xs text-muted-foreground flex items-center gap-2">
-                      {isPlaying ? (
-                        <>
-                          <span className="relative flex h-2 w-2 flex-shrink-0" aria-hidden="true">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
-                          </span>
-                          <span className="truncate">Now Playing</span>
-                        </>
-                      ) : (
-                        <span className="truncate">Ready to play</span>
-                      )}
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="font-semibold text-sm">{STATION_CONFIG.name}</div>
-                    <div className="text-xs text-muted-foreground flex items-center gap-2">
-                      {isPlaying ? (
-                        <>
-                          <span className="relative flex h-2 w-2" aria-hidden="true">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
-                          </span>
-                          Now Playing
-                        </>
-                      ) : (
-                        'Ready to play'
-                      )}
-                    </div>
-                  </>
-                )}
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 flex-1 justify-center">
-              <Button
-                size="icon"
-                variant="ghost"
-                onClick={togglePlay}
-                aria-label={isPlaying ? 'Pause' : 'Play'}
-                className="h-12 w-12 rounded-full hover:bg-secondary hover:text-secondary-foreground transition-all flex-shrink-0"
-              >
-                {isPlaying ? (
-                  <Pause weight="fill" className="h-6 w-6" aria-hidden="true" />
-                ) : (
-                  <Play weight="fill" className="h-6 w-6" aria-hidden="true" />
-                )}
-              </Button>
-
-              {isPlaying && currentShow && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="hidden lg:flex flex-col items-center min-w-0"
-                >
-                  <div className="text-xs text-muted-foreground">Now Playing</div>
-                  <div className="font-medium text-sm truncate max-w-xs">{currentShow.name}</div>
-                  {currentSlot && (
-                    <div className="text-xs text-muted-foreground">
-                      {currentSlot.startTime} - {currentSlot.endTime}
-                    </div>
-                  )}
-                </motion.div>
-              )}
-
-              {isPlaying && !currentShow && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="hidden md:flex items-center gap-1"
-                >
-                  <SoundWave />
-                </motion.div>
-              )}
-            </div>
-
-            <div className="flex items-center gap-2 flex-shrink-0">
-              <Button
-                size="icon"
-                variant="ghost"
-                onClick={toggleMute}
-                aria-label={isMuted ? 'Unmute' : 'Mute'}
-                className="hidden sm:flex"
-              >
-                {isMuted ? (
-                  <SpeakerSlash className="h-5 w-5" aria-hidden="true" />
-                ) : (
-                  <SpeakerHigh className="h-5 w-5" aria-hidden="true" />
-                )}
-              </Button>
-
-              <div className="hidden md:block w-24">
-                <Slider
-                  value={[isMuted ? 0 : volume * 100]}
-                  onValueChange={(value) => setVolume(value[0] / 100)}
-                  max={100}
-                  step={1}
-                  aria-label="Volume"
-                  className="cursor-pointer"
-                />
-              </div>
-
-              <Button
-                size="icon"
-                variant="ghost"
-                onClick={() => setIsMinimized(true)}
-                aria-label="Minimise audio player"
-              >
-                <X className="h-5 w-5" aria-hidden="true" />
-              </Button>
             </div>
           </div>
         </div>
-      </motion.div>
-    </AnimatePresence>
+      </div>
+
+      {/* Live status for screen readers — polite so it doesn't interrupt */}
+      <span className="sr-only" aria-live="polite" aria-atomic="true">
+        {ariaLiveStatus ?? ''}
+      </span>
+    </div>
   )
 }
