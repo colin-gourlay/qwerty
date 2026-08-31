@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
-import { Radio, Calendar, Users, Newspaper, Play, List, X, Phone, ChatCircle, Envelope, MapPin, Headphones, Info, Heart, HandHeart } from '@phosphor-icons/react'
+import { Radio, Calendar, Users, Newspaper, Play, List, X, Phone, ChatCircle, Envelope, MapPin, Headphones, Info, Heart, HandHeart, ArrowRight } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { Card } from '@/components/ui/card'
@@ -202,6 +202,8 @@ function Header() {
 
 function HomePage() {
   const { togglePlay, isPlaying } = useAudioPlayer()
+  const featuredShows = shows.filter((show) => show.featured)
+  const homepageShows = (featuredShows.length > 0 ? featuredShows : shows).slice(0, 3)
 
   return (
     <div>
@@ -248,18 +250,85 @@ function HomePage() {
 
       <section className="py-16 page-section">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-8">Featured Shows</h2>
+          <div className="flex flex-col gap-3 mb-8 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-2">Programme discovery</p>
+              <h2 className="text-3xl font-bold">On Sundown Radio</h2>
+            </div>
+            <Link to="/shows" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80">
+              Browse all shows
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="rounded-lg border bg-card p-6 hover:shadow-lg transition-shadow">
-                <div className="aspect-video rounded-md bg-muted mb-4"></div>
-                <h3 className="font-semibold text-lg mb-2">Show Title {i}</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Description of the show goes here
-                </p>
-                <Button variant="outline" size="sm">Learn More</Button>
-              </div>
-            ))}
+            {homepageShows.map((show) => {
+              const genreColors = getGenreColors(show.genre)
+
+              return (
+                <Link
+                  key={show.id}
+                  to={`/shows/${show.id}`}
+                  className="group block h-full rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  aria-label={`Explore ${show.name}`}
+                >
+                  <article className="flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
+                    <div
+                      className="relative aspect-[4/3] overflow-hidden bg-slate-950"
+                      style={{
+                        background: `linear-gradient(135deg, ${show.color ?? 'oklch(0.40 0.08 260)'} 0%, oklch(0.16 0.05 260) 100%)`
+                      }}
+                    >
+                      <div
+                        className="absolute -right-12 -top-12 h-40 w-40 rounded-full border border-white/25"
+                        aria-hidden="true"
+                      ></div>
+                      <div
+                        className="absolute bottom-8 left-8 h-24 w-24 rounded-full border border-white/15"
+                        aria-hidden="true"
+                      ></div>
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(255,255,255,0.22),transparent_26%),linear-gradient(0deg,rgba(15,23,42,0.72),transparent_60%)]" aria-hidden="true"></div>
+                      <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+                        <span
+                          className="mb-3 inline-flex rounded-full border border-white/30 bg-white/15 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm"
+                        >
+                          Sundown Radio programme
+                        </span>
+                        <h3 className="text-2xl font-bold leading-tight drop-shadow-md">{show.name}</h3>
+                      </div>
+                    </div>
+                    <div className="flex flex-1 flex-col gap-4 p-5">
+                      <div className="flex flex-wrap gap-2">
+                        <span
+                          className="inline-flex rounded-full border px-3 py-1 text-xs font-semibold"
+                          style={{
+                            backgroundColor: genreColors.bg,
+                            color: genreColors.text,
+                            borderColor: genreColors.border
+                          }}
+                        >
+                          {show.genre}
+                        </span>
+                        {(show.broadcastSummary ?? show.schedule) && (
+                          <span className="inline-flex rounded-full border bg-muted px-3 py-1 text-xs font-semibold text-muted-foreground">
+                            {show.broadcastSummary ?? show.schedule}
+                          </span>
+                        )}
+                      </div>
+                      {show.strapline && (
+                        <p className="text-base font-semibold text-foreground">{show.strapline}</p>
+                      )}
+                      <p className="text-sm leading-relaxed text-muted-foreground line-clamp-3">{show.description}</p>
+                      <div className="mt-auto flex items-center justify-end border-t pt-4">
+                        <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                          Explore
+                          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                        </span>
+                      </div>
+                    </div>
+                  </article>
+                </Link>
+              )
+            })}
           </div>
         </div>
       </section>

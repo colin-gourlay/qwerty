@@ -27,6 +27,9 @@ export interface Show {
   color?: string
   fullDescription?: string
   schedule?: string
+  broadcastSummary?: string
+  strapline?: string
+  featured?: boolean
   features?: string[]
   highlights?: string[]
   contact?: {
