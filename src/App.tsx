@@ -268,12 +268,14 @@ function HomePage() {
             {homepageShows.map((show) => {
               const genreColors = getGenreColors(show.genre)
               const scheduleLabel = show.broadcastSummary ?? show.schedule
+              const showLinkLabel = `Explore ${show.name}${show.strapline ? `, ${show.strapline}` : ''}${scheduleLabel ? `, ${scheduleLabel}` : ''}`
 
               return (
                 <Link
                   key={show.id}
                   to={`/shows/${show.id}`}
                   className="group block h-full rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  aria-label={showLinkLabel}
                 >
                   <div className="flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
                     <div
