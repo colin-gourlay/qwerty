@@ -6,7 +6,7 @@ export const STATION_CONFIG: StationConfig = {
   description: 'Broadcasting from the heart of East Lothian, bringing you the best in music, talk, and community programming 24/7.',
   streamUrl: 'http://radio.canstream.co.uk:8117/live.mp3',
   phone: '01620 826444',
-  text: '07835 90 20 30',
+  whatsapp: '07555610811',
   email: 'studio@sundownradio.co.uk',
   address: {
     street: '2B Haddington Station Industrial Site',

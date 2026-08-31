@@ -70,7 +70,7 @@ export interface StationConfig {
   description: string
   streamUrl: string
   phone: string
-  text: string
+  whatsapp: string
   email: string
   address: {
     street: string
