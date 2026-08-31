@@ -54,7 +54,7 @@ All prices exclude VAT where applicable.
 Long-term contracts (6+ months) eligible for discounts.
 
 Contact: advertising@sundownradio.co.uk
-Phone: 01620 826444
+Phone: 07555 610 811
 Address: 2B Station Yards, Haddington, EH41 3PP
 
 ═══════════════════════════════════════════
@@ -151,7 +151,7 @@ Print Name: _____________________________________________________
 Please return completed form to:
 Email: advertising@sundownradio.co.uk
 Mail:  Sundown Radio, 2B Station Yards, Haddington, EH41 3PP
-Phone: 01620 826444
+Phone: 07555 610 811
 
 ═══════════════════════════════════════════
 Sundown Radio - Charity Registration No. SC042784
@@ -439,7 +439,7 @@ target audience effectively.
 ═══════════════════════════════════════════
 
 Contact: advertising@sundownradio.co.uk
-Phone: 01620 826444
+Phone: 07555 610 811
 Address: 2B Station Yards, Haddington, EH41 3PP
 
 ═══════════════════════════════════════════

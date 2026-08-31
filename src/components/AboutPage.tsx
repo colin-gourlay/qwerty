@@ -186,7 +186,7 @@ export default function AboutPage() {
                 Contact Us
               </a>
               <a 
-                href={`tel:${STATION_CONFIG.phone.replace(/\s/g, '')}`}
+                href={`tel:+44${STATION_CONFIG.phone.replace(/[^0-9]/g, '').slice(1)}`}
                 className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-6"
               >
                 Call {STATION_CONFIG.phone}
