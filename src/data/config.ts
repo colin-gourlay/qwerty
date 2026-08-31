@@ -7,7 +7,7 @@ export const STATION_CONFIG: StationConfig = {
   broadcastLabel: '107.6 FM',
   coverageArea: 'East Lothian',
   streamUrl: 'http://radio.canstream.co.uk:8117/live.mp3',
-  phone: '01620 826444',
+  phone: '07555 610 811',
   whatsapp: '07555610811',
   email: 'studio@sundownradio.co.uk',
   address: {

@@ -596,7 +596,7 @@ function ContactPage() {
                 <div className="flex-1">
                   <div className="font-semibold text-lg mb-1">Phone</div>
                   <a 
-                    href={`tel:${STATION_CONFIG.phone.replace(/\s/g, '')}`}
+                    href={`tel:+44${STATION_CONFIG.phone.replace(/[^0-9]/g, '').slice(1)}`}
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     {STATION_CONFIG.phone}

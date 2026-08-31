@@ -186,7 +186,7 @@ export default function GetInvolvedPage() {
               </div>
               <h3 className="font-semibold mb-2">Call Us</h3>
               <a 
-                href={`tel:${STATION_CONFIG.phone.replace(/\s/g, '')}`}
+                href={`tel:+44${STATION_CONFIG.phone.replace(/[^0-9]/g, '').slice(1)}`}
                 className="text-sm text-primary hover:underline"
               >
                 {STATION_CONFIG.phone}
