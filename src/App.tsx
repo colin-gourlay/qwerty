@@ -255,7 +255,7 @@ function HomePage() {
                     <div className="h-12 w-1 rounded-full bg-amber-100/35"></div>
                     <div className="h-24 w-1 rounded-full bg-amber-100/75"></div>
                     <div className="h-14 w-1 rounded-full bg-amber-100/45"></div>
-                    <div className="h-[4.5rem] w-1 rounded-full bg-amber-100/70"></div>
+                    <div className="h-16 w-1 rounded-full bg-amber-100/70"></div>
                   </div>
                   <Radio className="absolute left-6 top-6 h-8 w-8 text-amber-100" weight="duotone" />
                   <Broadcast className="absolute right-6 top-6 h-8 w-8 text-rose-200" weight="duotone" />
