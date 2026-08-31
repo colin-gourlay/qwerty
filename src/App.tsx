@@ -527,10 +527,12 @@ function ContactPage() {
                   <ChatCircle className="h-6 w-6 text-primary" weight="duotone" aria-hidden="true" />
                 </div>
                 <div className="flex-1">
-                  <div className="font-semibold text-lg mb-1">Text Message</div>
+                  <div className="font-semibold text-lg mb-1">WhatsApp</div>
                   <a 
-                    href={`sms:${STATION_CONFIG.text}`}
+                    href={`https://wa.me/44${STATION_CONFIG.text.replace(/\s/g, '').replace(/^0/, '')}`}
                     className="text-muted-foreground hover:text-primary transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {STATION_CONFIG.text}
                   </a>
