@@ -245,7 +245,7 @@ function HomePage() {
               </div>
             </div>
 
-            <SundownHeroPanel frequency={STATION_CONFIG.broadcastLabel} coverageArea={STATION_CONFIG.coverageArea} />
+            <SundownHeroPanel />
           </div>
         </div>
       </section>
