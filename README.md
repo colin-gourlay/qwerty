@@ -144,7 +144,7 @@ Full article content goes here...
 ### Branding
 
 - **Colors**: Edit `/src/index.css` (CSS custom properties)
-- **Logo**: Replace `/src/assets/images/logo.svg`
+- **Logo**: Replace `/src/assets/images/sundown-radio-logo.svg`
 - **Station Info**: Update `/src/data/config.ts`
 - **Fonts**: Modify Google Fonts link in `/index.html`
 
