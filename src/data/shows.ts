@@ -9,6 +9,9 @@ export const shows: Show[] = [
     genre: 'Music & Talk',
     image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800',
     color: 'oklch(0.75 0.15 60)',
+    strapline: 'Morning music, local voices and bright starts',
+    broadcastSummary: 'Weekdays · 6–10am',
+    featured: true,
     fullDescription: 'The Breakfast Club has been Sundown Radio\'s flagship morning show since 2015, consistently rated as the region\'s favorite way to start the day. Host Sarah Jenkins brings her infectious energy and genuine warmth to every broadcast, creating a show that feels less like radio and more like having coffee with a friend who happens to have great taste in music.\n\nEach morning from 6 AM to 10 AM, The Breakfast Club delivers the perfect blend of entertainment, information, and interaction. From breaking news and traffic updates to celebrity interviews and listener competitions, every show is packed with content designed to inform, entertain, and energize your morning routine.',
     schedule: 'Monday to Friday, 6:00 AM - 10:00 AM',
     features: [
@@ -69,6 +72,9 @@ export const shows: Show[] = [
     genre: 'Soul, Funk & Disco',
     image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800',
     color: 'oklch(0.68 0.15 300)',
+    strapline: 'Soul, funk and disco for the weekend',
+    broadcastSummary: 'Weekends · 2–6pm',
+    featured: true,
     fullDescription: 'Weekend Grooves is where the party starts on the East Coast. DJ Jenny Patel, with over 15 years of experience spinning records at clubs and festivals across the UK, brings her expertise to the airwaves every Saturday and Sunday afternoon.\n\nThis show is a celebration of the best groove-based music from the 1970s to today. Expect rare soul cuts, disco classics, funk workouts, and contemporary artists keeping these traditions alive. Jenny\'s infectious enthusiasm and deep knowledge of the music creates an irresistible atmosphere that gets listeners moving, whatever they\'re doing.',
     schedule: 'Saturday & Sunday, 2:00 PM - 6:00 PM',
     features: [
@@ -128,6 +134,9 @@ export const shows: Show[] = [
     genre: 'Chill & Ambient',
     image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800',
     color: 'oklch(0.40 0.08 260)',
+    strapline: 'Ambient sounds and chill music after dark',
+    broadcastSummary: 'Every night · 11pm–2am',
+    featured: true,
     fullDescription: 'Late Night Sessions offers sanctuary in the quiet hours. Broadcasting from 11 PM to 2 AM every night, Dave Thompson creates a sonic cocoon of ambient, downtempo, and chill music perfect for unwinding, studying, or keeping company during late shifts.\n\nWith 15 years of late-night broadcasting experience, Dave understands the unique rhythm of the nocturnal world. His carefully curated selections create a consistent atmosphere that feels like a friend keeping you company through the quiet hours, whether you\'re unable to sleep, working the night shift, or simply enjoying the peace.',
     schedule: 'Every Night, 11:00 PM - 2:00 AM',
     features: [

@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
-import { Radio, Calendar, Users, Newspaper, Play, List, X, Phone, ChatCircle, Envelope, MapPin, Headphones, Info, Heart, HandHeart } from '@phosphor-icons/react'
+import { Radio, Calendar, Users, Newspaper, Play, List, X, Phone, ChatCircle, Envelope, MapPin, Headphones, Info, Heart, HandHeart, ArrowRight } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { Card } from '@/components/ui/card'
@@ -28,8 +28,11 @@ import CoverageMap from '@/components/CoverageMap'
 import FrequencyInfo from '@/components/FrequencyInfo'
 import MobileAppDownload from '@/components/MobileAppDownload'
 import SundownHeroPanel from '@/components/layout/SundownHeroPanel'
+import { FeaturedShowCard } from '@/components/shows/FeaturedShowCard'
 import { getGenreColors } from '@/lib/genre-colors'
 import { getTimeSlotColors, getTimeOfDayPeriods } from '@/lib/time-slot-colors'
+
+const MAX_HOMEPAGE_SHOWS = 3
 
 export default function App() {
   return (
@@ -202,6 +205,7 @@ function Header() {
 
 function HomePage() {
   const { togglePlay, isPlaying } = useAudioPlayer()
+  const homepageShows = shows.filter((show) => show.featured).slice(0, MAX_HOMEPAGE_SHOWS)
 
   return (
     <div>
@@ -248,17 +252,19 @@ function HomePage() {
 
       <section className="py-16 page-section">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-8">Featured Shows</h2>
+          <div className="flex flex-col gap-3 mb-8 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-2">Programme discovery</p>
+              <h2 className="text-3xl font-bold">On {STATION_CONFIG.name}</h2>
+            </div>
+            <Link to="/shows" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80">
+              Browse all shows
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="rounded-lg border bg-card p-6 hover:shadow-lg transition-shadow">
-                <div className="aspect-video rounded-md bg-muted mb-4"></div>
-                <h3 className="font-semibold text-lg mb-2">Show Title {i}</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Description of the show goes here
-                </p>
-                <Button variant="outline" size="sm">Learn More</Button>
-              </div>
+            {homepageShows.map((show) => (
+              <FeaturedShowCard key={show.id} show={show} />
             ))}
           </div>
         </div>
