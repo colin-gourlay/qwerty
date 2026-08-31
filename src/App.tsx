@@ -31,6 +31,8 @@ import SundownHeroPanel from '@/components/layout/SundownHeroPanel'
 import { getGenreColors } from '@/lib/genre-colors'
 import { getTimeSlotColors, getTimeOfDayPeriods } from '@/lib/time-slot-colors'
 
+const PROGRAMME_DISCOVERY_ITEM_LABEL = 'programme'
+
 export default function App() {
   return (
     <AudioPlayerProvider streamUrl={STREAM_URL}>
@@ -271,7 +273,7 @@ function HomePage() {
                   className="group block h-full rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   aria-label={`Explore ${show.name}`}
                 >
-                  <article className="flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
+                  <div className="flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
                     <div
                       className="relative aspect-[4/3] overflow-hidden bg-slate-950"
                       style={{
@@ -291,7 +293,7 @@ function HomePage() {
                         <span
                           className="mb-3 inline-flex rounded-full border border-white/30 bg-white/15 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm"
                         >
-                          {STATION_CONFIG.name} programme
+                          {STATION_CONFIG.name} {PROGRAMME_DISCOVERY_ITEM_LABEL}
                         </span>
                         <h3 className="text-2xl font-bold leading-tight drop-shadow-md">{show.name}</h3>
                       </div>
@@ -325,7 +327,7 @@ function HomePage() {
                         </span>
                       </div>
                     </div>
-                  </article>
+                  </div>
                 </Link>
               )
             })}
