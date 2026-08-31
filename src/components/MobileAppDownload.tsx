@@ -1,4 +1,4 @@
-import { DeviceMobile, AppleLogo, GooglePlayLogo, SpeakerHigh, WaveformSlash } from '@phosphor-icons/react'
+import { DeviceMobile, AppleLogo, GooglePlayLogo, Radio, SpeakerHigh } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { STATION_CONFIG } from '@/data/config'
@@ -114,9 +114,13 @@ export default function MobileAppDownload() {
                   </p>
                 </div>
               </div>
-              <div className="rounded-lg bg-muted/60 p-4 text-sm mb-4">
+              <p
+                className="rounded-lg bg-muted/60 p-4 text-sm mb-4"
+                role="note"
+                aria-label="Voice command example"
+              >
                 {`“Alexa, play ${STATION_CONFIG.name} on TuneIn”`}
-              </div>
+              </p>
               {STATION_CONFIG.tunein ? (
                 <Button
                   variant="outline"
@@ -129,7 +133,7 @@ export default function MobileAppDownload() {
                     rel="noopener noreferrer"
                     aria-label={`Open the ${STATION_CONFIG.name} TuneIn listing for Alexa setup`}
                   >
-                    <WaveformSlash className="h-5 w-5" />
+                    <Radio className="h-5 w-5" />
                     Open TuneIn listing
                   </a>
                 </Button>
@@ -138,7 +142,7 @@ export default function MobileAppDownload() {
                   className="w-full gap-2 h-12 text-base rounded-md border border-input bg-muted/40 text-muted-foreground inline-flex items-center justify-center"
                   role="status"
                 >
-                  <WaveformSlash className="h-5 w-5" />
+                  <Radio className="h-5 w-5" />
                   TuneIn listing coming soon
                 </div>
               )}
