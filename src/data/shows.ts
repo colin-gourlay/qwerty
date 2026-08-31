@@ -134,7 +134,7 @@ export const shows: Show[] = [
     genre: 'Chill & Ambient',
     image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800',
     color: 'oklch(0.40 0.08 260)',
-    strapline: 'Alternative music after dark',
+    strapline: 'Ambient sounds and chill music after dark',
     broadcastSummary: 'Every night · 11pm–2am',
     featured: true,
     fullDescription: 'Late Night Sessions offers sanctuary in the quiet hours. Broadcasting from 11 PM to 2 AM every night, Dave Thompson creates a sonic cocoon of ambient, downtempo, and chill music perfect for unwinding, studying, or keeping company during late shifts.\n\nWith 15 years of late-night broadcasting experience, Dave understands the unique rhythm of the nocturnal world. His carefully curated selections create a consistent atmosphere that feels like a friend keeping you company through the quiet hours, whether you\'re unable to sleep, working the night shift, or simply enjoying the peace.',

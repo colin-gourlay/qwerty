@@ -32,7 +32,7 @@ import { getGenreColors } from '@/lib/genre-colors'
 import { getTimeSlotColors, getTimeOfDayPeriods } from '@/lib/time-slot-colors'
 
 const MAX_HOMEPAGE_SHOWS = 3
-const DEFAULT_PROGRAMME_COLOR = 'oklch(0.40 0.08 260)'
+const DEFAULT_PROGRAMME_COLOR = 'oklch(0.58 0.11 215)'
 const PROGRAMME_ART_END_COLOR = 'oklch(0.16 0.05 260)'
 
 export default function App() {
