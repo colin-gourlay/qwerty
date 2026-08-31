@@ -505,7 +505,9 @@ function ContactPage() {
   const whatsappNumber = STATION_CONFIG.whatsapp.replace(/\s/g, '').replace(/^\+/, '')
   const whatsappInternationalNumber = whatsappNumber.startsWith('0')
     ? `44${whatsappNumber.slice(1)}`
-    : whatsappNumber.startsWith('44')
+    : whatsappNumber.startsWith('0044')
+      ? whatsappNumber.slice(2)
+      : whatsappNumber.startsWith('44') && whatsappNumber.length === 12
       ? whatsappNumber
       : `44${whatsappNumber}`
 
