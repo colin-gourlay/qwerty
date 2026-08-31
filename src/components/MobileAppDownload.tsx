@@ -49,7 +49,10 @@ export default function MobileAppDownload() {
                   </a>
                 </Button>
               ) : (
-                <div className="w-full gap-2 h-12 text-base rounded-md border border-input bg-muted/40 text-muted-foreground inline-flex items-center justify-center">
+                <div
+                  className="w-full gap-2 h-12 text-base rounded-md border border-input bg-muted/40 text-muted-foreground inline-flex items-center justify-center"
+                  role="status"
+                >
                   <AppleLogo className="h-5 w-5" weight="fill" />
                   App Store link coming soon
                 </div>
@@ -89,7 +92,10 @@ export default function MobileAppDownload() {
                   </a>
                 </Button>
               ) : (
-                <div className="w-full gap-2 h-12 text-base rounded-md border border-input bg-muted/40 text-muted-foreground inline-flex items-center justify-center">
+                <div
+                  className="w-full gap-2 h-12 text-base rounded-md border border-input bg-muted/40 text-muted-foreground inline-flex items-center justify-center"
+                  role="status"
+                >
                   <GooglePlayLogo className="h-5 w-5" weight="fill" />
                   Google Play link coming soon
                 </div>
@@ -128,7 +134,10 @@ export default function MobileAppDownload() {
                   </a>
                 </Button>
               ) : (
-                <div className="w-full gap-2 h-12 text-base rounded-md border border-input bg-muted/40 text-muted-foreground inline-flex items-center justify-center">
+                <div
+                  className="w-full gap-2 h-12 text-base rounded-md border border-input bg-muted/40 text-muted-foreground inline-flex items-center justify-center"
+                  role="status"
+                >
                   <WaveformSlash className="h-5 w-5" />
                   TuneIn listing coming soon
                 </div>
