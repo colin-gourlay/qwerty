@@ -586,7 +586,9 @@ export default function WaysToListenPage() {
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6">Reception Tips</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            {RECEPTION_TIPS.general.map((category, idx) => (
+            {RECEPTION_TIPS.general
+              .filter((category) => category.title !== 'FM Radio Tips')
+              .map((category, idx) => (
               <Card key={idx} className="p-6">
                 <h3 className="font-semibold text-lg mb-3">{category.title}</h3>
                 <ul className="space-y-2">
@@ -598,7 +600,7 @@ export default function WaysToListenPage() {
                   ))}
                 </ul>
               </Card>
-            ))}
+              ))}
           </div>
         </section>
 
