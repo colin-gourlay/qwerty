@@ -694,8 +694,13 @@ function ContactPage() {
                   <div className="font-semibold text-lg mb-1">Address</div>
                   <div className="text-muted-foreground">
                     {STATION_CONFIG.address.street}<br />
-                    {STATION_CONFIG.address.city}<br />
-                    {STATION_CONFIG.address.postcode}
+                    {STATION_CONFIG.address.city}
+                    {STATION_CONFIG.address.postcode ? (
+                      <>
+                        <br />
+                        {STATION_CONFIG.address.postcode}
+                      </>
+                    ) : null}
                   </div>
                 </div>
               </div>
@@ -771,7 +776,10 @@ function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 flex-shrink-0 mt-0.5" aria-hidden="true" />
-                <span>{STATION_CONFIG.address.city}, {STATION_CONFIG.address.postcode}</span>
+                <span>
+                  {STATION_CONFIG.address.city}
+                  {STATION_CONFIG.address.postcode ? `, ${STATION_CONFIG.address.postcode}` : ''}
+                </span>
               </li>
             </ul>
           </div>
