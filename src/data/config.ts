@@ -12,8 +12,8 @@ export const STATION_CONFIG: StationConfig = {
   email: 'studio@sundownradio.co.uk',
   address: {
     street: '2B Haddington Station Industrial Site',
-    city: 'Haddington',
-    postcode: 'EH41 3PP'
+    city: 'East Lothian',
+    postcode: ''
   },
   social: {
     x: 'https://x.com/SundownRadio',

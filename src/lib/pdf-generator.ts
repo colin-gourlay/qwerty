@@ -55,7 +55,7 @@ Long-term contracts (6+ months) eligible for discounts.
 
 Contact: advertising@sundownradio.co.uk
 Phone: 07555 610 811
-Address: 2B Station Yards, Haddington, EH41 3PP
+Address: 2B Station Yards, East Lothian
 
 ═══════════════════════════════════════════
 Sundown Radio - Charity Registration No. SC042784
@@ -150,7 +150,7 @@ Print Name: _____________________________________________________
 
 Please return completed form to:
 Email: advertising@sundownradio.co.uk
-Mail:  Sundown Radio, 2B Station Yards, Haddington, EH41 3PP
+Mail:  Sundown Radio, 2B Station Yards, East Lothian
 Phone: 07555 610 811
 
 ═══════════════════════════════════════════
@@ -440,7 +440,7 @@ target audience effectively.
 
 Contact: advertising@sundownradio.co.uk
 Phone: 07555 610 811
-Address: 2B Station Yards, Haddington, EH41 3PP
+Address: 2B Station Yards, East Lothian
 
 ═══════════════════════════════════════════
 Sundown Radio - Charity Registration No. SC042784
