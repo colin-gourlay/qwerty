@@ -33,11 +33,74 @@ import { getGenreColors } from '@/lib/genre-colors'
 import { getTimeSlotColors, getTimeOfDayPeriods } from '@/lib/time-slot-colors'
 
 const MAX_HOMEPAGE_SHOWS = 3
+const HOMEPAGE_TITLE = `${STATION_CONFIG.name} | ${STATION_CONFIG.tagline}`
+const STATION_TITLE_SUFFIX = `| ${STATION_CONFIG.name}`
+const STATIC_PAGE_TITLES: Record<string, string> = {
+  '/about': 'About',
+  '/history': 'History',
+  '/schedule': 'Schedule',
+  '/shows': 'Shows',
+  '/presenters': 'Presenters',
+  '/listen': 'Listen Live',
+  '/get-involved': 'Get Involved',
+  '/news': 'News',
+  '/contact': 'Contact',
+  '/donate': 'Donate',
+  '/advertise': 'Advertise',
+}
+
+function formatPageTitle(pageTitle: string): string {
+  const trimmedPageTitle = pageTitle.trim()
+  if (trimmedPageTitle.toLowerCase().includes(STATION_CONFIG.name.toLowerCase())) {
+    return trimmedPageTitle
+  }
+
+  return `${trimmedPageTitle} ${STATION_TITLE_SUFFIX}`
+}
+
+function resolveDocumentTitle(pathname: string): string {
+  if (pathname === '/') {
+    return HOMEPAGE_TITLE
+  }
+
+  const showPathMatch = pathname.match(/^\/shows\/([^/]+)$/)
+  if (showPathMatch) {
+    const showId = decodeURIComponent(showPathMatch[1])
+    const show = shows.find((entry) => entry.id === showId)
+    return formatPageTitle(show?.name ?? 'Show Not Found')
+  }
+
+  const presenterPathMatch = pathname.match(/^\/presenters\/([^/]+)$/)
+  if (presenterPathMatch) {
+    const presenterId = decodeURIComponent(presenterPathMatch[1])
+    const presenter = presenters.find((entry) => entry.id === presenterId)
+    return formatPageTitle(presenter?.name ?? 'Presenter Not Found')
+  }
+
+  const staticPageTitle = STATIC_PAGE_TITLES[pathname]
+  if (staticPageTitle) {
+    return formatPageTitle(staticPageTitle)
+  }
+
+  return STATION_CONFIG.name
+}
+
+function TitleManager() {
+  const location = useLocation()
+
+  useEffect(() => {
+    const documentTitle = resolveDocumentTitle(location.pathname)
+    document.title = documentTitle
+  }, [location.pathname])
+
+  return null
+}
 
 export default function App() {
   return (
     <AudioPlayerProvider streamUrl={STREAM_URL}>
       <BrowserRouter>
+        <TitleManager />
         <div className="min-h-screen bg-background flex flex-col pb-20">
           <a
             href="#main-content"
