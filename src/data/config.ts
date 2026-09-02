@@ -86,6 +86,7 @@ export const RECEPTION_TIPS = {
   ],
   general: [
     {
+      id: 'fm-radio-tips',
       title: 'FM Radio Tips',
       tips: [
         'Extend your antenna fully for best reception',
@@ -95,6 +96,7 @@ export const RECEPTION_TIPS = {
       ]
     },
     {
+      id: 'online-streaming',
       title: 'Online Streaming',
       tips: [
         'Visit sundownradio.co.uk and click "Listen Live"',
@@ -104,6 +106,7 @@ export const RECEPTION_TIPS = {
       ]
     },
     {
+      id: 'troubleshooting',
       title: 'Troubleshooting',
       tips: [
         'If signal is weak, try repositioning your antenna',
