@@ -89,11 +89,7 @@ export default function WaysToListenPage() {
                     <p className="text-sm text-muted-foreground mb-4">
                       Set your device to Sundown Radio
                     </p>
-                    <div className="space-y-3 w-full">
-                      <div className="bg-muted rounded-lg p-3">
-                        <div className="text-xs text-muted-foreground mb-1">FM Radio</div>
-                        <div className="text-xl font-bold text-primary">107.6 FM</div>
-                      </div>
+                    <div className="grid gap-3 w-full sm:grid-cols-2">
                       <div className="bg-muted rounded-lg p-3">
                         <div className="text-xs text-muted-foreground mb-1">Smart Speaker</div>
                         <div className="text-sm font-mono">"Play Sundown Radio"</div>
