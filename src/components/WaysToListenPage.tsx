@@ -44,7 +44,7 @@ export default function WaysToListenPage() {
                   <CheckCircle className="h-7 w-7 text-primary-foreground" weight="fill" />
                 </div>
                 <div>
-                  <h2 className="text-2xl sm:text-3xl font-bold">Quick Start Guide</h2>
+                  <h2 className="text-2xl sm:text-3xl font-bold">Choose how you want to listen</h2>
                   <p className="text-sm text-muted-foreground">New to {STATION_CONFIG.name}? Get listening in 3 easy steps</p>
                 </div>
               </div>
