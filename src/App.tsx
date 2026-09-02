@@ -33,7 +33,7 @@ import { getGenreColors } from '@/lib/genre-colors'
 import { getTimeSlotColors, getTimeOfDayPeriods } from '@/lib/time-slot-colors'
 
 const MAX_HOMEPAGE_SHOWS = 3
-const HOMEPAGE_TITLE = 'Sundown Radio | Alternative Music After Dark'
+const HOMEPAGE_TITLE = `${STATION_CONFIG.name} | ${STATION_CONFIG.tagline}`
 const STATION_TITLE_SUFFIX = `| ${STATION_CONFIG.name}`
 const STATIC_PAGE_TITLES: Record<string, string> = {
   '/about': 'About',
