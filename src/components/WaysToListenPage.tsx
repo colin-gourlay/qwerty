@@ -32,8 +32,7 @@ export default function WaysToListenPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Ways to Listen</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Tune into {STATION_CONFIG.name} however you prefer. From traditional FM radio to modern streaming apps, 
-            we've got you covered across East Lothian and beyond.
+            Listen to {STATION_CONFIG.name} your way. Stream live online, tune in through supported apps, or ask your smart speaker. Alternative music, wherever you are.
           </p>
         </div>
 
