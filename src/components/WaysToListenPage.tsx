@@ -23,6 +23,8 @@ import { useAudioPlayer } from '@/components/AudioPlayerContext'
 import SoundWave from '@/components/SoundWave'
 import FrequencyFinder from '@/components/FrequencyFinder'
 
+const FM_RADIO_TIPS_ID = 'fm-radio-tips'
+
 export default function WaysToListenPage() {
   const { togglePlay, isPlaying } = useAudioPlayer()
 
@@ -587,19 +589,19 @@ export default function WaysToListenPage() {
           <h2 className="text-3xl font-bold mb-6">Reception Tips</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {RECEPTION_TIPS.general
-              .filter((category) => category.title !== 'FM Radio Tips')
-              .map((category, idx) => (
-              <Card key={idx} className="p-6">
-                <h3 className="font-semibold text-lg mb-3">{category.title}</h3>
-                <ul className="space-y-2">
-                  {category.tips.map((tip, tipIdx) => (
-                    <li key={tipIdx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-accent mt-2" />
-                      <span>{tip}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Card>
+              .filter((category) => category.id !== FM_RADIO_TIPS_ID)
+              .map((category) => (
+                <Card key={category.id} className="p-6">
+                  <h3 className="font-semibold text-lg mb-3">{category.title}</h3>
+                  <ul className="space-y-2">
+                    {category.tips.map((tip, tipIdx) => (
+                      <li key={tipIdx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-accent mt-2" />
+                        <span>{tip}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
               ))}
           </div>
         </section>
