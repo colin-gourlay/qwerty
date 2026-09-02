@@ -5,7 +5,6 @@ import {
   AppleLogo, 
   GooglePlayLogo, 
   WaveformSlash,
-  Broadcast,
   Waveform,
   Play,
   Microphone,
@@ -159,36 +158,6 @@ export default function WaysToListenPage() {
 
         <section className="mb-16">
           <FrequencyFinder />
-        </section>
-
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-            <Broadcast className="h-8 w-8 text-primary" weight="duotone" />
-            Traditional Radio
-          </h2>
-          <Card className="p-8 hover:shadow-lg transition-shadow bg-gradient-to-br from-primary/5 to-primary/10">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
-                <Radio className="h-8 w-8 text-primary" weight="duotone" />
-              </div>
-              <div className="flex-1">
-                <Badge className="mb-2">Most Popular</Badge>
-                <h3 className="font-semibold text-2xl mb-2">FM Radio</h3>
-                <div className="text-4xl font-bold text-primary mb-3">107.6 FM</div>
-                <p className="text-sm text-muted-foreground">
-                  The classic way to listen. Simply tune your FM radio to 107.6 and enjoy crystal clear reception 
-                  across East Lothian.
-                </p>
-              </div>
-            </div>
-            <div className="bg-card rounded-lg p-4 border">
-              <h4 className="font-semibold text-sm mb-2">Coverage Area</h4>
-              <p className="text-xs text-muted-foreground">
-                Haddington, North Berwick, Dunbar, Musselburgh, Tranent, Prestonpans, East Linton, Gullane, 
-                and surrounding areas
-              </p>
-            </div>
-          </Card>
         </section>
 
         <section className="mb-16">
