@@ -2,7 +2,7 @@ import type { StationConfig } from '@/types'
 
 export const STATION_CONFIG: StationConfig = {
   name: 'Sundown Radio',
-  tagline: 'Your Voice on the Coast',
+  tagline: 'Alternative Music After Dark',
   description: 'Broadcasting from the heart of East Lothian, bringing you the best in music, talk, and community programming 24/7.',
   broadcastLabel: '107.6 FM',
   coverageArea: 'East Lothian',
