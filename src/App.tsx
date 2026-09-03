@@ -165,7 +165,7 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60 transition-all duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`flex items-center justify-between gap-8 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
+        <div className={`flex items-center justify-between gap-8 lg:gap-6 xl:gap-8 transition-all duration-300 ${isScrolled ? 'py-2 lg:py-1.5' : 'py-4 lg:py-3'}`}>
           <Link to="/" className="flex items-center group flex-shrink-0">
             <img 
               src={stationLogo} 
@@ -174,7 +174,7 @@ function Header() {
             />
           </Link>
 
-          <nav aria-label="Main navigation" className="hidden md:flex items-center gap-4 lg:gap-6 flex-wrap justify-end">
+          <nav aria-label="Main navigation" className="hidden xl:flex items-center gap-4 xl:gap-4 2xl:gap-6 flex-wrap justify-end">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -210,7 +210,7 @@ function Header() {
           </nav>
 
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-            <SheetTrigger asChild className="md:hidden">
+            <SheetTrigger asChild className="xl:hidden">
               <Button variant="ghost" size="icon" aria-label="Open navigation menu">
                 <List className="h-5 w-5" aria-hidden="true" />
               </Button>
