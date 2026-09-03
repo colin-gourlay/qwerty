@@ -174,7 +174,7 @@ function Header() {
             />
           </Link>
 
-          <nav aria-label="Main navigation" className="hidden xl:flex items-center gap-4 xl:gap-4 2xl:gap-6 flex-wrap justify-end">
+          <nav aria-label="Main navigation" className="hidden xl:flex items-center gap-4 2xl:gap-6 flex-wrap justify-end">
             {navItems.map((item) => (
               <Link
                 key={item.path}
