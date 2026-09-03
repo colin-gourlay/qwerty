@@ -1,5 +1,4 @@
 import { 
-  Radio, 
   DeviceMobile, 
   Globe, 
   AppleLogo, 
@@ -61,10 +60,6 @@ export default function WaysToListenPage() {
                       Pick the listening option that works best for you
                     </p>
                     <div className="space-y-2 w-full">
-                      <div className="flex items-center gap-2 text-xs text-left">
-                        <Radio className="h-4 w-4 text-primary flex-shrink-0" weight="duotone" />
-                        <span>Traditional FM Radio (107.6)</span>
-                      </div>
                       <div className="flex items-center gap-2 text-xs text-left">
                         <Globe className="h-4 w-4 text-primary flex-shrink-0" weight="duotone" />
                         <span>Online Streaming</span>
