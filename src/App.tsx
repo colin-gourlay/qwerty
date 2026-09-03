@@ -198,8 +198,8 @@ function Header() {
             </Button>
             <Button 
               size="sm" 
-              variant="default"
-              className="gap-2 bg-accent hover:bg-accent/90 text-accent-foreground"
+              variant="outline"
+              className="gap-2"
               asChild
             >
               <Link to="/donate">
@@ -249,7 +249,8 @@ function Header() {
                   {isPlaying && <SoundWave />}
                 </Button>
                 <Button 
-                  className="gap-2 w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+                  variant="outline"
+                  className="gap-2 w-full"
                   asChild
                 >
                   <Link to="/donate" onClick={() => setMobileMenuOpen(false)}>
