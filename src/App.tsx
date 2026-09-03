@@ -41,7 +41,7 @@ const STATIC_PAGE_TITLES: Record<string, string> = {
   '/schedule': 'Schedule',
   '/shows': 'Shows',
   '/presenters': 'Presenters',
-  '/listen': 'Listen Live',
+  '/listen': 'Ways to Listen',
   '/get-involved': 'Get Involved',
   '/news': 'News',
   '/contact': 'Contact',
@@ -151,7 +151,7 @@ function Header() {
   }, [])
 
   const navItems = [
-    { path: '/listen', label: 'Listen', icon: Headphones },
+    { path: '/listen', label: 'Ways to Listen', icon: Headphones },
     { path: '/schedule', label: 'Schedule', icon: Calendar },
     { path: '/shows', label: 'Shows', icon: Play },
     { path: '/presenters', label: 'Presenters', icon: Users },
